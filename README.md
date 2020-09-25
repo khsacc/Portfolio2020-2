@@ -1,5 +1,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+勉強のために Next.ts + Typescript を導入してみます。ポートフォリオは構造を作り直したくなったので仕切り直しのためにリポジトリを変えました。
+
 ## Getting Started
 
 First, run the development server:
