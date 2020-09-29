@@ -1,7 +1,9 @@
-import "../styles/globals.css";
+import { AppProps } from 'next/app';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
-}
+const defaultLayout = ({ Component, pageProps }: AppProps) => (
+  <>
+    <Component {...pageProps} />
+  </>
+)
 
-export default MyApp;
+export default defaultLayout;
