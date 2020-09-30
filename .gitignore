@@ -32,3 +32,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# raw design data
+/assets/
