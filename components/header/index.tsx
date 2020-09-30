@@ -1,18 +1,15 @@
-import { makeStyles } from "@material-ui/core";
-import { NextPage } from 'next'
+import { makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles(() => {
-    return {
-      wrapper: {
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100%',
-      }
-    }
-  })
+const useStyles = makeStyles(() => ({
+  wrapper: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100%',
+  },
+}));
 
-export const Header: NextPage = () => {
-    const classes = useStyles()
-    return <div className={classes.wrapper}>header</div>
-}
+export const Header = () => {
+  const classes = useStyles();
+  return <div className={classes.wrapper}>header</div>;
+};
