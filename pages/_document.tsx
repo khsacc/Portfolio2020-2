@@ -70,6 +70,7 @@ export default class MyDocument extends Document {
           <link rel="icon" type="image/png" sizes="24x24" href="/meta/icon-24x24.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/meta/icon-32x32.png" />
           {/* og-image */}
+          <meta name="og:title" content="Hiroki Kobayashi | Design Portfolio"></meta>
           <meta name="og:image" content={'/meta/ogimage.png'}></meta>
           <meta name="twitter:card" content="summary_large_image"></meta>
         </Head>
