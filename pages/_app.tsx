@@ -35,7 +35,7 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
       {/* <Header /> */}
       <ThemeProvider theme={theme}>
         <div className={classes.page}>
-          <PageTransition timeout={600} classNames="page-transition">
+          <PageTransition timeout={1000} classNames="page-transition">
             <Component {...pageProps} />
           </PageTransition>
         </div>
@@ -46,14 +46,14 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
         }
         .page-transition-enter-active {
           opacity: 1;
-          transition: all ease-in-out 0.5s;
+          transition: all ease-in-out 1s;
         }
         .page-transition-exit {
           opacity: 1;
         }
         .page-transition-exit-active {
           opacity: 0;
-          transition: all ease-in-out 0.5s;
+          transition: all ease-in-out 1s;
         }
       `}</style>
     </>
