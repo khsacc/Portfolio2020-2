@@ -7,6 +7,7 @@ import { makeStyles } from '@material-ui/core';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import CssBaseLine from '@material-ui/core/CssBaseline';
+import Head from 'next/head';
 import PropTypes from 'prop-types';
 import theme from '../styles/theme';
 
@@ -32,6 +33,9 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
 
   return (
     <>
+      <Head>
+        <title>Hiroki Kobayashi | Design Portfolio</title>
+      </Head>
       <CssBaseLine />
       <Header />
       <ThemeProvider theme={theme}>

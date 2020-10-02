@@ -13,7 +13,6 @@ export default class MyDocument extends Document {
     return (
       <Html lang="ja">
         <Head>
-          <title>Hiroki Kobayashi | Design Portfolio</title>
           {/* PWA primary color */}
           {/* <meta name="theme-color" content={theme.palette.primary.main} /> */}
           <meta name="msapplication-square70x70logo" content="/meta/site-tile-70x70.png" />
