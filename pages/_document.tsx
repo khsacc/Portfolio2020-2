@@ -13,6 +13,17 @@ export default class MyDocument extends Document {
     return (
       <Html lang="ja">
         <Head>
+          {/* Google Analytics */}
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179513963-1"></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-179513963-1');`,
+            }}
+          ></script>
+
           {/* PWA primary color */}
           {/* <meta name="theme-color" content={theme.palette.primary.main} /> */}
           <meta name="msapplication-square70x70logo" content="/meta/site-tile-70x70.png" />
