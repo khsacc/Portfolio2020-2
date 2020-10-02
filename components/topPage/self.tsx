@@ -39,6 +39,7 @@ export const Self = () => {
       color: colours.main.light,
       zIndex: zIndex.top.self_umb,
       width: '60%',
+      maxWidth: 450,
       height: 'fit-content',
       [theme.breakpoints.up('mobile')]: {
         width: '35%',
