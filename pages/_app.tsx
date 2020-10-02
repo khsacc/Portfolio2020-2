@@ -2,6 +2,7 @@ import { AppProps } from 'next/app';
 // import { Header } from '../components/header';
 import { ThemeProvider } from '@material-ui/core/styles';
 // import { headerStyle } from '../styles';
+import { PageTransition } from 'next-page-transitions';
 import { makeStyles } from '@material-ui/core';
 import { useEffect } from 'react';
 import CssBaseLine from '@material-ui/core/CssBaseline';
@@ -34,9 +35,27 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
       {/* <Header /> */}
       <ThemeProvider theme={theme}>
         <div className={classes.page}>
-          <Component {...pageProps} />
+          <PageTransition timeout={600} classNames="page-transition">
+            <Component {...pageProps} />
+          </PageTransition>
         </div>
       </ThemeProvider>
+      <style jsx global>{`
+        .page-transition-enter {
+          opacity: 0;
+        }
+        .page-transition-enter-active {
+          opacity: 1;
+          transition: all ease-in-out 0.5s;
+        }
+        .page-transition-exit {
+          opacity: 1;
+        }
+        .page-transition-exit-active {
+          opacity: 0;
+          transition: all ease-in-out 0.5s;
+        }
+      `}</style>
     </>
   );
 };
