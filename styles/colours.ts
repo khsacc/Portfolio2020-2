@@ -2,6 +2,7 @@
 
 export const colours = {
   main: {
+    main: '#de4575',
     back: '#fcf0f0',
   },
 };

@@ -18,7 +18,7 @@ const HeaderDesign = () => {
       fontSize: '2em',
       lineHeight: 1,
       margin: 0,
-      color: '#de4575',
+      color: colours.main.main,
     },
     top_link: {
       textDecoration: 'none',

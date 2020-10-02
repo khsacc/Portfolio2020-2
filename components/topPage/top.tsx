@@ -20,11 +20,15 @@ export const Top = () => {
       margin: '0 auto',
       width: '100%',
     },
+    heading: {
+      height: '26px',
+      marginBottom: 15,
+    },
   }));
   const classes = useStyles();
   return (
     <div className={classes.wrapper}>
-      <h1>「わくわくさせるクリエイティブ」</h1>
+      <img className={classes.heading} src="/topPage/heading.svg" alt="わくわくさせるクリエイティブ" />
       <div className={classes.img_wrapper}>
         <img className={classes.img} src="/topPage/top_back.png" />
       </div>
