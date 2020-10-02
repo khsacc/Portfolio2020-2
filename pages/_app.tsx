@@ -35,6 +35,7 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
     <>
       <Head>
         <title>Hiroki Kobayashi | Design Portfolio</title>
+        <link rel="stylesheet" href="https://use.typekit.net/vpq5jbc.css"></link>
       </Head>
       <CssBaseLine />
       <Header />

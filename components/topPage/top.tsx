@@ -14,11 +14,20 @@ export const Top = () => {
       maxHeight: '500px',
       height: 'object-fit',
       overflow: 'hidden',
+      animation: '$imageAnim 1s ease-in-out',
     },
     img: {
       display: 'block',
       margin: '0 auto',
       width: '100%',
+    },
+    '@keyframes imageAnim': {
+      '0%': {
+        transform: 'translateY(-3%)',
+      },
+      '100%': {
+        transform: 'translateY(0)',
+      },
     },
     heading: {
       height: '26px',
@@ -26,11 +35,12 @@ export const Top = () => {
     },
   }));
   const classes = useStyles();
+
   return (
     <div className={classes.wrapper}>
       <img className={classes.heading} src="/topPage/heading.svg" alt="わくわくさせるクリエイティブ" />
       <div className={classes.img_wrapper}>
-        <img className={classes.img} src="/topPage/top_back.png" />
+        <img className={classes.img} src="/topPage/top_back.svg" />
       </div>
     </div>
   );

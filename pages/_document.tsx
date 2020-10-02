@@ -14,7 +14,7 @@ export default class MyDocument extends Document {
       <Html lang="ja">
         <Head>
           {/* Google Analytics */}
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179513963-1"></script>
+          <script src="https://www.googletagmanager.com/gtag/js?id=UA-179513963-1"></script>
           <script
             dangerouslySetInnerHTML={{
               __html: `window.dataLayer = window.dataLayer || [];
@@ -69,7 +69,6 @@ export default class MyDocument extends Document {
           <link rel="icon" type="image/png" sizes="16x16" href="/meta/icon-16x16.png" />
           <link rel="icon" type="image/png" sizes="24x24" href="/meta/icon-24x24.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/meta/icon-32x32.png" />
-          <link rel="stylesheet" href="https://use.typekit.net/vpq5jbc.css"></link>
         </Head>
         <body>
           <Main />
