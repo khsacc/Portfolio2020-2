@@ -1,2 +1,2 @@
-import { globalStyle } from './global';
-export { globalStyle };
+import { headerStyle } from './global';
+export { headerStyle };

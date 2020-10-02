@@ -1,5 +1,3 @@
-export const globalStyle = {
-  header: {
-    height: 100,
-  },
+export const headerStyle = {
+  height: 100,
 };
