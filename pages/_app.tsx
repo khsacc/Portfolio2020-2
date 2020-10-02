@@ -5,6 +5,7 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import { headerStyle } from '../styles';
 import { makeStyles } from '@material-ui/core';
 import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import CssBaseLine from '@material-ui/core/CssBaseline';
 import PropTypes from 'prop-types';
 import theme from '../styles/theme';
@@ -27,6 +28,8 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
     }
   }, []);
 
+  const router = useRouter();
+
   return (
     <>
       <CssBaseLine />
@@ -34,7 +37,7 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
       <ThemeProvider theme={theme}>
         <div className={classes.page}>
           <PageTransition timeout={700} classNames="page-transition">
-            <Component {...pageProps} />
+            <Component key={router.pathname} {...pageProps} />
           </PageTransition>
         </div>
       </ThemeProvider>
