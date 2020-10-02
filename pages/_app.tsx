@@ -1,8 +1,8 @@
 import { AppProps } from 'next/app';
-// import { Header } from '../components/header';
-import { ThemeProvider } from '@material-ui/core/styles';
-// import { headerStyle } from '../styles';
+import { Header } from '../components/header';
 import { PageTransition } from 'next-page-transitions';
+import { ThemeProvider } from '@material-ui/core/styles';
+import { headerStyle } from '../styles';
 import { makeStyles } from '@material-ui/core';
 import { useEffect } from 'react';
 import CssBaseLine from '@material-ui/core/CssBaseline';
@@ -11,11 +11,9 @@ import theme from '../styles/theme';
 
 const useStyles = makeStyles(() => ({
   page: {
-    // marginTop: headerStyle.height,
-    background: '#fcf0f0',
-    padding: '10px',
     minHeight: '100vh',
     width: '100%',
+    marginTop: headerStyle.height,
   },
 }));
 
@@ -32,10 +30,10 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <CssBaseLine />
-      {/* <Header /> */}
+      <Header />
       <ThemeProvider theme={theme}>
         <div className={classes.page}>
-          <PageTransition timeout={1000} classNames="page-transition">
+          <PageTransition timeout={700} classNames="page-transition">
             <Component {...pageProps} />
           </PageTransition>
         </div>
@@ -46,14 +44,14 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
         }
         .page-transition-enter-active {
           opacity: 1;
-          transition: all ease-in-out 1s;
+          transition: all ease-in-out 0.7s;
         }
         .page-transition-exit {
           opacity: 1;
         }
         .page-transition-exit-active {
           opacity: 0;
-          transition: all ease-in-out 1s;
+          transition: all ease-in-out 0.7s;
         }
       `}</style>
     </>

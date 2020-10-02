@@ -1,2 +1,3 @@
+import { colours } from './colours';
 import { headerStyle } from './global';
-export { headerStyle };
+export { colours, headerStyle };

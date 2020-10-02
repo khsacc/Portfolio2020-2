@@ -1,9 +1,9 @@
-import { TopEyecatch } from '../components/topPage/eyecatch';
-
+import { Self, Top } from '../components/topPage';
 export default function IndexPage() {
   return (
-    <div>
-      <TopEyecatch />
-    </div>
+    <>
+      <Top />
+      <Self />
+    </>
   );
 }

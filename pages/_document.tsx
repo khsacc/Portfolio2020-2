@@ -1,7 +1,12 @@
+/**
+ * document.tsx
+ * material-uiによるstyleのrenderingに関するエラーを防止するために必要です。
+ * https://material-ui.com/ja/guides/server-rendering/
+ */
+
 import { ServerStyleSheets } from '@material-ui/core/styles';
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 import React from 'react';
-// import theme from '../src/theme';
 
 export default class MyDocument extends Document {
   render() {
