@@ -1,3 +1,3 @@
 import { colours } from './colours';
-import { headerStyle } from './global';
-export { colours, headerStyle };
+import { headerStyle, mrEavesBook, mrEavesRegular, zIndex } from './global';
+export { colours, headerStyle, mrEavesBook, mrEavesRegular, zIndex };

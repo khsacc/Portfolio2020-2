@@ -1,6 +1,7 @@
 import { colours } from '../../styles';
 import { headerStyle } from '../../styles';
 import { makeStyles } from '@material-ui/core';
+import { mrEavesBook } from '../../styles';
 import Link from 'next/link';
 
 const HeaderDesign = () => {
@@ -11,9 +12,7 @@ const HeaderDesign = () => {
       margin: '0 auto 5px',
     },
     name: {
-      fontFamily: 'mr-eaves-modern, sans-serif',
-      fontWeight: 300,
-      fontStyle: 'normal',
+      ...mrEavesBook,
       textAlign: 'center',
       fontSize: '2em',
       lineHeight: 1,
