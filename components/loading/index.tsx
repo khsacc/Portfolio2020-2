@@ -1,7 +1,7 @@
+import { Fade, makeStyles } from '@material-ui/core';
 import { LineUmb } from '../common';
 import { NextPage } from 'next';
 import { colours, zIndex } from '../../styles';
-import { makeStyles } from '@material-ui/core';
 import { useEffect, useState } from 'react';
 
 export const LoadAnim: NextPage = () => {
@@ -23,6 +23,15 @@ export const LoadAnim: NextPage = () => {
     umb: {
       width: '45%',
     },
+    exit: {
+      opacity: 1,
+    },
+    exitActive: {
+      transition: 'all 0.8s ease-in-out',
+    },
+    exitDone: {
+      opacity: 0,
+    },
   }))();
 
   const [showAnim, setShowAnim] = useState(true);
@@ -34,7 +43,14 @@ export const LoadAnim: NextPage = () => {
   // todo: react-css-transition
 
   return (
-    showAnim && (
+    <Fade
+      in={showAnim}
+      timeout={{
+        appear: 0,
+        enter: 0,
+        exit: 800,
+      }}
+    >
       <div className={classes.basement}>
         <div>
           <LineUmb className={classes.umb} />
@@ -42,6 +58,6 @@ export const LoadAnim: NextPage = () => {
           Welcome!
         </div>
       </div>
-    )
+    </Fade>
   );
 };
