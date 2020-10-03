@@ -50,7 +50,7 @@ export const Self = () => {
   const classes = useStyles();
   return (
     <div className={classes.wrapper}>
-      <img src="/topPage/self.jpg" className={classes.self} />
+      <img src="/topPage/self.jpg" alt="" className={classes.self} />
       <div>
         <h2 className={classes.name}>Hiroki Kobayashi</h2>
         <p className={classes.prof}>

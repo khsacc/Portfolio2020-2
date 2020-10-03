@@ -40,7 +40,7 @@ export const Top = () => {
     <div className={classes.wrapper}>
       <img className={classes.heading} src="/topPage/heading.svg" alt="わくわくさせるクリエイティブ" />
       <div className={classes.img_wrapper}>
-        <img className={classes.img} src="/topPage/top_back.svg" />
+        <img className={classes.img} alt="" src="/topPage/top_back.svg" />
       </div>
     </div>
   );

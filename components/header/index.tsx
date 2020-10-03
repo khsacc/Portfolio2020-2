@@ -27,7 +27,7 @@ const HeaderDesign = () => {
   return (
     <Link href="/">
       <a className={classes.top_link}>
-        <img src="/topPage/top_icon.svg" className={classes.top_icon} />
+        <img src="/topPage/top_icon.svg" alt="" className={classes.top_icon} />
         <h1 className={classes.name}>Hiroki Kobayashi</h1>
       </a>
     </Link>
