@@ -5,6 +5,8 @@ import { makeStyles } from '@material-ui/core';
 const useStyles = makeStyles(theme => ({
   wrapper: {
     width: '100%',
+    maxWidth: 800,
+    margin: '0 auto',
     padding: 10,
     background: colours.main.back,
     textAlign: 'center',
@@ -50,11 +52,13 @@ export const Self = () => {
   const classes = useStyles();
   return (
     <div className={classes.wrapper}>
-      <img src="/topPage/self.jpg" alt="" className={classes.self} />
+      <img src="/img/topPage/self.jpg" alt="" className={classes.self} />
       <div>
         <h2 className={classes.name}>Hiroki Kobayashi</h2>
         <p className={classes.prof}>
-          東京大学3年。印刷物のデザインが得意ですが、Webデザイン・開発もやっています。
+          東京大学3年。
+          <br />
+          印刷物のデザインが得意ですが、Webデザイン・開発もやっています。
           <br />
           媒体と素材を活かすための、ちょっとした工夫について日々考えています。
         </p>

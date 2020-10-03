@@ -39,9 +39,9 @@ export const Top = () => {
 
   return (
     <div className={classes.wrapper}>
-      <img className={classes.heading} src="/topPage/heading.svg" alt="わくわくさせるクリエイティブ" />
+      <img className={classes.heading} src="/img/topPage/heading.svg" alt="わくわくさせるクリエイティブ" />
       <div className={classes.img_wrapper}>
-        <img className={classes.img} alt="" src="/topPage/top_back.svg" />
+        <img className={classes.img} alt="" src="/img/topPage/top_back.svg" />
       </div>
     </div>
   );

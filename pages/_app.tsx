@@ -1,4 +1,5 @@
 import { AppProps } from 'next/app';
+import { Footer } from '../components/footer';
 import { Header } from '../components/header';
 import { LoadAnim } from '../components/loading';
 import { PageTransition } from 'next-page-transitions';
@@ -40,14 +41,15 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
         <link rel="stylesheet" href="https://use.typekit.net/vpq5jbc.css"></link>
       </Head>
       <CssBaseLine />
-      <LoadAnim />
-      <Header />
       <ThemeProvider theme={theme}>
+        <LoadAnim />
+        <Header />
         <div className={classes.page}>
           <PageTransition timeout={700} classNames="page-transition">
             <Component key={router.pathname} {...pageProps} />
           </PageTransition>
         </div>
+        <Footer />
       </ThemeProvider>
       <style jsx global>{`
         .page-transition-enter {
