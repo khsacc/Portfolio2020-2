@@ -12,7 +12,7 @@ export const Source = () => {
     img: {
       maxWidth: 400,
       margin: 5,
-      transition: 'all 0.8s',
+      transition: 'all 0.8s 0.05s',
     },
     img_hover: {
       position: 'absolute',

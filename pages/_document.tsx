@@ -5,13 +5,14 @@
  */
 
 import { ServerStyleSheets } from '@material-ui/core/styles';
+import { colours } from '../styles';
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 import React from 'react';
 
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html lang="ja">
+      <Html lang="ja" style={{ background: colours.main.back }}>
         <Head>
           {/* Google Analytics */}
           <script src="https://www.googletagmanager.com/gtag/js?id=UA-179513963-1"></script>

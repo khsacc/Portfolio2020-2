@@ -1,10 +1,11 @@
 import { NextPage } from 'next';
-import { Self, Top } from '../components/topPage';
+import { Self, SelfTheme } from '../components/self';
 
-const IndexPage: NextPage = () => (
+const ProfilePage: NextPage = () => (
   <>
-    <Self />
+    <Self showName />
+    <SelfTheme />
   </>
 );
 
-export default IndexPage;
+export default ProfilePage;

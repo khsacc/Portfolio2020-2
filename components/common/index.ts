@@ -1,2 +1,3 @@
 import { LineUmb } from './lineUmb';
-export { LineUmb };
+import { Subtitle } from './subtitle';
+export { LineUmb, Subtitle };

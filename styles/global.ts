@@ -2,14 +2,18 @@ export const headerStyle = {
   height: 100,
 };
 
+export const sectionStyle = {
+  margin: 10,
+};
+
 export const mrEavesBook = {
-  fontFamily: 'mr-eaves-modern, sans-serif',
+  fontFamily: 'mr-eaves-modern, glow-sans-condensed, sans-serif',
   fontWeight: 300,
   fontStyle: 'normal',
 };
 
 export const mrEavesRegular = {
-  fontFamily: 'mr-eaves-modern, sans-serif',
+  fontFamily: 'mr-eaves-modern, glow-sans-condensed, sans-serif',
   fontWeight: 300,
   fontStyle: 'normal',
 };
@@ -22,4 +26,5 @@ export const zIndex = {
   load_anim: {
     base: 700,
   },
+  header: 650,
 };

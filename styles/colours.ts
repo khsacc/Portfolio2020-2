@@ -6,5 +6,6 @@ export const colours = {
     sub: '#c15f72',
     back: '#fcf0f0',
     light: '#f2cbd2',
+    hover: '#fcdce0',
   },
 };

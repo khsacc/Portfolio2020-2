@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import { colours } from '../../styles';
+import { colours, zIndex } from '../../styles';
 import { headerStyle } from '../../styles';
 import { makeStyles } from '@material-ui/core';
 import { mrEavesBook } from '../../styles';
@@ -27,7 +27,7 @@ const HeaderDesign: NextPage = () => {
   return (
     <Link href="/">
       <a className={classes.top_link}>
-        <img src="/topPage/top_icon.svg" alt="" className={classes.top_icon} />
+        <img src="/img/topPage/top_icon.svg" alt="" className={classes.top_icon} />
         <h1 className={classes.name}>Hiroki Kobayashi</h1>
       </a>
     </Link>
@@ -45,11 +45,12 @@ export const Header = () => {
       height: headerStyle.height,
       padding: 10,
       background: colours.main.back,
+      zIndex: zIndex.header,
     },
   }))();
   return (
-    <div className={classes.headerWrapper}>
+    <header className={classes.headerWrapper}>
       <HeaderDesign />
-    </div>
+    </header>
   );
 };

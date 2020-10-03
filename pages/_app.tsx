@@ -40,8 +40,8 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
         <title>Hiroki Kobayashi | Design Portfolio</title>
         <link rel="stylesheet" href="https://use.typekit.net/vpq5jbc.css"></link>
       </Head>
-      <CssBaseLine />
       <ThemeProvider theme={theme}>
+        <CssBaseLine />
         <LoadAnim />
         <Header />
         <div className={classes.page}>
@@ -64,6 +64,7 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
         }
         .page-transition-exit-active {
           opacity: 0;
+          transform: translateY(-3%);
           transition: all ease-in-out 0.7s;
         }
       `}</style>
