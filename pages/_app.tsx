@@ -64,7 +64,7 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
         }
         .page-transition-exit-active {
           opacity: 0;
-          transform: translateY(-3%);
+          transform: translateY(-1.5%);
           transition: all ease-in-out 0.7s;
         }
       `}</style>
