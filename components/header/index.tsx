@@ -25,7 +25,7 @@ const HeaderDesign: NextPage = () => {
     },
   }))();
   return (
-    <Link href="/">
+    <Link href="/" scroll={false}>
       <a className={classes.top_link}>
         <img src="/img/topPage/top_icon.svg" alt="" className={classes.top_icon} />
         <h1 className={classes.name}>Hiroki Kobayashi</h1>

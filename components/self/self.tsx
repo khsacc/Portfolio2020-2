@@ -55,7 +55,7 @@ const useStyles = makeStyles(theme => ({
 export const Self: NextPage<{ showName?: boolean }> = ({ showName = false }) => {
   const classes = useStyles();
   return (
-    <Link href="/profile">
+    <Link href="/profile" scroll={false}>
       <a className={classes.wrapper_link}>
         <div className={classes.wrapper}>
           <img src="/img/topPage/self.jpg" alt="" className={classes.self} />
