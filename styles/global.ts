@@ -19,4 +19,7 @@ export const zIndex = {
     self_umb: 1,
     self_content: 2,
   },
+  load_anim: {
+    base: 700,
+  },
 };

@@ -1,12 +1,11 @@
 // import { colours, mrEavesRegular } from '../../styles';
 // import { makeStyles } from '@material-ui/core';
 
-// Wrapper
-export const LineUmb = () => (
-  // const useStyles = makeStyles(theme => ({}));
+import { NextPage } from 'next';
 
-  // const classes = useStyles();
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+// Wrapper
+export const LineUmb: NextPage<{ className?: string }> = ({ className }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" className={className}>
     <defs>
       <style>.cls-1{'{fill:currentColor;}'}</style>
     </defs>

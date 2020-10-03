@@ -1,10 +1,11 @@
+import { NextPage } from 'next';
 import { colours } from '../../styles';
 import { headerStyle } from '../../styles';
 import { makeStyles } from '@material-ui/core';
 import { mrEavesBook } from '../../styles';
 import Link from 'next/link';
 
-const HeaderDesign = () => {
+const HeaderDesign: NextPage = () => {
   const classes = makeStyles(() => ({
     top_icon: {
       width: '50px',

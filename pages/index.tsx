@@ -1,9 +1,11 @@
+import { NextPage } from 'next';
 import { Self, Top } from '../components/topPage';
-export default function IndexPage() {
-  return (
-    <>
-      <Top />
-      <Self />
-    </>
-  );
-}
+
+const IndexPage: NextPage = () => (
+  <>
+    <Top />
+    <Self />
+  </>
+);
+
+export default IndexPage;

@@ -1,8 +1,9 @@
 import { AppProps } from 'next/app';
 import { Header } from '../components/header';
+import { LoadAnim } from '../components/loading';
 import { PageTransition } from 'next-page-transitions';
 import { ThemeProvider } from '@material-ui/core/styles';
-import { headerStyle } from '../styles';
+import { colours, headerStyle } from '../styles';
 import { makeStyles } from '@material-ui/core';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
@@ -13,9 +14,10 @@ import theme from '../styles/theme';
 
 const useStyles = makeStyles(() => ({
   page: {
-    minHeight: '100vh',
+    minHeight: `calc(100vh - ${headerStyle.height}px)`,
     width: '100%',
     marginTop: headerStyle.height,
+    background: colours.main.back,
   },
 }));
 
@@ -38,6 +40,7 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
         <link rel="stylesheet" href="https://use.typekit.net/vpq5jbc.css"></link>
       </Head>
       <CssBaseLine />
+      <LoadAnim />
       <Header />
       <ThemeProvider theme={theme}>
         <div className={classes.page}>

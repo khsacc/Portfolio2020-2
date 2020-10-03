@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
   umb: {
     position: 'absolute',
     bottom: 0,
-    right: 0,
+    right: 5,
     color: colours.main.light,
     zIndex: zIndex.top.self_umb,
     width: '60%',
