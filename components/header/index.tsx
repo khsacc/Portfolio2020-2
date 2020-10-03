@@ -5,7 +5,7 @@ import { mrEavesBook } from '../../styles';
 import Link from 'next/link';
 
 const HeaderDesign = () => {
-  const useStyles = makeStyles(() => ({
+  const classes = makeStyles(() => ({
     top_icon: {
       width: '50px',
       display: 'block',
@@ -22,8 +22,7 @@ const HeaderDesign = () => {
     top_link: {
       textDecoration: 'none',
     },
-  }));
-  const classes = useStyles();
+  }))();
   return (
     <Link href="/">
       <a className={classes.top_link}>
@@ -36,7 +35,7 @@ const HeaderDesign = () => {
 
 // Wrapper
 export const Header = () => {
-  const useStyles = makeStyles(() => ({
+  const classes = makeStyles(() => ({
     headerWrapper: {
       position: 'fixed',
       top: 0,
@@ -46,8 +45,7 @@ export const Header = () => {
       padding: 10,
       background: colours.main.back,
     },
-  }));
-  const classes = useStyles();
+  }))();
   return (
     <div className={classes.headerWrapper}>
       <HeaderDesign />
