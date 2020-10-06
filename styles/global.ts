@@ -32,3 +32,7 @@ export const zIndex = {
 export const padding = {
   common: 10,
 };
+
+export const transitionTimingfunc = {
+  title: 'cubic-bezier(.6,.24,.13,.65)',
+};

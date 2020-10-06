@@ -2,6 +2,8 @@ import { LineUmb } from '../common';
 import { NextPage } from 'next';
 import { colours } from '../../styles';
 import { makeStyles } from '@material-ui/core';
+import { transitionTimingfunc } from '../../styles/global';
+import { useEffect, useState } from 'react';
 
 export const ArticleTitle: NextPage<{ img: string; title: string; umbColour?: string; alt: string }> = ({
   img,
@@ -15,15 +17,7 @@ export const ArticleTitle: NextPage<{ img: string; title: string; umbColour?: st
       maxWidth: 650,
       margin: '0 auto 10px',
       position: 'relative',
-      animation: '1s $enter linear',
-    },
-    '@keyframes enter': {
-      '0%': {
-        transform: 'translateY(-2%)',
-      },
-      '100%': {
-        transform: 'translateY(0)',
-      },
+      transition: 'all 1.45s ease-in-out',
     },
     article__img: {
       width: '100%',
@@ -36,25 +30,43 @@ export const ArticleTitle: NextPage<{ img: string; title: string; umbColour?: st
       transform: 'translateX(-50%)',
       background: colours.main.sub,
       color: 'white',
-      padding: '2px 25px',
+      opacity: 0,
+      padding: '2px 0',
+      transition: `all 0.8s 0.8s ${transitionTimingfunc.title}`,
       [theme.breakpoints.up('mobile')]: {
         fontSize: '3em',
       },
+    },
+    article__title__shown: {
+      opacity: 1,
+      padding: '2px 25px',
     },
     umb: {
       position: 'absolute',
       bottom: 10,
       right: 10,
-      width: '35%',
+      width: '37.5%',
       color: umbColour,
+      opacity: 0,
+      transition: `all 1s 0.8s ${transitionTimingfunc.title}`,
+    },
+    umb__shown: {
+      opacity: 1,
+      width: '35%',
     },
   }))();
 
+  const [entered, setEntered] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setEntered(true);
+    }, 250);
+  }, []);
   return (
-    <div className={classes.wrapper}>
-      <img src={img} className={classes.article__img} alt={alt} />
-      <span className={classes.article__title}>{title}</span>
-      <LineUmb className={classes.umb} />
+    <div className={classes.wrapper} style={{ transform: `translateX(${entered ? 0 : -4}%)` }}>
+      <img src={img} className={[classes.article__img].join(' ')} alt={alt} />
+      <span className={[classes.article__title, entered ? classes.article__title__shown : ''].join(' ')}>{title}</span>
+      <LineUmb className={[classes.umb, entered ? classes.umb__shown : ''].join(' ')} />
     </div>
   );
 };

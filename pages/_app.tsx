@@ -40,7 +40,7 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
             background: colours.main.back,
           }}
         >
-          <PageTransition timeout={700} classNames="page-transition">
+          <PageTransition timeout={500} classNames="page-transition">
             <Component key={router.pathname} {...pageProps} />
           </PageTransition>
         </div>
@@ -52,7 +52,7 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
         }
 
         .page-transition-enter-done {
-          transition: all ease-in-out 0.7s;
+          transition: all ease-in-out 0.5s;
           opacity: 1;
         }
 
@@ -62,7 +62,7 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
         .page-transition-exit-active {
           opacity: 0;
           transform: translateY(-1.5%);
-          transition: all ease-in-out 0.7s;
+          transition: all ease-in-out 0.8s;
         }
       `}</style>
     </>

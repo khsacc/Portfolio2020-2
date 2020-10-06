@@ -3,7 +3,7 @@ import { NextPage } from 'next';
 import { Subtitle } from '../common';
 import { colours, sectionStyle, zIndex } from '../../styles';
 import { makeStyles } from '@material-ui/core';
-import { padding } from '../../styles/global';
+import { padding, transitionTimingfunc } from '../../styles/global';
 
 export const Self: NextPage<{ showName?: boolean; isLink?: boolean }> = ({ showName = false, isLink = true }) => {
   const classes = makeStyles(theme => ({
@@ -75,7 +75,7 @@ export const Self: NextPage<{ showName?: boolean; isLink?: boolean }> = ({ showN
       fontSize: '1.75em',
       background: colours.main.sub,
       color: 'white',
-      transition: 'all 0.8s cubic-bezier(.6,.24,.13,.65)',
+      transition: `all 0.8s ${transitionTimingfunc.title}`,
       opacity: 0,
       padding: '5px 0',
     },
