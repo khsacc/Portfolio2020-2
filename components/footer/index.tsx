@@ -27,12 +27,13 @@ export const Footer: NextPage = () => {
       display: 'Profile',
     },
   ];
+
   return (
     <footer className={classes.wrapper}>
       Hiroki Kobayashi | Design Portfolio
       <br />
       {pages.map(page => (
-        <Link href={page.href}>
+        <Link href={page.href} scroll={false}>
           <a className={classes.link}>{page.display}</a>
         </Link>
       ))}
