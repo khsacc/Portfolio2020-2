@@ -57,8 +57,6 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
         }
         .page-transition-enter-active {
           transition: all ease-in-out 0.7s;
-        }
-        .page-transition-done {
           opacity: 1;
         }
 
