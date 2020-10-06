@@ -35,3 +35,6 @@ yarn-error.log*
 
 # raw design data
 /assets/
+
+# env
+.env
