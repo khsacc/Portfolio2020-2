@@ -2,7 +2,7 @@ Welcome to my portfolio repository.
 
 * This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 * For css coding, [Material-ui](https://material-ui.com/) is used as a CSS-in-js modules.
-* For development, any javascript files are allowed except cases where typescript cannot be used for some reason. Configuration for coding is available in tsconfig.json and .ealintrc.js.
+* For development, no javascript files are allowed: you should write in typescript unless you have inevitable reason. Configuration for coding is available in tsconfig.json and .ealintrc.js.
 
 <!-- 勉強のために Next.ts + Typescript を導入してみます。ポートフォリオは構造を作り直したくなったので仕切り直しのためにリポジトリを変えました。 -->
 
