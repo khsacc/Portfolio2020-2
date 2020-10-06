@@ -1,10 +1,11 @@
 import { NextPage } from 'next';
-import { Self, SelfTheme } from '../components/self';
+import { Self, SelfSkills, SelfTheme } from '../components/self';
 
 const ProfilePage: NextPage = () => (
   <>
     <Self showName />
-    <SelfTheme />
+    {/* <SelfTheme /> */}
+    <SelfSkills />
   </>
 );
 

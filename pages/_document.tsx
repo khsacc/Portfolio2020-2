@@ -15,8 +15,9 @@ export default class MyDocument extends Document {
       <Html lang="ja" style={{ background: colours.main.back }}>
         <Head>
           {/* Google Analytics */}
-          <script src="https://www.googletagmanager.com/gtag/js?id=UA-179513963-1"></script>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179513963-1"></script>
           <script
+            async
             dangerouslySetInnerHTML={{
               __html: `window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
