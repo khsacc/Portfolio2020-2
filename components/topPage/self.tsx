@@ -5,7 +5,7 @@ import { colours, sectionStyle, zIndex } from '../../styles';
 import { makeStyles } from '@material-ui/core';
 import { padding } from '../../styles/global';
 
-export const Self: NextPage<{ showName?: boolean; isLink?: boolean }> = ({ showName = false, isLink = false }) => {
+export const Self: NextPage<{ showName?: boolean; isLink?: boolean }> = ({ showName = false, isLink = true }) => {
   const classes = makeStyles(theme => ({
     wrapper: {
       width: '100%',
@@ -22,6 +22,7 @@ export const Self: NextPage<{ showName?: boolean; isLink?: boolean }> = ({ showN
       borderRadius: 7.5,
       '&:hover': {
         // background: colours.main.hover,
+        transform: 'scale(1.015)',
         '& $umb': {
           color: '#d19090',
           transform: 'scale(1.035) translateX(-1%)',

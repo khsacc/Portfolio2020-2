@@ -17,7 +17,7 @@ const IndexPage: NextPage = () => {
       <Top />
       <Link href="profile" scroll={false}>
         <a className={classes.wrapper_link}>
-          <Self isLink={true} />
+          <Self />
         </a>
       </Link>
 

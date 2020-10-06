@@ -8,9 +8,20 @@ const useStyles = makeStyles(() => ({
     textAlign: 'center',
   },
   theme: {
-    fontSize: '1.8em',
-    color: colours.main.main,
+    fontSize: '1.4em',
     letterSpacing: -2,
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    padding: '5px 35px 0.5px',
+    color: 'white',
+    background: colours.main.sub,
+    width: 'fit-content',
+    margin: 10,
+  },
+  theme_partial: {
+    display: 'inline-block',
   },
   img_wrapper: {
     width: '100%',
@@ -18,6 +29,7 @@ const useStyles = makeStyles(() => ({
     height: 'object-fit',
     overflow: 'hidden',
     animation: '$imageAnim 1s ease-in-out',
+    position: 'relative',
   },
   img: {
     display: 'block',
@@ -45,9 +57,12 @@ export const Top = () => {
   return (
     <div className={classes.wrapper}>
       {/* <img className={classes.heading} src="/img/topPage/heading.svg" alt="わくわくさせるクリエイティブ" /> */}
-      <p className={classes.theme}>“わくわくさせるクリエイティブ”</p>
       <div className={classes.img_wrapper}>
         <img className={classes.img} alt="" src="/img/topPage/top_back.svg" />
+        <p className={classes.theme}>
+          <span className={classes.theme_partial}>“わくわくさせる</span>
+          <span className={classes.theme_partial}>クリエイティブ”</span>
+        </p>
       </div>
     </div>
   );
