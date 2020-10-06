@@ -12,7 +12,7 @@ import React from 'react';
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html lang="ja" style={{ background: colours.main.back }}>
+      <Html lang="ja">
         <Head>
           {/* Google Analytics */}
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179513963-1"></script>
@@ -76,7 +76,7 @@ export default class MyDocument extends Document {
           <meta name="og:image" content={'/meta/ogimage.png'}></meta>
           <meta name="twitter:card" content="summary_large_image"></meta>
         </Head>
-        <body>
+        <body style={{ background: colours.main.back }}>
           <Main />
           <NextScript />
         </body>
