@@ -1,3 +1,3 @@
 import { LineUmb } from './lineUmb';
-import { Subtitle } from './subtitle';
+import { Subtitle } from '../article/subtitle';
 export { LineUmb, Subtitle };

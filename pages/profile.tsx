@@ -8,8 +8,10 @@ const ProfilePage: NextPage = () => {
   const classes = makeStyles(() => ({
     wrapper: {
       padding: padding.common,
+      maxWidth: 800,
+      margin: '0 auto',
     },
-    abs: {
+    p: {
       textAlign: 'center',
     },
   }))();
@@ -18,12 +20,17 @@ const ProfilePage: NextPage = () => {
     <>
       <ArticleTitle img="/img/topPage/self.jpg" title="Profile" />
       <div className={classes.wrapper}>
-        <p className={classes.abs}>
+        <p className={classes.p}>
           東京大学3年。
           <br />
           印刷物のデザインが得意ですが、Webデザイン・開発もやっています。
           <br />
           媒体と素材を活かすための、ちょっとした工夫について日々考えています。
+        </p>
+        <p className={classes.p}>
+          デザインについて考えるようになったきっかけは、大学1年から所属していた学園祭委員での活動の影響が大きいです。
+          <br />
+          パンフレット、グッズ、案内サイン、ウェブサイト、装飾物など、様々な媒体を作ることができる環境で、ひとつの「テーマ」に沿ったビジュアルデザインについて思索をめぐらせる日々が、「媒体や環境を活かす」という私の基本姿勢をかたちづくったように思います。
         </p>
         <SelfSkills />
       </div>
