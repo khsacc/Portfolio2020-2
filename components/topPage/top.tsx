@@ -7,13 +7,18 @@ const useStyles = makeStyles(theme => ({
     background: colours.main.back,
     textAlign: 'center',
   },
-  theme: {
-    fontSize: '1.4em',
-    letterSpacing: -2,
+  theme__container: {
+    textAlign: 'center',
     position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
+    width: '100%',
+  },
+  theme: {
+    fontSize: '1.4em',
+    letterSpacing: -2,
+    display: 'inline-block',
     padding: '5px 35px 0.5px',
     color: 'white',
     background: colours.main.sub,
@@ -63,10 +68,12 @@ export const Top = () => {
       {/* <img className={classes.heading} src="/img/topPage/heading.svg" alt="わくわくさせるクリエイティブ" /> */}
       <div className={classes.img_wrapper}>
         <img className={classes.img} alt="" src="/img/topPage/top_back.svg" />
-        <p className={classes.theme}>
-          <span className={classes.theme_partial}>“わくわくさせる</span>
-          <span className={classes.theme_partial}>クリエイティブ”</span>
-        </p>
+        <div className={classes.theme__container}>
+          <span className={classes.theme}>
+            <span className={classes.theme_partial}>“わくわくさせる</span>
+            <span className={classes.theme_partial}>クリエイティブ”</span>
+          </span>
+        </div>
       </div>
     </div>
   );
