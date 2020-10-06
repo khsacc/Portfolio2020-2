@@ -7,6 +7,11 @@ const useStyles = makeStyles(() => ({
     background: colours.main.back,
     textAlign: 'center',
   },
+  theme: {
+    fontSize: '1.8em',
+    color: colours.main.main,
+    letterSpacing: -2,
+  },
   img_wrapper: {
     width: '100%',
     maxHeight: '500px',
@@ -39,7 +44,8 @@ export const Top = () => {
 
   return (
     <div className={classes.wrapper}>
-      <img className={classes.heading} src="/img/topPage/heading.svg" alt="わくわくさせるクリエイティブ" />
+      {/* <img className={classes.heading} src="/img/topPage/heading.svg" alt="わくわくさせるクリエイティブ" /> */}
+      <p className={classes.theme}>“わくわくさせるクリエイティブ”</p>
       <div className={classes.img_wrapper}>
         <img className={classes.img} alt="" src="/img/topPage/top_back.svg" />
       </div>
