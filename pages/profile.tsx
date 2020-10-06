@@ -6,6 +6,11 @@ import { padding } from '../styles/global';
 
 const ProfilePage: NextPage = () => {
   const classes = makeStyles(() => ({
+    name: {
+      fontWeight: 300,
+      textAlign: 'center',
+      fontSize: '2.5em',
+    },
     wrapper: {
       padding: padding.common,
       maxWidth: 800,
@@ -20,6 +25,7 @@ const ProfilePage: NextPage = () => {
     <>
       <ArticleTitle img="/img/topPage/self.jpg" title="Profile" />
       <div className={classes.wrapper}>
+        <h1 className={classes.name}>Hiroki Kobayashi</h1>
         <p className={classes.p}>
           東京大学3年。
           <br />
