@@ -5,7 +5,6 @@ import { LoadAnim } from '../components/loading';
 import { PageTransition } from 'next-page-transitions';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { colours, headerStyle } from '../styles';
-import { makeStyles } from '@material-ui/core';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import CssBaseLine from '@material-ui/core/CssBaseline';
@@ -13,18 +12,7 @@ import Head from 'next/head';
 import PropTypes from 'prop-types';
 import theme from '../styles/theme';
 
-const useStyles = makeStyles(() => ({
-  page: {
-    minHeight: `calc(100vh - ${headerStyle.height}px)`,
-    width: '100%',
-    marginTop: headerStyle.height,
-    background: colours.main.back,
-  },
-}));
-
 const defaultLayout = ({ Component, pageProps }: AppProps) => {
-  const classes = useStyles();
-
   useEffect(() => {
     const jssStyles = document.querySelector('#jss-server-side');
     if (jssStyles) {
@@ -44,7 +32,14 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
         <CssBaseLine />
         <LoadAnim />
         <Header />
-        <div className={classes.page}>
+        <div
+          style={{
+            minHeight: `calc(100vh - ${headerStyle.height}px)`,
+            width: '100%',
+            marginTop: headerStyle.height,
+            background: colours.main.back,
+          }}
+        >
           <PageTransition timeout={700} classNames="page-transition">
             <Component key={router.pathname} {...pageProps} />
           </PageTransition>
@@ -55,7 +50,8 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
         .page-transition-enter {
           opacity: 0;
         }
-        .page-transition-enter-active {
+
+        .page-transition-enter-done {
           transition: all ease-in-out 0.7s;
           opacity: 1;
         }

@@ -15,6 +15,15 @@ export const ArticleTitle: NextPage<{ img: string; title: string; umbColour?: st
       maxWidth: 650,
       margin: '0 auto 10px',
       position: 'relative',
+      animation: '1s $enter linear',
+    },
+    '@keyframes enter': {
+      '0%': {
+        transform: 'translateY(-2%)',
+      },
+      '100%': {
+        transform: 'translateY(0)',
+      },
     },
     article__img: {
       width: '100%',
@@ -40,6 +49,7 @@ export const ArticleTitle: NextPage<{ img: string; title: string; umbColour?: st
       color: umbColour,
     },
   }))();
+
   return (
     <div className={classes.wrapper}>
       <img src={img} className={classes.article__img} alt={alt} />
