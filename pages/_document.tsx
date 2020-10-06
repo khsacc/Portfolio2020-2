@@ -76,7 +76,7 @@ export default class MyDocument extends Document {
           <meta name="og:image" content={'/meta/ogimage.png'}></meta>
           <meta name="twitter:card" content="summary_large_image"></meta>
         </Head>
-        <body style={{ background: colours.main.back }}>
+        <body style={{ background: colours.main.back, fontSize: '16px' }}>
           <Main />
           <NextScript />
         </body>
