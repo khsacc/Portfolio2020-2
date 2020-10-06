@@ -1,7 +1,7 @@
 import { colours } from '../../styles';
 import { makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(theme => ({
   wrapper: {
     width: '100%',
     background: colours.main.back,
@@ -19,6 +19,9 @@ const useStyles = makeStyles(() => ({
     background: colours.main.sub,
     width: 'fit-content',
     margin: 10,
+    [theme.breakpoints.up('tablet')]: {
+      fontSize: '1.8em',
+    },
   },
   theme_partial: {
     display: 'inline-block',
