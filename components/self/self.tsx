@@ -3,15 +3,15 @@ import { NextPage } from 'next';
 import { Subtitle } from '../common';
 import { colours, sectionStyle, zIndex } from '../../styles';
 import { makeStyles } from '@material-ui/core';
+import { padding } from '../../styles/global';
 
-// Wrapper
 export const Self: NextPage<{ showName?: boolean; isLink?: boolean }> = ({ showName = false, isLink = false }) => {
   const classes = makeStyles(theme => ({
     wrapper: {
       width: '100%',
       maxWidth: 800,
       margin: `${sectionStyle.margin}px auto`,
-      padding: 10,
+      padding: padding.common,
       background: colours.main.back,
       textAlign: 'center',
       position: 'relative',
@@ -43,6 +43,9 @@ export const Self: NextPage<{ showName?: boolean; isLink?: boolean }> = ({ showN
         width: '60%',
       },
     },
+    self__wrapper__top: {
+      width: '90%',
+    },
     self: {
       width: '100%',
     },
@@ -65,24 +68,32 @@ export const Self: NextPage<{ showName?: boolean; isLink?: boolean }> = ({ showN
       },
     },
     profile_page: {
-      // display: 'block',
       position: 'absolute',
       bottom: 30,
       left: 15,
       fontSize: '1.75em',
       background: colours.main.sub,
       color: 'white',
-      // width: 0,
       transition: 'all 0.8s cubic-bezier(.6,.24,.13,.65)',
       opacity: 0,
       padding: '5px 0',
     },
+    profile_page__top: {
+      position: 'absolute',
+      bottom: 10,
+      left: '50%',
+      transform: 'translateX(-50%)',
+    },
   }))();
   return (
     <div className={[classes.wrapper, isLink && classes.wrapper__isLink].join(' ')}>
-      <span className={classes.self__wrapper}>
+      <span className={[classes.self__wrapper, !isLink ? classes.self__wrapper__top : ''].join(' ')}>
         <img src="/img/topPage/self.jpg" alt="self portrait" className={classes.self} />
-        {isLink && <span className={classes.profile_page}>{'>>'} Profile</span>}
+        {isLink ? (
+          <span className={classes.profile_page}>{'>>'} Profile</span>
+        ) : (
+          <span className={classes.profile_page__top}>Profile</span>
+        )}
       </span>
 
       <div>

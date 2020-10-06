@@ -28,3 +28,7 @@ export const zIndex = {
   },
   header: 650,
 };
+
+export const padding = {
+  common: 10,
+};
