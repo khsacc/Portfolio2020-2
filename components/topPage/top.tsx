@@ -19,6 +19,7 @@ const useStyles = makeStyles(theme => ({
     background: colours.main.sub,
     width: 'fit-content',
     margin: 10,
+    fontFamily: 'glow-sans-condensed',
     [theme.breakpoints.up('tablet')]: {
       fontSize: '1.8em',
     },
