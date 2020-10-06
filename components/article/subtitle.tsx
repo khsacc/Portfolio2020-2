@@ -4,7 +4,6 @@ import { colours, mrEavesRegular, zIndex } from '../../styles';
 import { makeStyles } from '@material-ui/core';
 
 export const Subtitle: NextPage = props => {
-  // 致命的な問題として、このコンポーネント日本語に使えません
   const classes = makeStyles(theme => ({
     wrapper: {
       position: 'relative',

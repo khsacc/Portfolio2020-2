@@ -3,10 +3,11 @@ import { NextPage } from 'next';
 import { colours } from '../../styles';
 import { makeStyles } from '@material-ui/core';
 
-export const ArticleTitle: NextPage<{ img: string; title: string; umbColour?: string }> = ({
+export const ArticleTitle: NextPage<{ img: string; title: string; umbColour?: string; alt: string }> = ({
   img,
   title,
   umbColour = colours.main.sub,
+  alt,
 }) => {
   const classes = makeStyles(theme => ({
     wrapper: {
@@ -41,7 +42,7 @@ export const ArticleTitle: NextPage<{ img: string; title: string; umbColour?: st
   }))();
   return (
     <div className={classes.wrapper}>
-      <img src={img} className={classes.article__img} />
+      <img src={img} className={classes.article__img} alt={alt} />
       <span className={classes.article__title}>{title}</span>
       <LineUmb className={classes.umb} />
     </div>

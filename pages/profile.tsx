@@ -23,7 +23,7 @@ const ProfilePage: NextPage = () => {
 
   return (
     <>
-      <ArticleTitle img="/img/topPage/self.jpg" title="Profile" />
+      <ArticleTitle img="/img/topPage/self.jpg" title="Profile" alt="self portrait" />
       <div className={classes.wrapper}>
         <h1 className={classes.name}>Hiroki Kobayashi</h1>
         <p className={classes.p}>
