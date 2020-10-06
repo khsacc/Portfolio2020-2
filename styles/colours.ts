@@ -8,5 +8,6 @@ export const colours = {
     subtitle_back: 'rgba(252, 240, 240, 0.5)',
     light: '#f2cbd2',
     hover: '#fcdce0',
+    dark: '#a34152',
   },
 };
