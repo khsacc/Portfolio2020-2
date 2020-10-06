@@ -28,7 +28,7 @@ export const Subtitle: NextPage = props => {
       },
       fontFeatureSettings: '"palt"',
       background: colours.main.subtitle_back,
-      margin: '1.7em 0',
+      margin: '1.7em 0 1em',
     },
   }))();
   return (
