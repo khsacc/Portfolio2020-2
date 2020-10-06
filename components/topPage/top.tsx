@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
     fontSize: '1.4em',
     letterSpacing: -2,
     display: 'inline-block',
-    padding: '5px 35px 0.5px',
+    padding: '5px 10px 0.5px',
     color: 'white',
     background: colours.main.sub,
     width: 'fit-content',
@@ -27,6 +27,9 @@ const useStyles = makeStyles(theme => ({
     fontFamily: 'glow-sans-condensed',
     [theme.breakpoints.up('tablet')]: {
       fontSize: '1.8em',
+    },
+    [theme.breakpoints.up('mobile')]: {
+      padding: '5px 35px 0.5px',
     },
   },
   theme_partial: {
