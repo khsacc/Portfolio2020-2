@@ -86,7 +86,11 @@ export const SelfSkills = () => {
   return (
     <>
       <Subtitle>Skills</Subtitle>
-      <p>使用頻度、経験や知識などを考えながら、大雑把にグラフにしてみました。</p>
+      <p>
+        使用頻度、経験や知識などを考えながら、大雑把にグラフにしてみました。
+        <br />
+        今後は写真や映像を使ったグラフィックに挑戦してみたいという気持ちがあります。
+      </p>
       Design Apps
       <div className={classes.container}>
         {adobeSkills.map((e, i) => (
