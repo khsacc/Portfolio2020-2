@@ -22,6 +22,14 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
 
   const router = useRouter();
 
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+      });
+    }, 900);
+  }, [router.pathname]);
+
   return (
     <>
       <Head>
