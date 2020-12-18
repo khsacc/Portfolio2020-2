@@ -1,3 +1,4 @@
+import { Parallax } from 'react-scroll-parallax';
 import { colours } from '../../styles';
 import { makeStyles } from '@material-ui/core';
 
@@ -37,11 +38,15 @@ const useStyles = makeStyles(theme => ({
   },
   img_wrapper: {
     width: '100%',
-    maxHeight: '500px',
-    height: 'object-fit',
+    // maxHeight: '500px',
+    height: '500px',
     overflow: 'hidden',
     animation: '$imageAnim 1s ease-in-out',
     position: 'relative',
+    backgroundImage: 'url("/img/topPage/top_back.svg")',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'contain',
+    backgroundAttachment: 'fixed',
   },
   img: {
     display: 'block',
@@ -70,13 +75,12 @@ export const Top = () => {
     <div className={classes.wrapper}>
       {/* <img className={classes.heading} src="/img/topPage/heading.svg" alt="わくわくさせるクリエイティブ" /> */}
       <div className={classes.img_wrapper}>
-        <img className={classes.img} alt="" src="/img/topPage/top_back.svg" />
-        <div className={classes.theme__container}>
+        <Parallax y={[0, -30]} className={classes.theme__container}>
           <span className={classes.theme}>
             <span className={classes.theme_partial}>“わくわくさせる</span>
             <span className={classes.theme_partial}>クリエイティブ”</span>
           </span>
-        </div>
+        </Parallax>
       </div>
     </div>
   );
