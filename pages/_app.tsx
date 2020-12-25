@@ -1,3 +1,4 @@
+import 'aos/dist/aos.css'; // needed to use AOS in react typescript
 import { AppProps } from 'next/app';
 import { Footer } from '../components/footer';
 import { Header } from '../components/header';
@@ -7,6 +8,7 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import { colours, headerStyle } from '../styles';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import AOS from 'aos';
 import CssBaseLine from '@material-ui/core/CssBaseline';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
