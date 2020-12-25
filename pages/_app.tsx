@@ -14,6 +14,10 @@ import theme from '../styles/theme';
 
 const defaultLayout = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
+    AOS.init();
+  }, []);
+
+  useEffect(() => {
     const jssStyles = document.querySelector('#jss-server-side');
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles);
