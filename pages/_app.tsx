@@ -61,7 +61,6 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
               width: '100%',
               marginTop: headerStyle.height,
               background: colours.main.back,
-              fontSize: '1rem',
             }}
           >
             <PageTransition timeout={500} classNames="page-transition">

@@ -37,6 +37,7 @@ const theme = createMuiTheme({
   },
   typography: {
     fontFamily: ['mr-eaves-modern', 'glow-sans-condensed'].join(', '),
+    fontSize: 17,
   },
   overrides: {
     MuiCssBaseline: {

@@ -177,7 +177,7 @@ export default class MyDocument extends Document {
           <meta name="og:image" content={'https://hiroki-k.vercel.app/meta/ogimage.png'}></meta>
           <meta name="twitter:card" content="summary_large_image"></meta>
         </Head>
-        <body style={{ background: colours.main.back, fontSize: '16px' }}>
+        <body style={{ background: colours.main.back }}>
           <Main />
           <NextScript />
         </body>
