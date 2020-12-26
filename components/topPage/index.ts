@@ -1,3 +1,4 @@
 import { Self } from './self';
 import { Top } from './top';
-export { Self, Top };
+import { Works } from './works';
+export { Self, Top, Works };
