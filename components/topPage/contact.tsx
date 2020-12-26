@@ -1,13 +1,31 @@
 import { NextPage } from 'next';
 import { Subtitle } from '../common';
+import { colours } from '../../styles';
 import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
   centre: {
     textAlign: 'center',
   },
+  spacing: {
+    display: 'inline-block',
+    width: 0,
+    transition: 'width 0.4s',
+  },
   mail: {
     fontSize: '1.5em',
+    padding: '5px 0 2px',
+    transitionTimingFunction: 'ease-in-out',
+    transition: 'color 0.6s, background 0.2s',
+    textDecoration: 'none',
+    color: colours.main.dark,
+    '&:hover': {
+      color: 'white',
+      background: colours.main.sub,
+      '& $spacing': {
+        width: 25,
+      },
+    },
   },
 }));
 
@@ -17,8 +35,12 @@ export const Contact: NextPage = () => {
     <>
       <Subtitle>Contact</Subtitle>
       <div className={classes.centre} data-aos="fade-up">
-        <p>以下の e-mail アドレスまでお願いいたします。</p>
-        <a>hero.key629522@gmail.com</a>
+        <p>ご連絡は、以下のアドレスまでお願いいたします。</p>
+        <a href="mailto:hero.key629522@gmail.com" className={classes.mail}>
+          <span className={classes.spacing} />
+          hero.key629522@gmail.com
+          <span className={classes.spacing} />
+        </a>
       </div>
     </>
   );
