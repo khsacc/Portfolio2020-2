@@ -35,7 +35,7 @@ const HeaderDesign: NextPage = () => {
 };
 
 // Wrapper
-export const Header = () => {
+export const Header: NextPage<{ isTop: boolean }> = ({ isTop }) => {
   const classes = makeStyles(() => ({
     headerWrapper: {
       position: 'fixed',
@@ -48,8 +48,11 @@ export const Header = () => {
       zIndex: zIndex.header,
     },
   }))();
+  const topPageScroll = () => {
+    isTop && window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
   return (
-    <header className={classes.headerWrapper}>
+    <header className={classes.headerWrapper} onClick={topPageScroll}>
       <HeaderDesign />
     </header>
   );
