@@ -50,7 +50,7 @@ export const Works: NextPage = () => {
             className={classes.KF70_img}
           ></img>
         </Parallax>
-        <Parallax y={[-10, 20]} data-aos="fade-up">
+        <Parallax y={[5, -40]} data-aos="fade-up">
           <div data-aos="fade-left">
             <h2>第92回五月祭</h2>
             {['Information Signs', 'DTP Design'].map((e, i) => (

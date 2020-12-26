@@ -4,9 +4,11 @@ import { colours } from '../../styles';
 import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
-  centre: {
+  wrapper: {
     textAlign: 'center',
+    marginTop: '40px',
   },
+
   spacing: {
     display: 'inline-block',
     width: 0,
@@ -32,9 +34,9 @@ const useStyles = makeStyles(() => ({
 export const Contact: NextPage = () => {
   const classes = useStyles();
   return (
-    <>
+    <div className={classes.wrapper}>
       <Subtitle>Contact</Subtitle>
-      <div className={classes.centre} data-aos="fade-up">
+      <div data-aos="fade-up">
         <p>ご連絡は、以下のアドレスまでお願いいたします。</p>
         <a href="mailto:hero.key629522@gmail.com" className={classes.mail}>
           <span className={classes.spacing} />
@@ -42,6 +44,6 @@ export const Contact: NextPage = () => {
           <span className={classes.spacing} />
         </a>
       </div>
-    </>
+    </div>
   );
 };
