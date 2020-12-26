@@ -1,9 +1,12 @@
+import { HoverBtn } from '../common/hoverBtn';
 import { LineUmb } from '../common';
 import { NextPage } from 'next';
+import { Parallax } from 'react-scroll-parallax';
 import { Subtitle } from '../common';
 import { colours, sectionStyle, zIndex } from '../../styles';
 import { makeStyles } from '@material-ui/core';
-import { padding, transitionTimingfunc } from '../../styles/global';
+import { padding } from '../../styles/global';
+import { useState } from 'react';
 
 export const Self: NextPage<{ showName?: boolean; isLink?: boolean }> = ({ showName = false, isLink = true }) => {
   const classes = makeStyles(theme => ({
@@ -12,7 +15,7 @@ export const Self: NextPage<{ showName?: boolean; isLink?: boolean }> = ({ showN
       maxWidth: 800,
       margin: `${sectionStyle.margin}px auto`,
       padding: padding.common,
-      background: colours.main.back,
+      // background: colours.main.back,
       textAlign: 'center',
       position: 'relative',
       display: 'block',
@@ -26,11 +29,6 @@ export const Self: NextPage<{ showName?: boolean; isLink?: boolean }> = ({ showN
         '& $umb': {
           color: '#d19090',
           transform: 'scale(1.035) translateX(-1%)',
-        },
-        '& $profile_page': {
-          padding: '5px 15px',
-          // width: 'auto',
-          opacity: 1,
         },
       },
     },
@@ -68,17 +66,6 @@ export const Self: NextPage<{ showName?: boolean; isLink?: boolean }> = ({ showN
         width: '35%',
       },
     },
-    profile_page: {
-      position: 'absolute',
-      bottom: 30,
-      left: 15,
-      fontSize: '1.75em',
-      background: colours.main.sub,
-      color: 'white',
-      transition: `all 0.8s ${transitionTimingfunc.title}`,
-      opacity: 0,
-      padding: '5px 0',
-    },
     profile_page__top: {
       position: 'absolute',
       bottom: 10,
@@ -86,30 +73,48 @@ export const Self: NextPage<{ showName?: boolean; isLink?: boolean }> = ({ showN
       transform: 'translateX(-50%)',
     },
   }))();
-  return (
-    <div className={[classes.wrapper, isLink && classes.wrapper__isLink].join(' ')}>
-      <span className={[classes.self__wrapper, !isLink ? classes.self__wrapper__top : ''].join(' ')}>
-        <img src="/img/topPage/self.jpg" alt="self portrait" className={classes.self} />
-        {isLink ? (
-          <span className={classes.profile_page}>{'>>'} Profile</span>
-        ) : (
-          <span className={classes.profile_page__top}>Profile</span>
-        )}
-      </span>
 
-      <div>
-        {showName && <Subtitle>Hiroki Kobayashi</Subtitle>}
-        <p className={classes.prof}>
-          東京大学3年。
-          <br />
-          印刷物のデザインが得意ですが、Webデザイン・開発もやっています。
-          <br />
-          媒体と素材を活かすための、ちょっとした工夫について日々考えています。
-        </p>
-        <div className={classes.umb}>
-          <LineUmb />
-        </div>
+  const [hover, setHover] = useState(false);
+
+  return (
+    <Parallax y={[0, 0]}>
+      <div
+        className={[classes.wrapper, isLink && classes.wrapper__isLink].join(' ')}
+        onMouseOver={() => {
+          setHover(true);
+        }}
+        onMouseOut={() => {
+          setHover(false);
+        }}
+      >
+        <Parallax
+          y={[-3, 3]}
+          tagOuter="span"
+          className={[classes.self__wrapper, !isLink ? classes.self__wrapper__top : ''].join(' ')}
+        >
+          <img src="/img/topPage/self.jpg" alt="self portrait" className={classes.self} />
+          {isLink ? (
+            // <span className={classes.profile_page}>{'>>'} Profile</span>
+            <HoverBtn text=">> Profile" hover={hover} />
+          ) : (
+            <span className={classes.profile_page__top}>Profile</span>
+          )}
+        </Parallax>
+
+        <>
+          {showName && <Subtitle>Hiroki Kobayashi</Subtitle>}
+          <p className={classes.prof}>
+            東京大学3年。
+            <br />
+            印刷物のデザインが好きです。最近はWebデザイン・開発（Vue / React）もしています。
+            <br />
+            媒体と素材を活かすための、ちょっとした工夫について日々考えています。
+          </p>
+          <Parallax y={[-50, 15]} className={classes.umb}>
+            <LineUmb />
+          </Parallax>
+        </>
       </div>
-    </div>
+    </Parallax>
   );
 };
