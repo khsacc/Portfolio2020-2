@@ -32,7 +32,7 @@ export const Subtitle: NextPage = props => {
     },
   }))();
   return (
-    <div className={classes.wrapper}>
+    <div className={classes.wrapper} data-aos="fade-up" data-aos-duration="600" data-aos-offset="50">
       <LineUmb className={classes.umb} />
       <h2 className={classes.name}>{props.children}</h2>
     </div>
