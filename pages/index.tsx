@@ -1,5 +1,5 @@
+import { Contact, Self, Top, Works } from '../components/topPage';
 import { NextPage } from 'next';
-import { Self, Top } from '../components/topPage';
 import { Source } from '../components/source';
 import { makeStyles } from '@material-ui/core';
 import Link from 'next/link';
@@ -20,7 +20,8 @@ const IndexPage: NextPage = () => {
           <Self />
         </a>
       </Link>
-
+      <Works />
+      <Contact />
       <Source />
     </>
   );

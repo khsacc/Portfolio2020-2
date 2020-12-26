@@ -72,16 +72,16 @@ export const Top = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.wrapper}>
+    <Parallax y={[0, -30]} className={classes.wrapper}>
       {/* <img className={classes.heading} src="/img/topPage/heading.svg" alt="わくわくさせるクリエイティブ" /> */}
       <div className={classes.img_wrapper}>
-        <Parallax y={[0, -30]} className={classes.theme__container}>
+        <div className={classes.theme__container}>
           <span className={classes.theme}>
             <span className={classes.theme_partial}>“わくわくさせる</span>
             <span className={classes.theme_partial}>クリエイティブ”</span>
           </span>
-        </Parallax>
+        </div>
       </div>
-    </div>
+    </Parallax>
   );
 };

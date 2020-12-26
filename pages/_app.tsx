@@ -1,12 +1,14 @@
 import 'aos/dist/aos.css'; // needed to use AOS in react typescript
 import { AppProps } from 'next/app';
+import { BackToTopBtn } from '../components/common/backToTopBtn';
 import { Footer } from '../components/footer';
 import { Header } from '../components/header';
 import { LoadAnim } from '../components/loading';
 import { PageTransition } from 'next-page-transitions';
+import { ParallaxProvider } from 'react-scroll-parallax';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { colours, headerStyle } from '../styles';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import AOS from 'aos';
 import CssBaseLine from '@material-ui/core/CssBaseline';
@@ -15,8 +17,12 @@ import PropTypes from 'prop-types';
 import theme from '../styles/theme';
 
 const defaultLayout = ({ Component, pageProps }: AppProps) => {
+  // note that to initialize AOS, ``document`` is needed.
   useEffect(() => {
-    AOS.init();
+    // after mounted
+    AOS.init({
+      easing: 'ease-in-out-cubic',
+    });
   }, []);
 
   useEffect(() => {
@@ -27,8 +33,10 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
   }, []);
 
   const router = useRouter();
+  const [isTop, setIsTop] = useState(false);
 
   useEffect(() => {
+    setIsTop(router.pathname === '/');
     setTimeout(() => {
       window.scrollTo({
         top: 0,
@@ -43,23 +51,28 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
         <link rel="stylesheet" href="https://use.typekit.net/vpq5jbc.css"></link>
       </Head>
       <ThemeProvider theme={theme}>
-        <CssBaseLine />
-        <LoadAnim />
-        <Header />
-        <div
-          style={{
-            minHeight: `calc(100vh - ${headerStyle.height}px)`,
-            width: '100%',
-            marginTop: headerStyle.height,
-            background: colours.main.back,
-          }}
-        >
-          <PageTransition timeout={500} classNames="page-transition">
-            <Component key={router.pathname} {...pageProps} />
-          </PageTransition>
-        </div>
-        <Footer />
+        <ParallaxProvider>
+          <CssBaseLine />
+          <LoadAnim />
+          <Header isTop />
+          <div
+            style={{
+              minHeight: `calc(100vh - ${headerStyle.height}px)`,
+              width: '100%',
+              marginTop: headerStyle.height,
+              background: colours.main.back,
+              fontSize: '1rem',
+            }}
+          >
+            <PageTransition timeout={500} classNames="page-transition">
+              <Component key={router.pathname} {...pageProps} />
+            </PageTransition>
+          </div>
+          {<BackToTopBtn isTop={isTop} />}
+          <Footer currentPage={router.pathname} />
+        </ParallaxProvider>
       </ThemeProvider>
+
       <style jsx global>{`
         .page-transition-enter {
           opacity: 0;
