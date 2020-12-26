@@ -3,7 +3,7 @@ import { colours } from '../../styles';
 import { makeStyles } from '@material-ui/core';
 import Link from 'next/link';
 
-export const Footer: NextPage = () => {
+export const Footer: NextPage<{ currentPage: string }> = ({ currentPage }) => {
   const classes = makeStyles(() => ({
     wrapper: {
       // background: colours.main.dark,
@@ -28,13 +28,19 @@ export const Footer: NextPage = () => {
     },
   ];
 
+  const scrollToTop = (target: string) => {
+    target === currentPage && window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className={classes.wrapper}>
       Hiroki Kobayashi | Design Portfolio
       <br />
-      {pages.map(page => (
-        <Link href={page.href} scroll={false}>
-          <a className={classes.link}>{page.display}</a>
+      {pages.map((page, idx) => (
+        <Link href={page.href} scroll={false} key={`footer-${idx}`}>
+          <a className={classes.link} onClick={() => scrollToTop(page.href)}>
+            {page.display}
+          </a>
         </Link>
       ))}
     </footer>
