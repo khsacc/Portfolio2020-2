@@ -86,32 +86,40 @@ export const SelfSkills = () => {
   return (
     <>
       <Subtitle>Skills</Subtitle>
-      <p>
-        使用頻度、経験や知識などを考えながら、大雑把にグラフにしてみました。
-        <br />
-        今後は写真や映像を使ったグラフィックに挑戦してみたいという気持ちがあります。
-      </p>
-      Design Apps
-      <div className={classes.container}>
-        {adobeSkills.map((e, i) => (
-          <div className={classes.wrapper} key={`skill__1--${i}`}>
-            <div className={classes.skill__name}>{e.name}</div>
-            <div className={classes.skill__base}>
-              <span className={classes.skill__value} style={{ background: e.colour.main, width: `${e.value}%` }}></span>
+      <div data-aos="fade-up">
+        <p>
+          使用頻度、経験や知識などを考えながら、大雑把にグラフにしてみました。
+          <br />
+          今後は写真や映像を使ったグラフィックに挑戦してみたいという気持ちがあります。
+        </p>
+        Design Apps
+        <div className={classes.container}>
+          {adobeSkills.map((e, i) => (
+            <div className={classes.wrapper} key={`skill__1--${i}`}>
+              <div className={classes.skill__name}>{e.name}</div>
+              <div className={classes.skill__base}>
+                <span
+                  className={classes.skill__value}
+                  style={{ background: e.colour.main, width: `${e.value}%` }}
+                ></span>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-      Frontend Development
-      <div className={classes.container}>
-        {webSkills.map((e, i) => (
-          <div className={classes.wrapper} key={`skill__1--${i}`}>
-            <div className={classes.skill__name}>{e.name}</div>
-            <div className={classes.skill__base}>
-              <span className={classes.skill__value} style={{ background: e.colour.main, width: `${e.value}%` }}></span>
+          ))}
+        </div>
+        Frontend Development
+        <div className={classes.container}>
+          {webSkills.map((e, i) => (
+            <div className={classes.wrapper} key={`skill__1--${i}`}>
+              <div className={classes.skill__name}>{e.name}</div>
+              <div className={classes.skill__base}>
+                <span
+                  className={classes.skill__value}
+                  style={{ background: e.colour.main, width: `${e.value}%` }}
+                ></span>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </>
   );
