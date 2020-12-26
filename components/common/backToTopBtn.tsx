@@ -18,6 +18,7 @@ const useStyles = makeStyles(() => ({
   },
   topLink_hidden: {
     opacity: 0,
+    pointerEvents: 'none',
   },
 }));
 
