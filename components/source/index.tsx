@@ -1,6 +1,7 @@
+import { NextPage } from 'next';
 import { makeStyles } from '@material-ui/core';
 
-export const Source = () => {
+export const Source: NextPage = () => {
   const classes = makeStyles(() => ({
     wrapper: {
       textAlign: 'center',
@@ -27,7 +28,7 @@ export const Source = () => {
     },
   }))();
   return (
-    <div className={classes.wrapper}>
+    <div className={classes.wrapper} data-aos="fade-up">
       本サイトのソースコードは、GitHubで公開しています。
       <br />
       <a href="https://github.com/khsacc/Portfolio2020-2/" target="_blank" rel="noreferrer external">
