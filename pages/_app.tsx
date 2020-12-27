@@ -1,4 +1,3 @@
-import 'aos/dist/aos.css'; // needed to use AOS in react typescript
 import { AppProps } from 'next/app';
 import { BackToTopBtn } from '../components/common/backToTopBtn';
 import { Footer } from '../components/footer';

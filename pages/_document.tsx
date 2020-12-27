@@ -4,10 +4,11 @@
  * https://material-ui.com/ja/guides/server-rendering/
  */
 
+import 'aos/dist/aos.css';
 import { ServerStyleSheets } from '@material-ui/core/styles';
 import { colours } from '../styles';
 import Document, { Head, Html, Main, NextScript } from 'next/document';
-import React from 'react';
+import React from 'react'; // needed to use AOS in react typescript
 
 export default class MyDocument extends Document {
   render() {
