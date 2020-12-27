@@ -5,24 +5,22 @@ import { makeStyles } from '@material-ui/core';
 // import theme from '../../styles/theme';
 import { LineUmb } from '../common';
 import { WorkCategory } from '../common/workCategory';
+import { colours } from '../../styles';
+import { padding } from '../../styles/global';
 
 const FesInfo: NextPage<{ title: string; categories: string[]; info?: string }> = ({ title, categories, info }) => {
   const classes = makeStyles(() => ({
+    wrapper: {
+      textAlign: 'center',
+    },
     fes_title: {
       marginBottom: 5,
-    },
-    umb: {
-      width: 60,
-      transform: 'rotate(-50deg)',
     },
   }))();
   return (
     <>
-      <div data-aos="fade-left">
-        <h2 className={classes.fes_title}>
-          <LineUmb className={classes.umb} />
-          {title}
-        </h2>
+      <div data-aos="fade-left" className={classes.wrapper}>
+        <h2 className={classes.fes_title}>{title}</h2>
         {categories.map((e, i) => (
           <WorkCategory key={i}>{e}</WorkCategory>
         ))}
@@ -39,7 +37,7 @@ export const Works: NextPage = () => {
       marginBottom: 150,
     },
     article__wrapper: {
-      padding: '0 50px',
+      padding: padding.common,
     },
     img_container: {
       textAlign: 'center',
@@ -63,6 +61,16 @@ export const Works: NextPage = () => {
       height: 400,
       margin: '15px 10px 0',
     },
+    separateUmb: {
+      width: 100,
+      color: colours.main.light,
+      display: 'block',
+      margin: '10px auto 60px',
+    },
+    othersImg: {
+      height: 300,
+      margin: '15px 10px 0',
+    },
   }))();
   return (
     <div>
@@ -84,6 +92,7 @@ export const Works: NextPage = () => {
               data-aos-easing="ease-out-quad"
               src="/img/works/test_KF70.jpg"
               className={classes.KF70_img}
+              alt=""
             ></img>
           </div>
         </Parallax>
@@ -100,6 +109,7 @@ export const Works: NextPage = () => {
               data-aos-duration="800"
               data-aos-easing="ease-out-quad"
               className={classes.MF92_img}
+              alt=""
             ></img>
           </div>
         </Parallax>
@@ -116,6 +126,7 @@ export const Works: NextPage = () => {
               data-aos-duration="800"
               data-aos-easing="ease-out-quad"
               className={classes.MF93_web}
+              alt=""
             />
             <img
               src="/img/works/MF93/web_online.jpg"
@@ -123,9 +134,16 @@ export const Works: NextPage = () => {
               data-aos-duration="800"
               data-aos-easing="ease-out-quad"
               className={classes.MF93_web}
+              alt=""
             />
           </div>
         </Parallax>
+        <LineUmb className={classes.separateUmb} />
+        <div className={classes.img_container}>
+          <img src="/img/works/kasa/virtual_background.jpg" className={classes.othersImg} alt="" />
+          <img src="/img/works/kasa/christmas_2020.jpg" className={classes.othersImg} alt="" />
+          <img src="/img/works/kasa/card_2020.jpg" className={classes.othersImg} alt="" />
+        </div>
       </div>
     </div>
   );

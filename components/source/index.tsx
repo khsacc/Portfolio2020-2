@@ -33,7 +33,7 @@ export const Source: NextPage = () => {
       <br />
       <a href="https://github.com/khsacc/Portfolio2020-2/" target="_blank" rel="noreferrer external">
         <div className={classes.img_wrapper}>
-          <img className={classes.img} src="/img/source/source.svg" />
+          <img className={classes.img} src="/img/source/source.svg" alt="" />
           <img className={[classes.img, classes.img_hover].join(' ')} src="/img/source/source_hover.svg" alt="" />
         </div>
       </a>

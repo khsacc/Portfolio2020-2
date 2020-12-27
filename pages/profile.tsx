@@ -1,6 +1,7 @@
 import { ArticleTitle } from '../components/article';
 import { NextPage } from 'next';
 import { SelfSkills } from '../components/self';
+import { Source } from '../components/source';
 import { makeStyles } from '@material-ui/core';
 import { padding } from '../styles/global';
 
@@ -40,6 +41,7 @@ const ProfilePage: NextPage = () => {
         </p>
         <SelfSkills />
       </div>
+      <Source />
     </>
   );
 };
