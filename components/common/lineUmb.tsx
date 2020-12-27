@@ -1,11 +1,12 @@
 // import { colours, mrEavesRegular } from '../../styles';
 // import { makeStyles } from '@material-ui/core';
 
+import { CSSProperties } from 'react';
 import { NextPage } from 'next';
 
 // Wrapper
-export const LineUmb: NextPage<{ className?: string }> = ({ className }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" className={className}>
+export const LineUmb: NextPage<{ className?: string; style?: CSSProperties }> = ({ className, style }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" className={className} style={style}>
     <defs>
       <style>.cls-1{'{fill:currentColor;}'}</style>
     </defs>

@@ -1,6 +1,6 @@
 import { HoverBtn } from '../common/hoverBtn';
 import { Parallax } from 'react-scroll-parallax';
-import { colours } from '../../styles';
+import { colours, headerStyle } from '../../styles';
 import { makeStyles } from '@material-ui/core';
 import { useEffect, useState } from 'react';
 
@@ -50,9 +50,8 @@ const useStyles = makeStyles(theme => ({
     display: 'inline-block',
   },
   img_wrapper: {
-    width: '100vw',
-    // maxHeight: '500px',
-    height: 'calc(100vw * (1080/1920))',
+    width: `100vw`,
+    height: `calc(100vh - ${headerStyle.height}px)`,
     overflow: 'hidden',
     animation: '$imageAnim 1s ease-in-out',
     position: 'relative',

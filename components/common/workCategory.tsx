@@ -4,10 +4,12 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
   category__wrapper: {
-    padding: '4px 8px 1px',
-    marginRight: 5,
-    background: colours.main.sub,
-    color: 'white',
+    padding: '4px 10px 1px 0',
+    marginRight: 10,
+    color: colours.main.dark,
+    borderRight: `1px solid ${colours.main.main}`,
+    display: 'inline-block',
+    // color: 'white',
   },
 }));
 
