@@ -39,6 +39,9 @@ export const Works: NextPage = () => {
     article__wrapper: {
       padding: padding.common,
     },
+    description: {
+      textAlign: 'center',
+    },
     img_container: {
       textAlign: 'center',
     },
@@ -46,7 +49,7 @@ export const Works: NextPage = () => {
       marginTop: 20,
       transition: 'transform 0.5s ease-in-out',
       '&:hover': {
-        transform: 'scale(1.025)',
+        transform: 'scale(1.005)',
       },
     },
     KF70_img: {
@@ -85,6 +88,13 @@ export const Works: NextPage = () => {
             categories={['Design Direction', 'Graphics', 'DTP Design']}
             info="2019年・共同制作（広報局長）"
           />
+          <p className={classes.description}>
+            広報の文脈で世に出される全てのデザインに責任を持つ立場での学園祭でした。
+            <br />
+            「学園祭のキャンパスを廻る」ことを「万華鏡を回す」ことに喩え、様々な出会いや景色を愉しんでもらいたいという思いを込めています。
+            <br />
+            自分で作るより、他の委員と一緒に考える時間の方がずっと多く、指針の定め方などディレクション面での学びが多かったです。
+          </p>
           <div className={classes.img_container}>
             <img
               data-aos="fade-right"
@@ -113,7 +123,7 @@ export const Works: NextPage = () => {
             ></img>
           </div>
         </Parallax>
-        <Parallax y={[5, -40]} data-aos="fade-up">
+        <Parallax y={[20, -30]} data-aos="fade-up">
           <FesInfo
             title="第93回五月祭"
             categories={['Web Frontend', 'DTP Design', 'Design Workshop']}
@@ -140,9 +150,30 @@ export const Works: NextPage = () => {
         </Parallax>
         <LineUmb className={classes.separateUmb} />
         <div className={classes.img_container}>
-          <img src="/img/works/kasa/virtual_background.jpg" className={classes.othersImg} alt="" />
-          <img src="/img/works/kasa/christmas_2020.jpg" className={classes.othersImg} alt="" />
-          <img src="/img/works/kasa/card_2020.jpg" className={classes.othersImg} alt="" />
+          <img
+            src="/img/works/kasa/virtual_background.jpg"
+            className={classes.othersImg}
+            alt=""
+            data-aos="fade-right"
+            data-aos-duration="800"
+            data-aos-easing="ease-out-quad"
+          />
+          <img
+            src="/img/works/kasa/christmas_2020.jpg"
+            className={classes.othersImg}
+            alt=""
+            data-aos="fade-left"
+            data-aos-duration="800"
+            data-aos-easing="ease-out-quad"
+          />
+          <img
+            src="/img/works/kasa/card_2020.jpg"
+            className={classes.othersImg}
+            alt=""
+            data-aos="fade-right"
+            data-aos-duration="800"
+            data-aos-easing="ease-out-quad"
+          />
         </div>
       </div>
     </div>

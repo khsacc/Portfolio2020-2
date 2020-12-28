@@ -30,7 +30,7 @@ export const zIndex = {
 };
 
 export const padding = {
-  common: 10,
+  common: 30,
 };
 
 export const transitionTimingfunc = {

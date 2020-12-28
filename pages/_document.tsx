@@ -4,7 +4,7 @@
  * https://material-ui.com/ja/guides/server-rendering/
  */
 
-import 'aos/dist/aos.css';
+// import 'aos/dist/aos.css';
 import { ServerStyleSheets } from '@material-ui/core/styles';
 import { colours } from '../styles';
 import Document, { Head, Html, Main, NextScript } from 'next/document';

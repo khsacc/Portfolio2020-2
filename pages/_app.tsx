@@ -1,3 +1,4 @@
+import 'aos/dist/aos.css';
 import { AppProps } from 'next/app';
 import { BackToTopBtn } from '../components/common/backToTopBtn';
 import { Footer } from '../components/footer';
