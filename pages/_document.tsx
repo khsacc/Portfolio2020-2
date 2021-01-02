@@ -5,10 +5,11 @@
  */
 
 // import 'aos/dist/aos.css';
+import { GA_ID, existsGaId } from '../lib/gtag';
 import { ServerStyleSheets } from '@material-ui/core/styles';
 import { colours } from '../styles';
-import Document, { Head, Html, Main, NextScript } from 'next/document';
-import React from 'react'; // needed to use AOS in react typescript
+import Document, { Head, Html, Main, NextScript } from 'next/document'; // needed to use AOS in react typescript
+import React from 'react';
 
 export default class MyDocument extends Document {
   render() {
@@ -16,16 +17,23 @@ export default class MyDocument extends Document {
       <Html lang="ja">
         <Head>
           {/* Google Analytics */}
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179513963-1"></script>
-          <script
-            async
-            dangerouslySetInnerHTML={{
-              __html: `window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'UA-179513963-1');`,
-            }}
-          ></script>
+          {existsGaId && (
+            <>
+              <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
+              <script
+                async
+                dangerouslySetInnerHTML={{
+                  __html: `window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', '${GA_ID}', {
+                      page_path: window.location.pathname,
+                    });`,
+                }}
+              />
+            </>
+          )}
+          {/* Google Analytics */}
 
           {/* PWA primary color */}
           {/* <meta name="theme-color" content={theme.palette.primary.main} /> */}

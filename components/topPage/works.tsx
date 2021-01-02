@@ -49,11 +49,11 @@ export const Works: NextPage = () => {
       marginTop: 20,
       transition: 'transform 0.5s ease-in-out',
       '&:hover': {
-        transform: 'scale(1.005)',
+        // transform: 'scale(1.005)',
       },
     },
     KF70_img: {
-      width: '40%',
+      height: 500,
       // margin: '0 20vw',
     },
     MF92_img: {
@@ -88,7 +88,7 @@ export const Works: NextPage = () => {
             categories={['Design Direction', 'Graphics', 'DTP Design']}
             info="2019年・共同制作（広報局長）"
           />
-          <p className={classes.description}>
+          <p className={classes.description} data-aos="fade-left">
             広報の文脈で世に出される全てのデザインに責任を持つ立場での学園祭でした。
             <br />
             「学園祭のキャンパスを廻る」ことを「万華鏡を回す」ことに喩え、様々な出会いや景色を愉しんでもらいたいという思いを込めています。
@@ -100,7 +100,7 @@ export const Works: NextPage = () => {
               data-aos="fade-right"
               data-aos-duration="800"
               data-aos-easing="ease-out-quad"
-              src="/img/works/test_KF70.jpg"
+              src="/img/works/KF70_poster.jpg"
               className={classes.KF70_img}
               alt=""
             ></img>

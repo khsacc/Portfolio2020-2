@@ -1,4 +1,5 @@
 import 'aos/dist/aos.css';
+import * as gtag from '../lib/gtag';
 import { AppProps } from 'next/app';
 import { BackToTopBtn } from '../components/common/backToTopBtn';
 import { Footer } from '../components/footer';
@@ -43,6 +44,21 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
       });
     }, 900);
   }, [router.pathname]);
+
+  useEffect(() => {
+    if (!gtag.existsGaId) {
+      return;
+    }
+
+    const handleRouteChange = path => {
+      gtag.pageview(path);
+    };
+
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
 
   return (
     <>
