@@ -157,7 +157,7 @@ export default class MyDocument extends Document {
           <link rel="icon" type="image/png" sizes="32x32" href={`${process.env.BASE_PATH}meta/icon-32x32.png`} />
           {/* og-image */}
           <meta name="og:title" content="Hiroki Kobayashi | Design Portfolio"></meta>
-          <meta name="og:image" content={'${process.env.BASE_PATH}meta/ogimage.png'}></meta>
+          <meta name="og:image" content={`${process.env.BASE_PATH}meta/ogimage.png`}></meta>
           <meta name="twitter:card" content="summary_large_image"></meta>
         </Head>
         <body style={{ background: colours.main.back }}>
