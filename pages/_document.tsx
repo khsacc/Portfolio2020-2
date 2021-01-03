@@ -37,153 +37,127 @@ export default class MyDocument extends Document {
 
           {/* PWA primary color */}
           {/* <meta name="theme-color" content={theme.palette.primary.main} /> */}
-          <meta name="msapplication-square70x70logo" content="https://hiroki-k.vercel.app/meta/site-tile-70x70.png" />
-          <meta
-            name="msapplication-square150x150logo"
-            content="https://hiroki-k.vercel.app/meta/site-tile-150x150.png"
-          />
-          <meta name="msapplication-wide310x150logo" content="https://hiroki-k.vercel.app/meta/site-tile-310x150.png" />
-          <meta
-            name="msapplication-square310x310logo"
-            content="https://hiroki-k.vercel.app/meta/site-tile-310x310.png"
-          />
+          <meta name="msapplication-square70x70logo" content={`${process.env.BASE_PATH}meta/site-tile-70x70.png`} />
+          <meta name="msapplication-square150x150logo" content={`${process.env.BASE_PATH}meta/site-tile-150x150.png`} />
+          <meta name="msapplication-wide310x150logo" content={`${process.env.BASE_PATH}meta/site-tile-310x150.png`} />
+          <meta name="msapplication-square310x310logo" content={`${process.env.BASE_PATH}meta/site-tile-310x310.png`} />
           <meta name="msapplication-TileColor" content="#0078d7" />
-          <link
-            rel="shortcut icon"
-            type="image/vnd.microsoft.icon"
-            href="https://hiroki-k.vercel.app/meta/favicon.ico"
-          />
-          <link rel="icon" type="image/vnd.microsoft.icon" href="https://hiroki-k.vercel.app/meta/favicon.ico" />
-          <link
-            rel="apple-touch-icon"
-            sizes="57x57"
-            href="https://hiroki-k.vercel.app/meta/apple-touch-icon-57x57.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="60x60"
-            href="https://hiroki-k.vercel.app/meta/apple-touch-icon-60x60.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="72x72"
-            href="https://hiroki-k.vercel.app/meta/apple-touch-icon-72x72.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="76x76"
-            href="https://hiroki-k.vercel.app/meta/apple-touch-icon-76x76.png"
-          />
+          <link rel="shortcut icon" type="image/vnd.microsoft.icon" href={`${process.env.BASE_PATH}meta/favicon.ico`} />
+          <link rel="icon" type="image/vnd.microsoft.icon" href={`${process.env.BASE_PATH}meta/favicon.ico`} />
+          <link rel="apple-touch-icon" sizes="57x57" href={`${process.env.BASE_PATH}meta/apple-touch-icon-57x57.png`} />
+          <link rel="apple-touch-icon" sizes="60x60" href={`${process.env.BASE_PATH}meta/apple-touch-icon-60x60.png`} />
+          <link rel="apple-touch-icon" sizes="72x72" href={`${process.env.BASE_PATH}meta/apple-touch-icon-72x72.png`} />
+          <link rel="apple-touch-icon" sizes="76x76" href={`${process.env.BASE_PATH}meta/apple-touch-icon-76x76.png`} />
           <link
             rel="apple-touch-icon"
             sizes="114x114"
-            href="https://hiroki-k.vercel.app/meta/apple-touch-icon-114x114.png"
+            href={`${process.env.BASE_PATH}meta/apple-touch-icon-114x114.png`}
           />
           <link
             rel="apple-touch-icon"
             sizes="120x120"
-            href="https://hiroki-k.vercel.app/meta/apple-touch-icon-120x120.png"
+            href={`${process.env.BASE_PATH}meta/apple-touch-icon-120x120.png`}
           />
           <link
             rel="apple-touch-icon"
             sizes="144x144"
-            href="https://hiroki-k.vercel.app/meta/apple-touch-icon-144x144.png"
+            href={`${process.env.BASE_PATH}meta/apple-touch-icon-144x144.png`}
           />
           <link
             rel="apple-touch-icon"
             sizes="152x152"
-            href="https://hiroki-k.vercel.app/meta/apple-touch-icon-152x152.png"
+            href={`${process.env.BASE_PATH}meta/apple-touch-icon-152x152.png`}
           />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="https://hiroki-k.vercel.app/meta/apple-touch-icon-180x180.png"
+            href={`${process.env.BASE_PATH}meta/apple-touch-icon-180x180.png`}
           />
           <link
             rel="icon"
             type="image/png"
             sizes="36x36"
-            href="https://hiroki-k.vercel.app/meta/android-chrome-36x36.png"
+            href={`${process.env.BASE_PATH}meta/android-chrome-36x36.png`}
           />
           <link
             rel="icon"
             type="image/png"
             sizes="48x48"
-            href="https://hiroki-k.vercel.app/meta/android-chrome-48x48.png"
+            href={`${process.env.BASE_PATH}meta/android-chrome-48x48.png`}
           />
           <link
             rel="icon"
             type="image/png"
             sizes="72x72"
-            href="https://hiroki-k.vercel.app/meta/android-chrome-72x72.png"
+            href={`${process.env.BASE_PATH}meta/android-chrome-72x72.png`}
           />
           <link
             rel="icon"
             type="image/png"
             sizes="96x96"
-            href="https://hiroki-k.vercel.app/meta/android-chrome-96x96.png"
+            href={`${process.env.BASE_PATH}meta/android-chrome-96x96.png`}
           />
           <link
             rel="icon"
             type="image/png"
             sizes="128x128"
-            href="https://hiroki-k.vercel.app/meta/android-chrome-128x128.png"
+            href={`${process.env.BASE_PATH}meta/android-chrome-128x128.png`}
           />
           <link
             rel="icon"
             type="image/png"
             sizes="144x144"
-            href="https://hiroki-k.vercel.app/meta/android-chrome-144x144.png"
+            href={`${process.env.BASE_PATH}meta/android-chrome-144x144.png`}
           />
           <link
             rel="icon"
             type="image/png"
             sizes="152x152"
-            href="https://hiroki-k.vercel.app/meta/android-chrome-152x152.png"
+            href={`${process.env.BASE_PATH}meta/android-chrome-152x152.png`}
           />
           <link
             rel="icon"
             type="image/png"
             sizes="192x192"
-            href="https://hiroki-k.vercel.app/meta/android-chrome-192x192.png"
+            href={`${process.env.BASE_PATH}meta/android-chrome-192x192.png`}
           />
           <link
             rel="icon"
             type="image/png"
             sizes="256x256"
-            href="https://hiroki-k.vercel.app/meta/android-chrome-256x256.png"
+            href={`${process.env.BASE_PATH}meta/android-chrome-256x256.png`}
           />
           <link
             rel="icon"
             type="image/png"
             sizes="384x384"
-            href="https://hiroki-k.vercel.app/meta/android-chrome-384x384.png"
+            href={`${process.env.BASE_PATH}meta/android-chrome-384x384.png`}
           />
           <link
             rel="icon"
             type="image/png"
             sizes="512x512"
-            href="https://hiroki-k.vercel.app/meta/android-chrome-512x512.png"
+            href={`${process.env.BASE_PATH}meta/android-chrome-512x512.png`}
           />
-          <link rel="icon" type="image/png" sizes="36x36" href="https://hiroki-k.vercel.app/meta/icon-36x36.png" />
-          <link rel="icon" type="image/png" sizes="48x48" href="https://hiroki-k.vercel.app/meta/icon-48x48.png" />
-          <link rel="icon" type="image/png" sizes="72x72" href="https://hiroki-k.vercel.app/meta/icon-72x72.png" />
-          <link rel="icon" type="image/png" sizes="96x96" href="https://hiroki-k.vercel.app/meta/icon-96x96.png" />
-          <link rel="icon" type="image/png" sizes="128x128" href="https://hiroki-k.vercel.app/meta/icon-128x128.png" />
-          <link rel="icon" type="image/png" sizes="144x144" href="https://hiroki-k.vercel.app/meta/icon-144x144.png" />
-          <link rel="icon" type="image/png" sizes="152x152" href="https://hiroki-k.vercel.app/meta/icon-152x152.png" />
-          <link rel="icon" type="image/png" sizes="160x160" href="https://hiroki-k.vercel.app/meta/icon-160x160.png" />
-          <link rel="icon" type="image/png" sizes="192x192" href="https://hiroki-k.vercel.app/meta/icon-192x192.png" />
-          <link rel="icon" type="image/png" sizes="196x196" href="https://hiroki-k.vercel.app/meta/icon-196x196.png" />
-          <link rel="icon" type="image/png" sizes="256x256" href="https://hiroki-k.vercel.app/meta/icon-256x256.png" />
-          <link rel="icon" type="image/png" sizes="384x384" href="https://hiroki-k.vercel.app/meta/icon-384x384.png" />
-          <link rel="icon" type="image/png" sizes="512x512" href="https://hiroki-k.vercel.app/meta/icon-512x512.png" />
-          <link rel="icon" type="image/png" sizes="16x16" href="https://hiroki-k.vercel.app/meta/icon-16x16.png" />
-          <link rel="icon" type="image/png" sizes="24x24" href="https://hiroki-k.vercel.app/meta/icon-24x24.png" />
-          <link rel="icon" type="image/png" sizes="32x32" href="https://hiroki-k.vercel.app/meta/icon-32x32.png" />
+          <link rel="icon" type="image/png" sizes="36x36" href={`${process.env.BASE_PATH}meta/icon-36x36.png`} />
+          <link rel="icon" type="image/png" sizes="48x48" href={`${process.env.BASE_PATH}meta/icon-48x48.png`} />
+          <link rel="icon" type="image/png" sizes="72x72" href={`${process.env.BASE_PATH}meta/icon-72x72.png`} />
+          <link rel="icon" type="image/png" sizes="96x96" href={`${process.env.BASE_PATH}meta/icon-96x96.png`} />
+          <link rel="icon" type="image/png" sizes="128x128" href={`${process.env.BASE_PATH}meta/icon-128x128.png`} />
+          <link rel="icon" type="image/png" sizes="144x144" href={`${process.env.BASE_PATH}meta/icon-144x144.png`} />
+          <link rel="icon" type="image/png" sizes="152x152" href={`${process.env.BASE_PATH}meta/icon-152x152.png`} />
+          <link rel="icon" type="image/png" sizes="160x160" href={`${process.env.BASE_PATH}meta/icon-160x160.png`} />
+          <link rel="icon" type="image/png" sizes="192x192" href={`${process.env.BASE_PATH}meta/icon-192x192.png`} />
+          <link rel="icon" type="image/png" sizes="196x196" href={`${process.env.BASE_PATH}meta/icon-196x196.png`} />
+          <link rel="icon" type="image/png" sizes="256x256" href={`${process.env.BASE_PATH}meta/icon-256x256.png`} />
+          <link rel="icon" type="image/png" sizes="384x384" href={`${process.env.BASE_PATH}meta/icon-384x384.png`} />
+          <link rel="icon" type="image/png" sizes="512x512" href={`${process.env.BASE_PATH}meta/icon-512x512.png`} />
+          <link rel="icon" type="image/png" sizes="16x16" href={`${process.env.BASE_PATH}meta/icon-16x16.png`} />
+          <link rel="icon" type="image/png" sizes="24x24" href={`${process.env.BASE_PATH}meta/icon-24x24.png`} />
+          <link rel="icon" type="image/png" sizes="32x32" href={`${process.env.BASE_PATH}meta/icon-32x32.png`} />
           {/* og-image */}
           <meta name="og:title" content="Hiroki Kobayashi | Design Portfolio"></meta>
-          <meta name="og:image" content={'https://hiroki-k.vercel.app/meta/ogimage.png'}></meta>
+          <meta name="og:image" content={'${process.env.BASE_PATH}meta/ogimage.png'}></meta>
           <meta name="twitter:card" content="summary_large_image"></meta>
         </Head>
         <body style={{ background: colours.main.back }}>
