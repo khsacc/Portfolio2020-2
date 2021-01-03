@@ -30,6 +30,73 @@ const FesInfo: NextPage<{ title: string; categories: string[]; info?: string }> 
   );
 };
 
+type ImgData = {
+  name: string;
+  namePosition: {
+    top?: number;
+    left?: number;
+    right?: number;
+    bottom?: number;
+  };
+  dir: 'left' | 'right';
+  src: string;
+  className: string;
+  alt?: string;
+};
+
+const ImgContainer: NextPage<{ data: ImgData[] }> = ({ data }) => {
+  const classes = makeStyles(() => ({
+    wrapper: {
+      textAlign: 'center',
+    },
+    eachImgWrapper: {
+      display: 'inline-block',
+      height: 'fit-content',
+      width: 'fit-content',
+      position: 'relative',
+      overflow: 'hidden',
+      '&:hover': {
+        '& $eachImgName': {
+          opacity: 1,
+          padding: '5px 10px 2px',
+        },
+      },
+    },
+    eachImgName: {
+      position: 'absolute',
+      opacity: 0,
+      color: 'white',
+      background: colours.main.img_name,
+      transition: 'all 0.5s ease-out',
+      padding: '5px 0 2px',
+    },
+    eachImg: {
+      transition: 'transform 0.5s ease-in-out',
+      '&:hover': {
+        transform: 'scale(1.02)',
+      },
+    },
+  }))();
+  return (
+    <div className={classes.wrapper}>
+      {data.map((datum, index) => (
+        <div
+          className={classes.eachImgWrapper}
+          key={index}
+          data-aos={`fade-${datum.dir}`}
+          data-aos-duration="800"
+          data-aos-easing="ease-out-quad"
+        >
+          <img src={datum.src} className={[datum.className, classes.eachImg].join(' ')} alt={datum.alt ?? ''} />
+          <span className={classes.eachImgName} style={{ ...datum.namePosition }}>
+            {datum.name}
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+};
+
 export const Works: NextPage = () => {
   const classes = makeStyles(() => ({
     introduction: {
@@ -95,16 +162,30 @@ export const Works: NextPage = () => {
             <br />
             自分で作るより、他の委員と一緒に考える時間の方がずっと多く、指針の定め方などディレクション面での学びが多かったです。
           </p>
-          <div className={classes.img_container}>
-            <img
-              data-aos="fade-right"
-              data-aos-duration="800"
-              data-aos-easing="ease-out-quad"
-              src="/img/works/KF70_poster.jpg"
-              className={classes.KF70_img}
-              alt=""
-            ></img>
-          </div>
+          <ImgContainer
+            data={[
+              {
+                name: '公式ポスター',
+                namePosition: { left: 0, top: 0 },
+                src: '/img/works/KF70_poster.jpg',
+                dir: 'left',
+                className: classes.KF70_img,
+              },
+            ]}
+          />
+          {/* <div className={classes.img_container}>
+            <div style={{ display: 'inline-block', height: 'fit-content', width: 'fit-content', position: 'relative' }}>
+              <span style={{ position: 'absolute', top: 0, left: 0 }}>ポスター</span>
+              <img
+                data-aos="fade-right"
+                data-aos-duration="800"
+                data-aos-easing="ease-out-quad"
+                src="/img/works/KF70_poster.jpg"
+                className={classes.KF70_img}
+                alt=""
+              ></img>
+            </div>
+          </div> */}
         </Parallax>
         <Parallax y={[5, -40]} data-aos="fade-up">
           <FesInfo
@@ -112,6 +193,12 @@ export const Works: NextPage = () => {
             categories={['Information Signs', 'DTP Design']}
             info={'2019年・共同制作（案内制作担当・印刷物担当）'}
           />
+          <p className={classes.description} data-aos="fade-left">
+            パンフレット制作に携わる傍ら、案内サインシステムの制作を経験した回です。 <br />
+            学園祭全体のビジュアル計画には関わっていませんが、
+            <br />
+            「〈おもしろい〉が交差する」というテーマを、無機質になりがちな案内サインの中に取り入れて、ビジュアルデザイン的な面白さも併存するように工夫しています。
+          </p>
           <div className={classes.img_container}>
             <img
               src="/img/works/MF92navi.jpg"
@@ -149,6 +236,7 @@ export const Works: NextPage = () => {
           </div>
         </Parallax>
         <LineUmb className={classes.separateUmb} />
+        <div className={classes.description}>other works</div>
         <div className={classes.img_container}>
           <img
             src="/img/works/kasa/virtual_background.jpg"
