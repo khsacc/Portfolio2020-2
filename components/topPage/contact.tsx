@@ -33,14 +33,15 @@ const useStyles = makeStyles(() => ({
 
 export const Contact: NextPage = () => {
   const classes = useStyles();
+  const address = 'k.hiroki.listen2@gmail.com';
   return (
     <div className={classes.wrapper}>
       <Subtitle>Contact</Subtitle>
       <div data-aos="fade-up">
         <p>ご連絡は、以下のアドレスまでお願いいたします。</p>
-        <a href="mailto:hero.key629522@gmail.com" className={classes.mail}>
+        <a href={`mailto:${address}`} className={classes.mail}>
           <span className={classes.spacing} />
-          hero.key629522@gmail.com
+          {address}
           <span className={classes.spacing} />
         </a>
       </div>

@@ -106,11 +106,9 @@ export const Self: NextPage<{ showName?: boolean; isLink?: boolean }> = ({ showN
           <p className={classes.prof}>
             東京大学3年。
             <br />
-            印刷物のデザインが好きです。最近はWebデザイン・開発（Vue / React）もしています。UIデザインは苦手です。
+            印刷物のデザインが好きです。最近はWebデザイン・開発（Vue / React）もしています。
             <br />
-            媒体と素材を活かすための、ちょっとした工夫について日々考えています。
-            <br />
-            大学の学園祭委員会で、様々な種類のデザインに触れた経験が、与えられたものを大切にするという基本的な眼差しにつながっている気がします。
+            媒体や素材そのものを丹念に観察し、ちょっとしたおもしろさと物語性のあるデザインつくることをを心がけています。
           </p>
           <Parallax y={[-50, 15]} className={classes.umb}>
             <LineUmb />
