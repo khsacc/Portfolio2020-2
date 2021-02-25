@@ -107,8 +107,7 @@ export const Self: NextPage<{ showName?: boolean; isLink?: boolean }> = ({ showN
             東京大学3年。
             <br />
             印刷物のデザインが好きです。最近はWebデザイン・開発（Vue / React）もしています。
-            <br />
-            媒体や素材そのものを丹念に観察し、ちょっとしたおもしろさと物語性のあるデザインつくることをを心がけています。
+            媒体や素材そのものを丹念に観察し、ちょっとしたおもしろさと物語性のあるデザインを心がけています。
           </p>
           <Parallax y={[-50, 15]} className={classes.umb}>
             <LineUmb />
