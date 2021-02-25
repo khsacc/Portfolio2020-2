@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 
 // SSGするのでprocess.envが使えない（という理解）
-export const BASE_PATH = 'https://hero--key1207.vercel.app';
+export const BASE_PATH = 'https://hero--key1207.vercel.app/';
 
 export const CreateHead: NextPage<{ title?: string; ogimage?: string }> = ({ title, ogimage }) => {
   const router = useRouter();
@@ -13,7 +13,7 @@ export const CreateHead: NextPage<{ title?: string; ogimage?: string }> = ({ tit
     <Head>
       <title>{[title, `Hiroki Kobayashi Design Portfolio`].join(' | ')}</title>
       <meta name="og:title" content={[title, `Hiroki Kobayashi Design Portfolio`].join(' | ')}></meta>
-      <meta name="og:image" content={`${process.env.BASE_PATH}meta/${ogimage || 'ogimage.png'}`}></meta>
+      <meta name="og:image" content={`${BASE_PATH}meta/${ogimage || 'ogimage.png'}`}></meta>
       <meta name="og:type" content={router.pathname === '/' ? 'website' : 'article'}></meta>
       <meta name="og:site_name" content="Hiroki Kobayashi Design Portfolio"></meta>
       <meta name="twitter:card" content="summary_large_image"></meta>
