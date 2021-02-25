@@ -1,10 +1,12 @@
 import { KF70 } from './KF70';
+import { MF92 } from './MF92';
 import { NextPage } from 'next';
 import { makeStyles } from '@material-ui/core';
 
 // ここに並べたものが表示対象です
 const articleData = {
   KF70,
+  MF92,
 };
 
 // 全体

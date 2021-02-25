@@ -2,6 +2,9 @@ import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 
+// SSGするのでprocess.envが使えない（という理解）
+export const BASE_PATH = 'https://hero--key1207.vercel.app';
+
 export const CreateHead: NextPage<{ title?: string; ogimage?: string }> = ({ title, ogimage }) => {
   const router = useRouter();
   // ogimageはpublic/meta内に配置しファイル名のみを渡す

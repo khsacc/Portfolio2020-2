@@ -36,17 +36,17 @@ const useTopWorkStyles = makeStyles(theme => ({
     },
   },
   workImg: {
-    // height: 200,
+    height: 200,
     margin: 10,
     transition: `all 0.6s ${transitionTimingfunc.workImg}`,
-    [theme.breakpoints.up('sm')]: {
-      height: 400,
-    },
-    [theme.breakpoints.down('tablet')]: {
+    [theme.breakpoints.up('mobile')]: {
       height: 250,
     },
-    [theme.breakpoints.only('se')]: {
-      height: 200,
+    [theme.breakpoints.up('sm')]: {
+      height: 320,
+    },
+    [theme.breakpoints.up('tablet')]: {
+      height: 375,
     },
   },
   workUmb: {
