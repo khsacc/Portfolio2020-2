@@ -1,4 +1,5 @@
 import { Parallax } from 'react-scroll-parallax';
+import { UAParser } from 'ua-parser-js';
 import { colours, headerStyle } from '../../styles';
 import { makeStyles } from '@material-ui/core';
 import { useEffect, useState } from 'react';
@@ -55,7 +56,6 @@ const useStyles = makeStyles(theme => ({
     animation: '$imageAnim 1s ease-in-out',
     position: 'relative',
     backgroundImage: 'url("/img/topPage/top_back-mobile.svg")',
-    // backgroundImage: 'url("/img/topPage/top_back.svg")',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     // backgroundAttachment: 'fixed',
@@ -91,10 +91,19 @@ export const Top = () => {
     setShowTheme(true);
   }, []);
 
+  // background-attachmentが使えないブラウザに対する特殊処理。具体的にはiOS Safari、Opera Mini、Android Browser、Opera Mobileらしい
+  // OperaかつAndroidで適切に表示されるか不明。場合によってすべてはじく。
+  // https://caniuse.com/?search=background-attachment
+  const uaParser = new UAParser();
+  const currentBrowser = uaParser.getBrowser().name;
+  const isBackgroundAttachmentSupported = !['Mobile Safari', 'Opera Mini', 'Android Browser', 'Opera Mobi'].includes(
+    currentBrowser,
+  );
+
   return (
     <Parallax y={[0, 0]} className={classes.wrapper}>
       {/* <img className={classes.heading} src="/img/topPage/heading.svg" alt="わくわくさせるクリエイティブ" /> */}
-      <div className={classes.img_wrapper}>
+      <div className={classes.img_wrapper} style={isBackgroundAttachmentSupported && { backgroundAttachment: 'fixed' }}>
         <div className={classes.theme__container}>
           <span className={[classes.theme, showTheme ? classes.theme__show : ''].join(' ')}>
             <span className={classes.theme_partial}>“わくわくさせる</span>
