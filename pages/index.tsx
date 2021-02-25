@@ -15,7 +15,7 @@ const IndexPage: NextPage = () => {
 
   return (
     <>
-      <CreateHead />
+      <CreateHead title="Top" />
       <Top />
       <Link href="/profile" scroll={false}>
         <a className={classes.wrapper_link}>
