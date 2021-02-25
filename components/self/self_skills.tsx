@@ -107,6 +107,8 @@ export const SelfSkills = () => {
           ))}
         </div>
         Frontend Development
+        <br />
+        TypeScriptベースの開発が好みです。
         <div className={classes.container}>
           {webSkills.map((e, i) => (
             <div className={classes.wrapper} key={`skill__1--${i}`}>

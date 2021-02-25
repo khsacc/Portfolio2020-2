@@ -9,5 +9,6 @@ export const colours = {
     light: '#f2cbd2',
     hover: '#fcdce0',
     dark: '#a34152',
+    img_name: 'rgba(189, 90, 110, 0.8)',
   },
 };

@@ -1,3 +1,4 @@
+import { CSSProperties, ReactNode } from 'react';
 import { NextPage } from 'next';
 import { colours } from '../../styles';
 import { makeStyles } from '@material-ui/core';
@@ -22,7 +23,16 @@ const useStyles = makeStyles(() => ({
 }));
 
 // Wrapper
-export const HoverBtn: NextPage<{ text: string; hover?: boolean }> = ({ text, hover }) => {
+export const HoverBtn: NextPage<{ text?: string | ReactNode; hover?: boolean; style?: CSSProperties }> = ({
+  text,
+  hover,
+  style,
+}) => {
   const classes = useStyles();
-  return <span className={[classes.btn, hover ? classes.btn_hover : ''].join(' ')}>{text}</span>;
+
+  return (
+    <span className={[classes.btn, hover ? classes.btn_hover : ''].join(' ')} style={style}>
+      {text}
+    </span>
+  );
 };

@@ -1,4 +1,5 @@
 import { ArticleTitle } from '../components/article';
+import { CreateHead } from '../lib/createHead';
 import { NextPage } from 'next';
 import { SelfSkills } from '../components/self';
 import { Source } from '../components/source';
@@ -24,6 +25,7 @@ const ProfilePage: NextPage = () => {
 
   return (
     <>
+      <CreateHead title="Profile" />
       <ArticleTitle img="/img/topPage/self.jpg" title="Profile" alt="self portrait" />
       <div className={classes.wrapper}>
         <h1 className={classes.name}>Hiroki Kobayashi</h1>
@@ -36,8 +38,7 @@ const ProfilePage: NextPage = () => {
         </p>
         <p className={classes.p}>
           デザインについて考えるようになったきっかけは、大学1年から所属していた学園祭委員での活動の影響が大きいです。
-          <br />
-          パンフレット、グッズ、案内サイン、ウェブサイト、装飾物など、様々な媒体を作ることができる環境で、ひとつの「テーマ」に沿ったビジュアルデザインについて思索をめぐらせる日々が、「媒体や環境を活かす」という私の基本姿勢をかたちづくったように思います。
+          パンフレット、グッズ、案内サイン、ウェブサイト、装飾物など、様々な媒体を作ることができる環境で、ひとつの「テーマ」に沿ったビジュアルデザインについて思索をめぐらせる日々が、「媒体や環境それ自体にはデザイン性が潜んでいて、それを引き出して物語を作るのがデザイナーの役割である」という基本姿勢をかたちづくったように思います。
         </p>
         <SelfSkills />
       </div>

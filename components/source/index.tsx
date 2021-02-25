@@ -29,7 +29,9 @@ export const Source: NextPage = () => {
   }))();
   return (
     <div className={classes.wrapper} data-aos="fade-up">
-      本サイトのソースコードは、GitHubで公開しています。
+      本サイトはNext.js + TypeScriptで開発しています。
+      <br />
+      ソースコードはGitHubで公開しています。
       <br />
       <a href="https://github.com/khsacc/Portfolio2020-2/" target="_blank" rel="noreferrer external">
         <div className={classes.img_wrapper}>
