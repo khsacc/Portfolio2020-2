@@ -3,7 +3,7 @@ import { createMuiTheme } from '@material-ui/core';
 declare module '@material-ui/core/styles/createBreakpoints' {
   interface BreakpointOverrides {
     xs: false;
-    sm: false;
+    sm: true;
     md: false;
     lg: false;
     xl: false;
@@ -30,6 +30,7 @@ const theme = createMuiTheme({
     values: {
       se: 280,
       mobile: 414,
+      sm: 600,
       tablet: 820,
       laptop: 1024,
       desktop: 1280,
