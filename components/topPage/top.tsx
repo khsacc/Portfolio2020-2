@@ -54,13 +54,13 @@ const useStyles = makeStyles(theme => ({
     overflow: 'hidden',
     animation: '$imageAnim 1s ease-in-out',
     position: 'relative',
-    // backgroundImage: 'url("/img/topPage/top_back-mobile.svg")',
-    backgroundImage: 'url("/img/topPage/top_back.svg")',
+    backgroundImage: 'url("/img/topPage/top_back-mobile.svg")',
+    // backgroundImage: 'url("/img/topPage/top_back.svg")',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     backgroundAttachment: 'fixed',
     [theme.breakpoints.up('tablet')]: {
-      backgroundImage: 'url("/img/topPage/top_back.svg")',
+      // backgroundImage: 'url("/img/topPage/top_back.svg")',
     },
   },
   img: {
