@@ -37,8 +37,7 @@ export const ProjectInfo: NextPage<{ prj: WorksDatum }> = ({ prj }) => {
 const useWorkImgStyles = makeStyles(() => ({
   wrapper: {
     width: '95%',
-    margin: '0 auto',
-    textAlign: 'center',
+    margin: '25px auto',
   },
   img: {
     width: '100%',
@@ -50,6 +49,7 @@ const useWorkImgStyles = makeStyles(() => ({
   },
   name: {
     fontWeight: 'bold',
+    textAlign: 'center',
   },
 }));
 export const WorkImg: NextPage<{ work: WorksDetail }> = ({ work }) => {
@@ -57,9 +57,8 @@ export const WorkImg: NextPage<{ work: WorksDetail }> = ({ work }) => {
   return (
     <div className={classes.wrapper}>
       <img src={work.img} className={classes.img} alt={work.name || ''} />
-      <div className={classes.description}>
-        <span className={classes.name}>{work.name}</span> {work.name && work.note && ' | '} {work.note}
-      </div>
+      <div className={classes.name}>{work.name} </div>
+      <div className={classes.description}>{work.note}</div>
     </div>
   );
 };
