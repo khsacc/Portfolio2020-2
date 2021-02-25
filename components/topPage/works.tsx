@@ -36,10 +36,16 @@ const useTopWorkStyles = makeStyles(theme => ({
     },
   },
   workImg: {
-    height: 400,
+    // height: 200,
     margin: 10,
     transition: `all 0.6s ${transitionTimingfunc.workImg}`,
+    [theme.breakpoints.up('sm')]: {
+      height: 400,
+    },
     [theme.breakpoints.down('tablet')]: {
+      height: 250,
+    },
+    [theme.breakpoints.only('se')]: {
       height: 200,
     },
   },
@@ -104,7 +110,7 @@ export const TopWork: NextPage = () => {
           .reduce(
             (pre: (WorksDetail & { prj: WorksDatum })[], cur: WorksDatum) => [
               ...pre,
-              ...cur.works.map(work => ({ ...work, prj: cur })),
+              ...cur.works.filter(work => work.topPage).map(work => ({ ...work, prj: cur })),
             ],
             [],
           )

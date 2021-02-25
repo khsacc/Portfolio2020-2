@@ -1,7 +1,6 @@
 import { CreateHead } from '../../lib/createHead';
 import { TopWork } from '../../components/topPage/works';
 import { makeStyles } from '@material-ui/core';
-import classes from '*.module.css';
 
 const useStyles = makeStyles(() => ({
   wrapper: {

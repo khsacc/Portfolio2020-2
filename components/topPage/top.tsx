@@ -1,4 +1,3 @@
-import { HoverBtn } from '../common/hoverBtn';
 import { Parallax } from 'react-scroll-parallax';
 import { colours, headerStyle } from '../../styles';
 import { makeStyles } from '@material-ui/core';

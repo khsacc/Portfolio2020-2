@@ -1,6 +1,6 @@
-import { ProjectInfo } from './prjInfo';
-import { ProjectTitle } from './prjTitle';
+import { ProjectArticle } from './each';
+import { ProjectInfo, WorkImg } from './project';
 import { WorksDatum, WorksDetail, worksData } from './data';
 
-export { ProjectTitle, ProjectInfo, worksData };
+export { ProjectInfo, worksData, ProjectArticle, WorkImg };
 export type { WorksDatum, WorksDetail };

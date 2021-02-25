@@ -1,7 +1,9 @@
 export type WorksDetail = {
-  name: string;
+  name?: string;
   note?: string;
   img: string;
+  alt: string;
+  topPage: boolean;
 };
 
 export type WorksDatum = {
@@ -27,7 +29,11 @@ export const worksData: WorksDatum[] = [
     works: [
       {
         name: '公式ポスター',
-        img: 'img/works/KF70/KF70_poster.jpg',
+        img: '/img/works/KF70/KF70_poster.jpg',
+        topPage: true,
+        note: 'A2版。黒色の背景は、万華鏡を覗き込むと光が見えるイメージに重なる。多用したアイデンティティのひとつだ。',
+        alt:
+          '第70回駒場祭「七変華」 | のぞきこむと、色とりどりの華模様。ちりばめられた祭の華は、めぐり歩けば、一歩ごとにあたらしい。出遭いの予感に誘われて、もう一歩踏み出す。祭とは、くるり回せばくるりと変わる、万華鏡。',
       },
     ],
   },
@@ -42,11 +48,15 @@ export const worksData: WorksDatum[] = [
     works: [
       {
         name: '屋内案内サイン',
-        img: 'img/works/MF92/MF92navi.jpg',
+        img: '/img/works/MF92/MF92navi.jpg',
+        topPage: true,
+        alt: '',
       },
       {
         name: '公式パンフレット表紙',
-        img: 'img/works/MF92/MF92pam_cover.jpg',
+        img: '/img/works/MF92/MF92pam_cover.jpg',
+        topPage: true,
+        alt: '',
       },
     ],
   },
