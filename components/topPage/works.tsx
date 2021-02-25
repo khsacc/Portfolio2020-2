@@ -42,8 +42,11 @@ const useTopWorkStyles = makeStyles(theme => ({
     [theme.breakpoints.up('mobile')]: {
       height: 250,
     },
+    [theme.breakpoints.up('sm')]: {
+      height: 320,
+    },
     [theme.breakpoints.up('tablet')]: {
-      height: 400,
+      height: 375,
     },
   },
   workUmb: {
