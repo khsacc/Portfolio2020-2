@@ -103,7 +103,10 @@ export const Top = () => {
   return (
     <Parallax y={[0, 0]} className={classes.wrapper}>
       {/* <img className={classes.heading} src="/img/topPage/heading.svg" alt="わくわくさせるクリエイティブ" /> */}
-      <div className={classes.img_wrapper} style={isBackgroundAttachmentSupported && { backgroundAttachment: 'fixed' }}>
+      <div
+        className={classes.img_wrapper}
+        style={isBackgroundAttachmentSupported ? { backgroundAttachment: 'fixed' } : {}}
+      >
         <div className={classes.theme__container}>
           <span className={[classes.theme, showTheme ? classes.theme__show : ''].join(' ')}>
             <span className={classes.theme_partial}>“わくわくさせる</span>
