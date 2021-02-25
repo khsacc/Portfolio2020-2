@@ -9,8 +9,9 @@ import { padding, transitionTimingfunc } from '../../styles/global';
 import { useState } from 'react';
 import { worksData } from '../works/data';
 import Link from 'next/link';
+import theme from '../../styles/theme';
 
-const useTopWorkStyles = makeStyles(() => ({
+const useTopWorkStyles = makeStyles(theme => ({
   container: {
     padding: padding.common,
     display: 'flex',
@@ -38,6 +39,9 @@ const useTopWorkStyles = makeStyles(() => ({
     height: 400,
     margin: 10,
     transition: `all 0.6s ${transitionTimingfunc.workImg}`,
+    [theme.breakpoints.down('tablet')]: {
+      height: 200,
+    },
   },
   workUmb: {
     width: '30%',
@@ -55,7 +59,7 @@ const useTopWorkStyles = makeStyles(() => ({
 }));
 
 const WorkContainer: NextPage<{ workidx: number; prj: WorksDatum; work: WorksDetail }> = ({ workidx, prj, work }) => {
-  const classes = useTopWorkStyles();
+  const classes = useTopWorkStyles(theme);
   const [hover, setHover] = useState(false);
 
   return (
@@ -92,18 +96,21 @@ const WorkContainer: NextPage<{ workidx: number; prj: WorksDatum; work: WorksDet
 
 export const TopWork: NextPage = () => {
   const classes = useTopWorkStyles();
-
   return (
     <>
       <Subtitle>Works</Subtitle>
       <div className={classes.container}>
-        {worksData.map(prj => (
-          <>
-            {prj.works.map((work, workidx) => (
-              <WorkContainer key={workidx} workidx={workidx} work={work} prj={prj} />
-            ))}
-          </>
-        ))}
+        {worksData
+          .reduce(
+            (pre: (WorksDetail & { prj: WorksDatum })[], cur: WorksDatum) => [
+              ...pre,
+              ...cur.works.map(work => ({ ...work, prj: cur })),
+            ],
+            [],
+          )
+          .map((work, workidx) => (
+            <WorkContainer key={workidx} workidx={workidx} work={work} prj={work.prj} />
+          ))}
       </div>
     </>
   );
