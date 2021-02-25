@@ -1,18 +1,13 @@
 import { LineUmb } from '../common';
 import { NextPage } from 'next';
 import { Parallax } from 'react-scroll-parallax';
+import { ReactNode, useEffect, useState } from 'react';
 import { colours } from '../../styles';
 import { makeStyles } from '@material-ui/core';
 import { transitionTimingfunc } from '../../styles/global';
-import { useEffect, useState } from 'react';
 
-export const ArticleTitle: NextPage<{ img: string; title: string; umbColour?: string; alt: string }> = ({
-  img,
-  title,
-  umbColour = colours.main.sub,
-  alt,
-}) => {
-  const classes = makeStyles(theme => ({
+const useStyles = (umbColour: string) =>
+  makeStyles(theme => ({
     wrapper: {
       width: '90%',
       maxWidth: 650,
@@ -55,7 +50,15 @@ export const ArticleTitle: NextPage<{ img: string; title: string; umbColour?: st
       opacity: 1,
       width: '35%',
     },
-  }))();
+  }));
+
+export const ArticleTitle: NextPage<{ img: string; title: ReactNode; umbColour?: string; alt: string }> = ({
+  img,
+  title,
+  umbColour = colours.main.sub,
+  alt,
+}) => {
+  const classes = useStyles(umbColour)();
 
   const [entered, setEntered] = useState(false);
   useEffect(() => {

@@ -1,4 +1,5 @@
 import { Contact, Self, Top, TopWork } from '../components/topPage';
+import { CreateHead } from '../lib/createHead';
 import { NextPage } from 'next';
 import { Source } from '../components/source';
 import { makeStyles } from '@material-ui/core';
@@ -14,6 +15,7 @@ const IndexPage: NextPage = () => {
 
   return (
     <>
+      <CreateHead />
       <Top />
       <Link href="profile" scroll={false}>
         <a className={classes.wrapper_link}>

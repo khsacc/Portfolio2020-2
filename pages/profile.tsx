@@ -1,4 +1,5 @@
 import { ArticleTitle } from '../components/article';
+import { CreateHead } from '../lib/createHead';
 import { NextPage } from 'next';
 import { SelfSkills } from '../components/self';
 import { Source } from '../components/source';
@@ -24,6 +25,7 @@ const ProfilePage: NextPage = () => {
 
   return (
     <>
+      <CreateHead title="Profile" />
       <ArticleTitle img="/img/topPage/self.jpg" title="Profile" alt="self portrait" />
       <div className={classes.wrapper}>
         <h1 className={classes.name}>Hiroki Kobayashi</h1>

@@ -35,4 +35,5 @@ export const padding = {
 
 export const transitionTimingfunc = {
   title: 'cubic-bezier(.6,.24,.13,.65)',
+  workImg: 'cubic-bezier(.79,.22,.26,1)',
 };

@@ -1,3 +1,4 @@
+import { CreateHead } from '../../lib/createHead';
 import { NextPage } from 'next';
 import { PageContent } from '../../components/common/pageContent';
 import { ProjectInfo, WorksDatum, worksData } from '../../components/works';
@@ -8,9 +9,12 @@ const useStyles = makeStyles(() => ({}));
 const ProjectPage: NextPage<{ prj: WorksDatum }> = ({ prj }) => {
   const classes = useStyles();
   return (
-    <PageContent>
-      <ProjectInfo prj={prj} />
-    </PageContent>
+    <>
+      <CreateHead title={prj.project}></CreateHead>
+      <PageContent>
+        <ProjectInfo prj={prj} />
+      </PageContent>
+    </>
   );
 };
 

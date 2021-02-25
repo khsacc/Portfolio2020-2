@@ -63,7 +63,6 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
-        <title>Hiroki Kobayashi | Design Portfolio</title>
         <link rel="stylesheet" href="https://use.typekit.net/vpq5jbc.css"></link>
       </Head>
       <ThemeProvider theme={theme}>
@@ -91,20 +90,28 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
       <style jsx global>{`
         .page-transition-enter {
           opacity: 0;
+          height: 100%;
+          width: 100%;
         }
 
         .page-transition-enter-done {
           transition: all ease-in-out 0.5s;
           opacity: 1;
+          height: 100%;
+          width: 100%;
         }
 
         .page-transition-exit {
           opacity: 1;
+          height: 100%;
+          width: 100%;
         }
         .page-transition-exit-active {
           opacity: 0;
           transform: translateY(-1.5%);
           transition: all ease-in-out 0.8s;
+          height: 100%;
+          width: 100%;
         }
       `}</style>
     </>
