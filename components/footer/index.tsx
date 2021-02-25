@@ -8,9 +8,10 @@ export const Footer: NextPage<{ currentPage: string }> = ({ currentPage }) => {
     wrapper: {
       // background: colours.main.dark,
       borderTop: `1px solid ${colours.main.main}`,
-      padding: 3,
+      padding: '5px 0 25px',
       color: colours.main.dark,
       textAlign: 'center',
+      fontSize: '1.2em',
     },
     link: {
       margin: '0 5px',
