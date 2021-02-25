@@ -106,7 +106,7 @@ export const Top = () => {
       {/* <img className={classes.heading} src="/img/topPage/heading.svg" alt="わくわくさせるクリエイティブ" /> */}
       <div
         className={classes.img_wrapper}
-        style={isBackgroundAttachmentSupported ? { backgroundAttachment: 'fixed' } : {}}
+        // style={isBackgroundAttachmentSupported ? { backgroundAttachment: 'fixed' } : {}}
       >
         <div className={classes.theme__container}>
           <span className={[classes.theme, showTheme ? classes.theme__show : ''].join(' ')}>
