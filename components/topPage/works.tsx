@@ -82,7 +82,7 @@ const WorkContainer: NextPage<{ workidx: number; prj: WorksDatum; work: WorksDet
           }}
           data-aos="fade-up"
         >
-          <img src={work.img} className={classes.workImg} />
+          <img src={work.img} className={classes.workImg} alt="" />
           <LineUmb className={classes.workUmb} />
           <HoverBtn
             hover={hover}
