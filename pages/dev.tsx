@@ -148,7 +148,8 @@ const IndexPage: NextPage = () => {
   return (
     <>
       <h1>This is Dev-page</h1>
-      <Dev />
+      {/* <Dev /> */}
+      <div style={{ width: '100%', height: 20 }}></div>
       <Top />
       {/* <Link href="/profile" scroll={false}>
         <a className={classes.wrapper_link}>
