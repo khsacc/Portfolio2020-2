@@ -150,12 +150,12 @@ const IndexPage: NextPage = () => {
       <h1>This is Dev-page</h1>
       <Dev />
       <Top />
-      <Link href="/profile" scroll={false}>
+      {/* <Link href="/profile" scroll={false}>
         <a className={classes.wrapper_link}>
           <Self />
         </a>
-      </Link>
-      {/* <TopWork /> */}
+      </Link> */}
+      <TopWork />
       <Contact />
       <Source />
     </>
