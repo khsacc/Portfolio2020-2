@@ -40,7 +40,8 @@ const useWorkImgStyles = makeStyles(() => ({
     margin: '25px auto',
   },
   img: {
-    width: '100%',
+    margin: '10px auto',
+    display: 'block',
   },
   description: {
     fontSize: '85%',
@@ -52,11 +53,13 @@ const useWorkImgStyles = makeStyles(() => ({
     textAlign: 'center',
   },
 }));
-export const WorkImg: NextPage<{ work: WorksDetail }> = ({ work }) => {
+
+export const WorkImg: NextPage<{ work: WorksDetail; imgWidth?: string }> = ({ work, imgWidth }) => {
   const classes = useWorkImgStyles();
   return (
     <div className={classes.wrapper}>
-      <img src={work.img} className={classes.img} alt={work.name || ''} />
+      <img src={work.img} className={classes.img} style={{ width: imgWidth || '100%' }} alt={work.name || ''} />
+
       <div className={classes.name}>{work.name} </div>
       <div className={classes.description}>{work.note}</div>
     </div>

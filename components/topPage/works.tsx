@@ -29,7 +29,7 @@ const useTopWorkStyles = makeStyles(theme => ({
         left: '7%',
       },
       '& $workImg': {
-        transform: 'scale(1.01)',
+        transform: 'scale(1.02)',
         boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
         borderRadius: 5,
       },

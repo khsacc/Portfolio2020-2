@@ -1,3 +1,4 @@
+import { Blog } from '../components/topPage/blog';
 import { Contact, Self, Top, TopWork } from '../components/topPage';
 import { CreateHead } from '../lib/createHead';
 import { NextPage } from 'next';
@@ -23,6 +24,7 @@ const IndexPage: NextPage = () => {
         </a>
       </Link>
       <TopWork />
+      <Blog />
       <Contact />
       <Source />
     </>

@@ -113,6 +113,12 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
           height: 100%;
           width: 100%;
         }
+        a {
+          color: #c15f72;
+        }
+        p {
+          line-height: 1.8;
+        }
       `}</style>
     </>
   );
