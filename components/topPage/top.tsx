@@ -93,16 +93,16 @@ export const Top = () => {
   const classes = useStyles();
 
   const [showTheme, setShowTheme] = useState(false);
+  const [isBackgroundSizeSupported, setIsBackgroundSizeSupported] = useState(false);
   useEffect(() => {
+    // background-size: 'cover'が使えないブラウザに対する特殊処理。調べたけど詳細不明なので、ひとまずiOSをすべてはじく。
+    // アイキャッチの画像をスクロールしても固定にするためにはbackground-imageを使う必要があるが、iOSではこれを諦める。
+    // 後々position: fixedで実装し直せれば良いが若干複雑なので、とりあえず放置しておく
+    const uaParser = new UAParser();
+    const currentOS = uaParser.getOS().name;
+    setIsBackgroundSizeSupported(currentOS !== 'iOS');
     setShowTheme(true);
   }, []);
-
-  // background-size: 'cover'が使えないブラウザに対する特殊処理。調べたけど詳細不明なので、ひとまずiOSをすべてはじく。
-  // アイキャッチの画像をスクロールしても固定にするためにはbackground-imageを使う必要があるが、iOSではこれを諦める。
-  // 後々position: fixedで実装し直せれば良いが若干複雑なので、とりあえず放置しておく
-  const uaParser = new UAParser();
-  const currentOS = uaParser.getOS().name;
-  const isBackgroundSizeSupported = currentOS !== 'iOS';
 
   return (
     <>

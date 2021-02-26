@@ -75,7 +75,7 @@ export const Blog: NextPage = () => {
       </p>
       <div className={classes.blogsContainer}>
         {blogsData.map((blog, idx) => (
-          <Link href={`/blog/${blog.id}`} scroll={false}>
+          <Link href={`/blog/${blog.id}`} scroll={false} key={idx}>
             <a className={classes.link}>
               <div key={idx} className={classes.wrapper}>
                 <LineUmb className={classes.umb} />
