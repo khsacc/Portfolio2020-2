@@ -60,22 +60,27 @@ const useStyles = makeStyles(theme => ({
     overflow: 'hidden',
     animation: '$imageAnim 1s ease-in-out',
     position: 'relative',
-    backgroundImage: 'url("/img/topPage/top_back-mobile.svg")',
+    // // backgroundImage: 'url("/img/topPage/top_back-mobile.svg")',
     // backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    '-webkit-background-size': 'cover',
+    // backgroundSize: 'cover',
+    // '-webkit-background-size': 'cover',
     // backgroundAttachment: 'fixed',
     [theme.breakpoints.up('tablet')]: {
-      backgroundImage: 'url("/img/topPage/top_back.svg")',
+      // backgroundImage: 'url("/img/topPage/top_back.svg")',
     },
   },
   img_wrapper_fixed: {
     backgroundAttachment: 'fixed',
   },
   img: {
-    display: 'block',
-    margin: '0 auto',
+    // display: 'block',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    // margin: '0 auto',
     width: '100%',
+    height: '100%',
+    objectFit: 'cover',
   },
   '@keyframes imageAnim': {
     '0%': {
@@ -111,10 +116,11 @@ export const Top = () => {
   );
 
   return (
-    <Parallax y={[0, 0]} className={classes.wrapper}>
+    <>
       <div
         className={[classes.img_wrapper, isBackgroundAttachmentSupported ? classes.img_wrapper_fixed : ''].join(' ')}
       >
+        <img className={classes.img} src="/img/topPage/top_back-mobile.svg" />
         <div className={classes.theme__container}>
           <span className={[classes.theme, showTheme ? classes.theme__show : ''].join(' ')}>
             <span className={classes.theme_partial}>“わくわくさせる</span>
@@ -122,21 +128,9 @@ export const Top = () => {
           </span>
         </div>
       </div>
-    </Parallax>
-  );
-};
-
-export function Dev() {
-  const uaParser = new UAParser();
-  const currentBrowser = uaParser.getBrowser().name;
-  const currentOs = uaParser.getOS().name;
-  return (
-    <>
-      {currentBrowser}, {currentOs}
-      <Top />
     </>
   );
-}
+};
 
 const IndexPage: NextPage = () => {
   const classes = makeStyles(theme => ({
@@ -144,22 +138,25 @@ const IndexPage: NextPage = () => {
       textDecoration: 'none',
       color: theme.palette.text.primary,
     },
+    content_wrapper: {
+      background: colours.main.back,
+    },
   }))();
 
   return (
     <>
       <h1>This is Dev-page</h1>
-      {/* <Dev /> */}
-      <div style={{ width: '100%', height: 20 }}></div>
       <Top />
-      <Link href="/profile" scroll={false}>
-        <a className={classes.wrapper_link}>
-          <Self />
-        </a>
-      </Link>
-      <TopWork />
-      <Contact />
-      <Source />
+      <div className={classes.content_wrapper}>
+        <Link href="/profile" scroll={false}>
+          <a className={classes.wrapper_link}>
+            <Self />
+          </a>
+        </Link>
+        <TopWork />
+        <Contact />
+        <Source />
+      </div>
     </>
   );
 };

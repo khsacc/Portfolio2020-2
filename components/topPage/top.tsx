@@ -49,27 +49,31 @@ const useStyles = makeStyles(theme => ({
   theme_partial: {
     display: 'inline-block',
   },
-  img_wrapper: {
+  img_wrapper_base: {
     width: `100vw`,
     height: `calc(100vh - ${headerStyle.height}px)`,
     overflow: 'hidden',
     animation: '$imageAnim 1s ease-in-out',
     position: 'relative',
+  },
+  img_wrapper_img: {
     backgroundImage: 'url("/img/topPage/top_back-mobile.svg")',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    // backgroundAttachment: 'fixed',
+    '-webkit-background-size': 'cover',
+    backgroundAttachment: 'fixed',
     [theme.breakpoints.up('tablet')]: {
       backgroundImage: 'url("/img/topPage/top_back.svg")',
     },
   },
-  img_wrapper_fixed: {
-    backgroundAttachment: 'fixed',
-  },
   img: {
-    display: 'block',
-    margin: '0 auto',
+    position: 'absolute',
+    top: 0,
+    left: 0,
     width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    animation: '$imageAnim 1s ease-in-out',
   },
   '@keyframes imageAnim': {
     '0%': {
@@ -94,21 +98,17 @@ export const Top = () => {
     setShowTheme(true);
   }, []);
 
-  // background-attachmentが使えないブラウザに対する特殊処理。具体的にはiOS Safari、Opera Mini、Android Browser、Opera Mobileらしい
-  // OperaかつAndroidで適切に表示されるか不明。場合によってすべてはじく。
-  // https://caniuse.com/?search=background-attachment
+  // background-size: 'cover'が使えないブラウザに対する特殊処理。調べたけど詳細不明なので、ひとまずiOSをすべてはじく。
+  // アイキャッチの画像をスクロールしても固定にするためにはbackground-imageを使う必要があるが、iOSではこれを諦める。
+  // 後々position: fixedで実装し直せれば良いが若干複雑なので、とりあえず放置しておく
   const uaParser = new UAParser();
-  const currentBrowser = uaParser.getBrowser().name;
-  // const currentOs = uaParser.getOS().name;
-  const isBackgroundAttachmentSupported = !(
-    ['Mobile Safari', 'Opera Mini', 'Android Browser', 'Opera Mobi'].includes(currentBrowser) // || currentOs === 'iOS'
-  );
+  const currentOS = uaParser.getOS().name;
+  const isBackgroundSizeSupported = currentOS !== 'iOS';
 
   return (
-    <Parallax y={[0, 0]} className={classes.wrapper}>
-      <div
-        className={[classes.img_wrapper, isBackgroundAttachmentSupported ? classes.img_wrapper_fixed : ''].join(' ')}
-      >
+    <>
+      <div className={[classes.img_wrapper_base, isBackgroundSizeSupported ? classes.img_wrapper_img : ''].join(' ')}>
+        {!isBackgroundSizeSupported && <img className={classes.img} src="/img/topPage/top_back-mobile.svg" />}
         <div className={classes.theme__container}>
           <span className={[classes.theme, showTheme ? classes.theme__show : ''].join(' ')}>
             <span className={classes.theme_partial}>“わくわくさせる</span>
@@ -116,6 +116,6 @@ export const Top = () => {
           </span>
         </div>
       </div>
-    </Parallax>
+    </>
   );
 };
