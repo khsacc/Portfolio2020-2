@@ -3,7 +3,8 @@ import { NextPage } from 'next';
 import { Subtitle } from '../common';
 import { colours } from '../../styles';
 import { makeStyles } from '@material-ui/core';
-const useStyles = makeStyles(() => ({
+import theme from '../../styles/theme';
+const useStyles = makeStyles((theme) => ({
   wrapper: {
     textAlign: 'center',
     marginTop: '40px',
@@ -31,12 +32,14 @@ const useStyles = makeStyles(() => ({
     },
   },
   right: {
-    borderRight: `1px solid ${colours.main.sub}`,
+    [theme.breakpoints.up('sm')]: {
+      borderRight: `1px solid ${colours.main.sub}`,
+    }
   },
 }));
 
 export const Contact: NextPage = () => {
-  const classes = useStyles();
+  const classes = useStyles(theme);
   const address = 'k.hiroki.listen2@gmail.com';
 
   const recordAnalytics = (label: string) => {
