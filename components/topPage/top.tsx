@@ -60,8 +60,11 @@ const useStyles = makeStyles(theme => ({
     backgroundSize: 'cover',
     // backgroundAttachment: 'fixed',
     [theme.breakpoints.up('tablet')]: {
-      // backgroundImage: 'url("/img/topPage/top_back.svg")',
+      backgroundImage: 'url("/img/topPage/top_back.svg")',
     },
+  },
+  img_wrapper_fixed: {
+    backgroundAttachment: 'fixed',
   },
   img: {
     display: 'block',

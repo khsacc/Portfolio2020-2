@@ -101,7 +101,7 @@ export const Top = () => {
   const currentBrowser = uaParser.getBrowser().name;
   const currentOs = uaParser.getOS().name;
   const isBackgroundAttachmentSupported = !(
-    ['Mobile Safari', 'Opera Mini', 'Android Browser', 'Opera Mobi'].includes(currentBrowser) || currentOs === 'iOS'
+    ['Mobile Safari', 'Opera Mini', 'Android Browser', 'Opera Mobi'].includes(currentBrowser) // || currentOs === 'iOS'
   );
 
   return (
