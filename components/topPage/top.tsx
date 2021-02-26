@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
     width: 'fit-content',
     margin: 10,
     opacity: 0,
-    transition: 'all 0.5s 1.3s cubic-bezier(.31,.84,.59,1)',
+    transition: 'all 0.4s 1s cubic-bezier(.31,.84,.59,1)',
     fontFamily: 'glow-sans-condensed',
     [theme.breakpoints.up('tablet')]: {
       fontSize: '1.8em',
