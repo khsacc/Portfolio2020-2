@@ -11,4 +11,7 @@ export const colours = {
     dark: '#a34152',
     img_name: 'rgba(189, 90, 110, 0.8)',
   },
+  blog: {
+    quotation: '#e6c8d3',
+  },
 };

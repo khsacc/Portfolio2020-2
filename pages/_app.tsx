@@ -78,7 +78,7 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
               background: colours.main.back,
             }}
           >
-            <PageTransition timeout={500} classNames="page-transition">
+            <PageTransition timeout={250} classNames="page-transition">
               <Component key={router.pathname} {...pageProps} />
             </PageTransition>
           </div>
@@ -112,6 +112,12 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
           transition: all ease-in-out 0.8s;
           height: 100%;
           width: 100%;
+        }
+        a {
+          color: #c15f72;
+        }
+        p {
+          line-height: 1.8;
         }
       `}</style>
     </>

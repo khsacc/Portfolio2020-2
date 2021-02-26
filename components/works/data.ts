@@ -13,6 +13,7 @@ export type WorksDatum = {
   year: number;
   note: string;
   collaborated: boolean;
+  collaboratedWith?: string;
   contribution: string[];
   works: WorksDetail[];
 };
