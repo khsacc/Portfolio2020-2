@@ -100,16 +100,14 @@ export const Top = () => {
   const uaParser = new UAParser();
   const currentBrowser = uaParser.getBrowser().name;
   const currentOs = uaParser.getOS().name;
-  const isBackgroundAttachmentSupported = !(
-    ['Mobile Safari', 'Opera Mini', 'Android Browser', 'Opera Mobi'].includes(currentBrowser) || currentOs === 'iOS'
+  const isBackgroundAttachmentSupported = !['Mobile Safari', 'Opera Mini', 'Android Browser', 'Opera Mobi'].includes(
+    currentBrowser,
   );
 
   return (
     <Parallax y={[0, 0]} className={classes.wrapper}>
-      {/* <img className={classes.heading} src="/img/topPage/heading.svg" alt="わくわくさせるクリエイティブ" /> */}
       <div
-        className={classes.img_wrapper}
-        // style={isBackgroundAttachmentSupported ? { backgroundAttachment: 'fixed' } : {}}
+        className={[classes.img_wrapper, isBackgroundAttachmentSupported ? classes.img_wrapper_fixed : ''].join(' ')}
       >
         <div className={classes.theme__container}>
           <span className={[classes.theme, showTheme ? classes.theme__show : ''].join(' ')}>
