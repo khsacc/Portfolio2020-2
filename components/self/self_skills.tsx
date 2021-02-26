@@ -42,14 +42,14 @@ export const SelfSkills = () => {
   const webSkills: Skill[] = [
     {
       name: 'Vue / Nuxt',
-      value: 45,
+      value: 33,
       colour: {
         main: '#41B883',
       },
     },
     {
       name: 'React / Next',
-      value: 20,
+      value: 33,
       colour: {
         main: '#61DBFB',
       },
@@ -93,6 +93,8 @@ export const SelfSkills = () => {
           今後は写真や映像を使ったグラフィックに挑戦してみたいという気持ちがあります。
         </p>
         Design Apps
+        <br />
+        印刷屋です。
         <div className={classes.container}>
           {adobeSkills.map((e, i) => (
             <div className={classes.wrapper} key={`skill__1--${i}`}>
@@ -108,7 +110,7 @@ export const SelfSkills = () => {
         </div>
         Frontend Development
         <br />
-        TypeScriptベースの開発が好みです。
+        最近はもっぱらReact + Typescriptです。
         <div className={classes.container}>
           {webSkills.map((e, i) => (
             <div className={classes.wrapper} key={`skill__1--${i}`}>
