@@ -7,6 +7,7 @@ import { PageContent } from '../common/pageContent';
 import { WorkImg } from '../works';
 import { colours } from '../../styles';
 import { makeStyles } from '@material-ui/core';
+import theme from '../../styles/theme';
 
 const blogList = {
   // keyはidにしてください。
@@ -19,7 +20,7 @@ export type BlogContent = {
   content: JSX.Element;
 };
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(theme => ({
   info: {
     textAlign: 'center',
   },
@@ -41,10 +42,26 @@ const useStyles = makeStyles(() => ({
     margin: '30px 0 0',
     letterSpacing: '-1px',
   },
+  articleTitle_wide: {
+    display: 'none',
+    [theme.breakpoints.up('sm')]: {
+      display: 'block',
+    },
+  },
+  articleTitle_narrow: {
+    display: 'block',
+    fontSize: '3em',
+    [theme.breakpoints.up('sm')]: {
+      display: 'none',
+    },
+  },
+  articleTitle_narrow_img: {
+    width: '100%',
+  },
 }));
 
 export const BlogTitle: NextPage<{ title: string }> = ({ title }) => {
-  const classes = useStyles();
+  const classes = useStyles(theme);
   return (
     <>
       <div className={classes.work}>blog</div>
@@ -60,7 +77,13 @@ export const BlogProvider: NextPage<{
   const contents = blogList[data.id] as BlogContent[];
   return typeof contents !== 'undefined' ? (
     <PageContent>
-      <ArticleTitle title={<BlogTitle title={data.title} />} img={data.img} alt=""></ArticleTitle>
+      <div className={classes.articleTitle_wide}>
+        <ArticleTitle title={<BlogTitle title={data.title} />} img={data.img} alt=""></ArticleTitle>
+      </div>
+      <div className={classes.articleTitle_narrow}>
+        <img src={data.img} alt="" className={classes.articleTitle_narrow_img} />
+        <BlogTitle title={data.title} />
+      </div>
       <p className={classes.info}>published: {data.date}</p>
       <ol>
         {contents.map((section, idx) => (

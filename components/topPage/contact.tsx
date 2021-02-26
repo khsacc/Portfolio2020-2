@@ -4,7 +4,7 @@ import { Subtitle } from '../common';
 import { colours } from '../../styles';
 import { makeStyles } from '@material-ui/core';
 import theme from '../../styles/theme';
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   wrapper: {
     textAlign: 'center',
     marginTop: '40px',
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   right: {
     [theme.breakpoints.up('sm')]: {
       borderRight: `1px solid ${colours.main.sub}`,
-    }
+    },
   },
 }));
 
