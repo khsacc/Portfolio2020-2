@@ -80,7 +80,7 @@ const WorkContainer: NextPage<{ workidx: number; prj: WorksDatum; work: WorksDet
           onMouseOut={() => {
             setHover(false);
           }}
-          // data-aos="fade-up"
+          data-aos="fade-up"
         >
           <img src={work.img} className={classes.workImg} />
           <LineUmb className={classes.workUmb} />
