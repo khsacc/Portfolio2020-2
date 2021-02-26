@@ -1,7 +1,8 @@
+import * as gtag from '../../lib/gtag';
 import { NextPage } from 'next';
 import { colours } from '../../styles/colours';
 import { makeStyles } from '@material-ui/core';
-import { useState } from 'react';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 const useStyles = makeStyles(() => ({
@@ -27,7 +28,15 @@ export const BackToTopBtn: NextPage<{ isTop: boolean }> = ({ isTop }) => {
   return (
     <div className={[classes.topLinkWrapper, isTop ? classes.topLink_hidden : ''].join(' ')}>
       <Link href="/" scroll={false}>
-        <a className={classes.topLink}>{'>> '}Back to Top</a>
+        <a
+          className={classes.topLink}
+          onClick={() => {
+            const currentPathName = useRouter().pathname;
+            gtag.event({ action: 'click', category: 'to-top', label: currentPathName });
+          }}
+        >
+          {'>> '}Back to Top
+        </a>
       </Link>
     </div>
   );

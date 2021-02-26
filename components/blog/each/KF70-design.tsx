@@ -1,3 +1,4 @@
+import * as gtag from '../../../lib/gtag';
 import { BlogContent } from '../blogProvider';
 import { BlogImg } from '../blogImg';
 
@@ -100,7 +101,13 @@ export const KF70Design: BlogContent[] = [
           ウェブサイトのキャンパスマップページは、わたしがAdobe
           Illustratorを用いて制作した地図を、SVG形式に書き出したうえでweb系の委員が実装する、というフローで制作されています。最近webの勉強を少しずつ始めたので、ほんとうは最後までかかわってみたかったのですが……。それはさておき、今期の地図の特徴としてはやはり「屋外の地図＝建物の配置」も「屋内の地図＝教室の配置」もいっしょのページで見ることができるようになった、という点があるでしょう。この「屋外・屋内重ね合わせ」の作業を行うためには、当然ながら地図の正確性を向上させる必要があり、それなりの時間と労力を要しました。余談ですがこのマップページ、駒場キャンパスにいる間には、位置情報をもとに近くの企画をおすすめする、なんていう機能も実装されています。
           地図の元データは
-          <a href="/img/blog/第70回駒場祭屋外地図（来場者向け）.ai" download={true}>
+          <a
+            href="/img/blog/第70回駒場祭屋外地図（来場者向け）.ai"
+            download={true}
+            onClick={() => {
+              gtag.event({ action: 'download', category: 'blog', label: 'KF70-map-ai' });
+            }}
+          >
             こちらをクリックしてダウンロードできます
           </a>
           ので、関心のある方はどうぞ。
