@@ -99,9 +99,9 @@ export const Top = () => {
   // https://caniuse.com/?search=background-attachment
   const uaParser = new UAParser();
   const currentBrowser = uaParser.getBrowser().name;
-  const currentOs = uaParser.getOS().name;
-  const isBackgroundAttachmentSupported = !['Mobile Safari', 'Opera Mini', 'Android Browser', 'Opera Mobi'].includes(
-    currentBrowser,
+  // const currentOs = uaParser.getOS().name;
+  const isBackgroundAttachmentSupported = !(
+    ['Mobile Safari', 'Opera Mini', 'Android Browser', 'Opera Mobi'].includes(currentBrowser) // || currentOs === 'iOS'
   );
 
   return (
