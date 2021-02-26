@@ -1,4 +1,3 @@
-import { Parallax } from 'react-scroll-parallax';
 import { UAParser } from 'ua-parser-js';
 import { colours, headerStyle } from '../../styles';
 import { makeStyles } from '@material-ui/core';
