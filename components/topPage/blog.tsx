@@ -71,7 +71,7 @@ export const Blog: NextPage = () => {
     <>
       <Subtitle>Blog</Subtitle>
       <p className={classes.comment} data-aos="fade-up">
-        主催したワークショップのご報告やデザインの裏側など。長くなりがちですが、丁寧に書くよう心がけています。是非お読みください。
+        主催したワークショップのご報告やデザインの裏側など。長くなりがちですが、丁寧に書くよう心がけています。お読みいただけたら嬉しいです。
       </p>
       <div className={classes.blogsContainer}>
         {blogsData.map((blog, idx) => (
