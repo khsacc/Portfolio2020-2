@@ -1,8 +1,13 @@
+import { Contact, Self, TopWork } from '../components/topPage';
+// import { CreateHead } from '../lib/createHead';
+import { NextPage } from 'next';
 import { Parallax } from 'react-scroll-parallax';
+import { Source } from '../components/source';
 import { UAParser } from 'ua-parser-js';
-import { colours, headerStyle } from '../styles';
+import { colours, headerStyle } from '../styles
 import { makeStyles } from '@material-ui/core';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 const useStyles = makeStyles(theme => ({
   wrapper: {
@@ -120,7 +125,7 @@ export const Top = () => {
   );
 };
 
-export default function () {
+export function Dev() {
   const uaParser = new UAParser();
   const currentBrowser = uaParser.getBrowser().name;
   const currentOs = uaParser.getOS().name;
@@ -131,3 +136,30 @@ export default function () {
     </>
   );
 }
+
+const IndexPage: NextPage = () => {
+  const classes = makeStyles(theme => ({
+    wrapper_link: {
+      textDecoration: 'none',
+      color: theme.palette.text.primary,
+    },
+  }))();
+
+  return (
+    <>
+      <h1>This is Dev-page</h1>
+      <Dev />
+      <Top />
+      <Link href="/profile" scroll={false}>
+        <a className={classes.wrapper_link}>
+          <Self />
+        </a>
+      </Link>
+      <TopWork />
+      <Contact />
+      <Source />
+    </>
+  );
+};
+
+export default IndexPage;
