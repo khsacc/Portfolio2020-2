@@ -1,6 +1,8 @@
+import * as gtag from '../../lib/gtag';
 import { NextPage } from 'next';
 import { colours } from '../../styles';
 import { makeStyles } from '@material-ui/core';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 export const Footer: NextPage<{ currentPage: string }> = ({ currentPage }) => {
@@ -39,7 +41,18 @@ export const Footer: NextPage<{ currentPage: string }> = ({ currentPage }) => {
       <br />
       {pages.map((page, idx) => (
         <Link href={page.href} scroll={false} key={`footer-${idx}`}>
-          <a className={classes.link} onClick={() => scrollToTop(page.href)}>
+          <a
+            className={classes.link}
+            onClick={() => {
+              scrollToTop(page.href);
+              const router = useRouter();
+              gtag.event({
+                action: 'click',
+                category: 'footer-link',
+                label: `from-${router.pathname}_to-${page.display}`,
+              });
+            }}
+          >
             {page.display}
           </a>
         </Link>
