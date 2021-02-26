@@ -62,7 +62,8 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     backgroundImage: 'url("/img/topPage/top_back-mobile.svg")',
     // backgroundRepeat: 'no-repeat',
-    // backgroundSize: 'cover',
+    backgroundSize: 'cover',
+    '-webkit-background-size': 'cover',
     // backgroundAttachment: 'fixed',
     [theme.breakpoints.up('tablet')]: {
       backgroundImage: 'url("/img/topPage/top_back.svg")',
