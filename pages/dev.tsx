@@ -4,7 +4,7 @@ import { NextPage } from 'next';
 import { Parallax } from 'react-scroll-parallax';
 import { Source } from '../components/source';
 import { UAParser } from 'ua-parser-js';
-import { colours, headerStyle } from '../styles
+import { colours, headerStyle } from '../styles';
 import { makeStyles } from '@material-ui/core';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
