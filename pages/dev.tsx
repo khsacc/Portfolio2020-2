@@ -151,14 +151,14 @@ const IndexPage: NextPage = () => {
       {/* <Dev /> */}
       <div style={{ width: '100%', height: 20 }}></div>
       <Top />
-      {/* <Link href="/profile" scroll={false}>
+      <Link href="/profile" scroll={false}>
         <a className={classes.wrapper_link}>
           <Self />
         </a>
       </Link>
       <TopWork />
       <Contact />
-      <Source /> */}
+      <Source />
     </>
   );
 };
