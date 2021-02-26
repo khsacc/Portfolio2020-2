@@ -13,7 +13,7 @@ export const CreateHead: NextPage<{ title?: string; ogimage?: string }> = ({ tit
     <Head>
       <title>{[title, `Hiroki Kobayashi Design Portfolio`].join(' | ')}</title>
       <meta name="og:title" content={[title, `Hiroki Kobayashi Design Portfolio`].join(' | ')}></meta>
-      <meta name="og:image" content={`${BASE_PATH}${ogimage}` || `${BASE_PATH}meta/ogimage.png'}`}></meta>
+      <meta name="og:image" content={typeof ogimage !== 'undefined' ? `${BASE_PATH}${ogimage}` :`${BASE_PATH}meta/ogimage.png'}`}></meta>
       <meta name="og:type" content={router.pathname === '/' ? 'website' : 'article'}></meta>
       <meta name="og:site_name" content="Hiroki Kobayashi Design Portfolio"></meta>
       <meta name="twitter:card" content="summary_large_image"></meta>
