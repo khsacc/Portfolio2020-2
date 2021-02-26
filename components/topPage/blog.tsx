@@ -1,6 +1,6 @@
+import { BlogDatum, blogsData } from '../blog/each';
 import { LineUmb, Subtitle } from '../common';
 import { NextPage } from 'next';
-import { blogsData } from '../blog/each';
 import { colours } from '../../styles';
 import { makeStyles } from '@material-ui/core';
 import { transitionTimingfunc } from '../../styles/global';
@@ -64,6 +64,22 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+export const BlogContainer: NextPage<{ blog: BlogDatum }> = ({ blog }) => {
+  const classes = useStyles();
+  return (
+    <Link href={`/blog/${blog.id}`} scroll={false}>
+      <a className={classes.link}>
+        <div className={classes.wrapper}>
+          <LineUmb className={classes.umb} />
+          <img src={blog.img} className={classes.img} />
+          <div className={classes.title}>{blog.title}</div>
+          <div className={classes.date}>published: {blog.date}</div>
+        </div>
+      </a>
+    </Link>
+  );
+};
+
 export const Blog: NextPage = () => {
   const classes = useStyles(theme);
 
@@ -73,18 +89,9 @@ export const Blog: NextPage = () => {
       <p className={classes.comment} data-aos="fade-up">
         主催したワークショップのご報告やデザインの裏側など。長くなりがちですが、丁寧に書くよう心がけています。お読みいただけたら嬉しいです。
       </p>
-      <div className={classes.blogsContainer}>
+      <div className={classes.blogsContainer} data-aos="fade-up">
         {blogsData.map((blog, idx) => (
-          <Link href={`/blog/${blog.id}`} scroll={false} key={idx}>
-            <a className={classes.link}>
-              <div key={idx} className={classes.wrapper}>
-                <LineUmb className={classes.umb} />
-                <img src={blog.img} className={classes.img} />
-                <div className={classes.title}>{blog.title}</div>
-                <div className={classes.date}>published: {blog.date}</div>
-              </div>
-            </a>
-          </Link>
+          <BlogContainer blog={blog} key={idx} />
         ))}
       </div>
     </>

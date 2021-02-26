@@ -15,6 +15,7 @@ import AOS from 'aos';
 import CssBaseLine from '@material-ui/core/CssBaseline';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
+import UAParser from 'ua-parser-js';
 import theme from '../styles/theme';
 
 const defaultLayout = ({ Component, pageProps }: AppProps) => {
@@ -27,10 +28,18 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
   }, []);
 
   useEffect(() => {
+    // mounted
     const jssStyles = document.querySelector('#jss-server-side');
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles);
     }
+
+    const uaParser = new UAParser();
+    gtag.event({
+      action: 'on-visit',
+      category: '',
+      label: `${JSON.stringify(uaParser.getResult())})`,
+    });
   }, []);
 
   const router = useRouter();
