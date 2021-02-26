@@ -1,8 +1,13 @@
+import { Contact, Self, TopWork } from '../components/topPage';
+// import { CreateHead } from '../lib/createHead';
+import { NextPage } from 'next';
 import { Parallax } from 'react-scroll-parallax';
+import { Source } from '../components/source';
 import { UAParser } from 'ua-parser-js';
-import { colours, headerStyle } from '../../styles';
+import { colours, headerStyle } from '../styles';
 import { makeStyles } from '@material-ui/core';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 const useStyles = makeStyles(theme => ({
   wrapper: {
@@ -49,31 +54,33 @@ const useStyles = makeStyles(theme => ({
   theme_partial: {
     display: 'inline-block',
   },
-  img_wrapper_base: {
+  img_wrapper: {
     width: `100vw`,
     height: `calc(100vh - ${headerStyle.height}px)`,
     overflow: 'hidden',
     animation: '$imageAnim 1s ease-in-out',
     position: 'relative',
-  },
-  img_wrapper_img: {
-    backgroundImage: 'url("/img/topPage/top_back-mobile.svg")',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    '-webkit-background-size': 'cover',
-    backgroundAttachment: 'fixed',
+    // // backgroundImage: 'url("/img/topPage/top_back-mobile.svg")',
+    // backgroundRepeat: 'no-repeat',
+    // backgroundSize: 'cover',
+    // '-webkit-background-size': 'cover',
+    // backgroundAttachment: 'fixed',
     [theme.breakpoints.up('tablet')]: {
-      backgroundImage: 'url("/img/topPage/top_back.svg")',
+      // backgroundImage: 'url("/img/topPage/top_back.svg")',
     },
   },
+  img_wrapper_fixed: {
+    backgroundAttachment: 'fixed',
+  },
   img: {
+    // display: 'block',
     position: 'absolute',
     top: 0,
     left: 0,
+    // margin: '0 auto',
     width: '100%',
     height: '100%',
     objectFit: 'cover',
-    animation: '$imageAnim 1s ease-in-out',
   },
   '@keyframes imageAnim': {
     '0%': {
@@ -98,17 +105,23 @@ export const Top = () => {
     setShowTheme(true);
   }, []);
 
-  // background-size: 'cover'が使えないブラウザに対する特殊処理。調べたけど詳細不明なので、ひとまずiOSをすべてはじく。
-  // アイキャッチの画像をスクロールしても固定にするためにはbackground-imageを使う必要があるが、iOSではこれを諦める。
-  // 後々position: fixedで実装し直せれば良いが若干複雑なので、とりあえず放置しておく
+  // background-attachmentが使えないブラウザに対する特殊処理。具体的にはiOS Safari、Opera Mini、Android Browser、Opera Mobileらしい
+  // OperaかつAndroidで適切に表示されるか不明。場合によってすべてはじく。
+  // https://caniuse.com/?search=background-attachment
   const uaParser = new UAParser();
-  const currentOS = uaParser.getOS().name;
-  const isBackgroundSizeSupported = currentOS !== 'iOS';
+  const currentBrowser = uaParser.getBrowser().name;
+  const currentOs = uaParser.getOS().name;
+  const isBackgroundAttachmentSupported = !(
+    ['Mobile Safari', 'Opera Mini', 'Android Browser', 'Opera Mobi'].includes(currentBrowser) // || currentOs === 'iOS'
+  );
 
   return (
-    <>
-      <div className={[classes.img_wrapper_base, isBackgroundSizeSupported ? classes.img_wrapper_img : ''].join(' ')}>
-        {!isBackgroundSizeSupported && <img className={classes.img} src="/img/topPage/top_back-mobile.svg" />}
+    <div>
+      {currentOs}
+      <div
+        className={[classes.img_wrapper, isBackgroundAttachmentSupported ? classes.img_wrapper_fixed : ''].join(' ')}
+      >
+        <img className={classes.img} src="/img/topPage/top_back-mobile.svg" />
         <div className={classes.theme__container}>
           <span className={[classes.theme, showTheme ? classes.theme__show : ''].join(' ')}>
             <span className={classes.theme_partial}>“わくわくさせる</span>
@@ -116,6 +129,37 @@ export const Top = () => {
           </span>
         </div>
       </div>
+    </div>
+  );
+};
+
+const IndexPage: NextPage = () => {
+  const classes = makeStyles(theme => ({
+    wrapper_link: {
+      textDecoration: 'none',
+      color: theme.palette.text.primary,
+    },
+    content_wrapper: {
+      background: colours.main.back,
+    },
+  }))();
+
+  return (
+    <>
+      <h1>This is Dev-page</h1>
+      <Top />
+      <div className={classes.content_wrapper}>
+        <Link href="/profile" scroll={false}>
+          <a className={classes.wrapper_link}>
+            <Self />
+          </a>
+        </Link>
+        <TopWork />
+        <Contact />
+        <Source />
+      </div>
     </>
   );
 };
+
+export default IndexPage;
