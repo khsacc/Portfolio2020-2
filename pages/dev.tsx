@@ -116,7 +116,8 @@ export const Top = () => {
   );
 
   return (
-    <>
+    <div>
+      {currentOs}
       <div
         className={[classes.img_wrapper, isBackgroundAttachmentSupported ? classes.img_wrapper_fixed : ''].join(' ')}
       >
@@ -128,7 +129,7 @@ export const Top = () => {
           </span>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
