@@ -31,14 +31,24 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles);
     }
+  }, []);
 
+  const [envChecked, setEnvCheck] = useState(false);
+  const checkEnv = () => {
     const uaParser = new UAParser();
     gtag.event({
       action: 'on-visit',
       category: '',
       label: JSON.stringify(uaParser.getResult()),
     });
-  }, []);
+    setEnvCheck(true);
+  };
+
+  window.addEventListener('load', () => {
+    if (!envChecked) {
+      checkEnv();
+    }
+  });
 
   const router = useRouter();
   const [isTop, setIsTop] = useState(false);
