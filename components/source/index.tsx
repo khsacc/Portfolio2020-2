@@ -10,11 +10,14 @@ export const Source: NextPage = () => {
     img_wrapper: {
       position: 'relative',
       height: 'fit-content',
+      width: '100%',
+      maxWidth: '400px',
+      padding: 10,
+      margin: '0 auto',
     },
     img: {
-      maxWidth: 400,
-      margin: 5,
       transition: 'all 0.8s 0.05s',
+      width: 'calc(100% - 20px)',
     },
     img_hover: {
       position: 'absolute',
@@ -22,6 +25,7 @@ export const Source: NextPage = () => {
       left: '50%',
       transform: 'translate(-50%, 0px)',
       opacity: 0,
+
       '&:hover': {
         opacity: 1,
       },
