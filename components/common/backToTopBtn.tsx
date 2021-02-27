@@ -3,7 +3,6 @@ import { NextPage } from 'next';
 import { colours } from '../../styles/colours';
 import { makeStyles } from '@material-ui/core';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 
 const useStyles = makeStyles(() => ({
   topLinkWrapper: {
