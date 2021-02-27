@@ -4,15 +4,16 @@ import { KF70Design } from './each/KF70-design';
 import { MF93Workshop } from './each/MF93-workshop';
 import { NextPage } from 'next';
 import { PageContent } from '../common/pageContent';
-import { WorkImg } from '../works';
 import { colours } from '../../styles';
 import { makeStyles } from '@material-ui/core';
+import { portfolioWebsite } from './each/portfolio-website';
 import theme from '../../styles/theme';
 
 const blogList = {
   // keyはidにしてください。
   'MF93-workshop': MF93Workshop,
   'KF70-design': KF70Design,
+  'about-this-portfolio': portfolioWebsite,
 };
 
 export type BlogContent = {

@@ -27,4 +27,10 @@ export const blogsData: BlogDatum[] = [
     date: 'Dec, 2019',
     related: ['KF70'],
   },
+  {
+    id: 'about-this-portfolio',
+    title: 'ポートフォリオ裏話',
+    img: 'img/blog/portfolio-website.jpg',
+    date: 'Feb, 2021',
+  },
 ];
