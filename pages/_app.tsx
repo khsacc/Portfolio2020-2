@@ -19,20 +19,6 @@ import UAParser from 'ua-parser-js';
 import theme from '../styles/theme';
 
 const defaultLayout = ({ Component, pageProps }: AppProps) => {
-  // note that to initialize AOS, ``document`` is needed.
-  useEffect(() => {
-    // after mounted
-    AOS.init({
-      easing: 'ease-in-out-cubic',
-    });
-
-    // mounted
-    const jssStyles = document.querySelector('#jss-server-side');
-    if (jssStyles) {
-      jssStyles.parentElement.removeChild(jssStyles);
-    }
-  }, []);
-
   const [envChecked, setEnvCheck] = useState(false);
   const checkEnv = () => {
     const uaParser = new UAParser();
@@ -44,11 +30,26 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
     setEnvCheck(true);
   };
 
-  window.addEventListener('load', () => {
-    if (!envChecked) {
-      checkEnv();
+  // note that to initialize AOS, ``document`` is needed.
+
+  useEffect(() => {
+    // after mounted
+    AOS.init({
+      easing: 'ease-in-out-cubic',
+    });
+
+    // mounted
+    const jssStyles = document.querySelector('#jss-server-side');
+    if (jssStyles) {
+      jssStyles.parentElement.removeChild(jssStyles);
     }
-  });
+
+    window.addEventListener('load', () => {
+      if (!envChecked) {
+        checkEnv();
+      }
+    });
+  }, []);
 
   const router = useRouter();
   const [isTop, setIsTop] = useState(false);
