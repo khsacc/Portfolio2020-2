@@ -41,7 +41,7 @@ export const Footer: NextPage = () => {
     if (target === currentPage) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      return;
+      router.push(target, target, { scroll: false });
     }
   };
 
@@ -49,28 +49,26 @@ export const Footer: NextPage = () => {
     <footer className={classes.wrapper}>
       Hiroki Kobayashi | Design Portfolio
       <br />
-      {pages.map((page, idx) => {
-        const Wrapper = page.href === currentPage ? 'span' : Link;
-        const wrapperAttributes = page.href === currentPage ? {} : { href: page.href, scroll: false };
-        return (
-          <Wrapper {...wrapperAttributes} key={idx}>
-            <a
-              className={classes.link}
-              key={idx}
-              onClick={() => {
-                gtag.event({
-                  action: 'click',
-                  category: 'footer-link',
-                  label: `from-${currentPage}_to-${page.display}`,
-                });
-                handleClick(page.href);
-              }}
-            >
-              {page.display}
-            </a>
-          </Wrapper>
-        );
-      })}
+      {pages.map((page, idx) => (
+        // const Wrapper = page.href === currentPage ? 'span' : Link;
+        // const wrapperAttributes = page.href === currentPage ? {} : { href: page.href, scroll: false };
+        // <Wrapper {...wrapperAttributes} key={idx}>
+        <a
+          className={classes.link}
+          key={idx}
+          onClick={() => {
+            gtag.event({
+              action: 'click',
+              category: 'footer-link',
+              label: `from-${currentPage}_to-${page.display}`,
+            });
+            handleClick(page.href);
+          }}
+        >
+          {page.display}
+        </a>
+        // </Wrapper>
+      ))}
     </footer>
   );
 };
