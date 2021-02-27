@@ -8,13 +8,13 @@ const isProduction = () => window.location.origin === 'https://hero--key1207.ver
 
 // PVを測定する
 export const pageview = (path: string) => {
-  if (window.location.origin === 'http://localhost:3000') {
-    console.log('page-transition' + path);
-  }
+  // if (window.location.origin === 'http://localhost:3000') {
+  //   console.log('page-transition' + path);
+  // }
 
-  if (!isProduction()) {
-    return;
-  }
+  // if (!isProduction()) {
+  //   return;
+  // }
   window.gtag('config', GA_ID, {
     page_path: path,
   });
@@ -22,17 +22,17 @@ export const pageview = (path: string) => {
 
 // GAイベントを発火させる
 export const event = ({ action, category, label, value = '' }) => {
-  if (window.location.origin === 'http://localhost:3000') {
-    console.log({ event_category: category, event_label: JSON.stringify(label), value });
-  }
+  // if (window.location.origin === 'http://localhost:3000') {
+  //   console.log({ event_category: category, event_label: JSON.stringify(label), value });
+  // }
 
-  if (!existsGaId) {
-    return;
-  }
+  // if (!existsGaId) {
+  //   return;
+  // }
 
-  if (!isProduction()) {
-    return;
-  }
+  // if (!isProduction()) {
+  //   return;
+  // }
 
   window.gtag('event', action, {
     event_category: category,
