@@ -25,14 +25,19 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
     AOS.init({
       easing: 'ease-in-out-cubic',
     });
-  }, []);
 
-  useEffect(() => {
     // mounted
     const jssStyles = document.querySelector('#jss-server-side');
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles);
     }
+
+    const uaParser = new UAParser();
+    gtag.event({
+      action: 'on-visit',
+      category: '',
+      label: JSON.stringify(uaParser.getResult()),
+    });
   }, []);
 
   const router = useRouter();
@@ -62,15 +67,6 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
       router.events.off('routeChangeComplete', handleRouteChange);
     };
   }, [router.events]);
-
-  useEffect(() => {
-    const uaParser = new UAParser();
-    gtag.event({
-      action: 'on-visit',
-      category: '',
-      label: `${JSON.stringify(uaParser.getResult())})`,
-    });
-  }, []);
 
   return (
     <>
