@@ -2,10 +2,11 @@ import * as gtag from '../../lib/gtag';
 import { NextPage } from 'next';
 import { colours } from '../../styles';
 import { makeStyles } from '@material-ui/core';
+import { url } from 'inspector';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-export const Footer: NextPage<{ currentPage: string }> = ({ currentPage }) => {
+export const Footer: NextPage = () => {
   const classes = makeStyles(() => ({
     wrapper: {
       // background: colours.main.dark,
@@ -18,6 +19,8 @@ export const Footer: NextPage<{ currentPage: string }> = ({ currentPage }) => {
     link: {
       margin: '0 5px',
       color: colours.main.dark,
+      textDecoration: 'underline',
+      cursor: 'pointer',
     },
   }))();
   const pages = [
@@ -31,32 +34,44 @@ export const Footer: NextPage<{ currentPage: string }> = ({ currentPage }) => {
     },
   ];
 
-  const scrollToTop = (target: string) => {
-    target === currentPage && window.scrollTo({ top: 0, behavior: 'smooth' });
+  const router = useRouter();
+
+  const currentPage = router.pathname;
+
+  const handleClick = (target: string) => {
+    if (target === currentPage) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      return;
+    }
   };
 
   return (
     <footer className={classes.wrapper}>
       Hiroki Kobayashi | Design Portfolio
       <br />
-      {pages.map((page, idx) => (
-        <Link href={page.href} scroll={false} key={`footer-${idx}`}>
-          <a
-            className={classes.link}
-            onClick={() => {
-              scrollToTop(page.href);
-              const router = useRouter();
-              gtag.event({
-                action: 'click',
-                category: 'footer-link',
-                label: `from-${router.pathname}_to-${page.display}`,
-              });
-            }}
-          >
-            {page.display}
-          </a>
-        </Link>
-      ))}
+      {pages.map((page, idx) => {
+        const Wrapper = page.href === currentPage ? 'span' : Link;
+        const wrapperAttributes = page.href === currentPage ? {} : { href: page.href, scroll: false };
+        return (
+          <Wrapper {...wrapperAttributes} key={idx}>
+            <a
+              className={classes.link}
+              key={idx}
+              onClick={() => {
+                gtag.event({
+                  action: 'click',
+                  category: 'footer-link',
+                  label: `from-${currentPage}_to-${page.display}`,
+                });
+                handleClick(page.href);
+              }}
+            >
+              {page.display}
+            </a>
+          </Wrapper>
+        );
+      })}
     </footer>
   );
 };
