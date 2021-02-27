@@ -20,6 +20,7 @@ export const BlogImg: NextPage<{
     <a
       href={href}
       rel="external nofollow noopener noreferrer"
+      target="_blank"
       onClick={() => {
         const currentPathName = useRouter().pathname;
         gtag.event({ action: 'exLink', category: 'blog', label: `from-${currentPathName}-to-${href}` });
