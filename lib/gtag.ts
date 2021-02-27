@@ -18,6 +18,10 @@ export const pageview = path => {
 
 // GAイベントを発火させる
 export const event = ({ action, category, label, value = '' }) => {
+  if (window.location.origin === 'http://localhost:3000') {
+    console.log({ event_category: category, event_label: JSON.stringify(label), value });
+  }
+
   if (!existsGaId) {
     return;
   }
@@ -31,4 +35,5 @@ export const event = ({ action, category, label, value = '' }) => {
     event_label: JSON.stringify(label),
     value,
   });
+  // console.log({ event_category: category, event_label: JSON.stringify(label), value });
 };
