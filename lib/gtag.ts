@@ -4,7 +4,7 @@ export const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
 export const existsGaId = GA_ID !== '';
 
 // 開発環境やテストデプロイを除外する
-const isProduction = () => window.location.origin === 'https://hero--key1207.vercel.app/';
+// const isProduction = () => window.location.origin === 'https://hero--key1207.vercel.app/';
 
 // PVを測定する
 export const pageview = (path: string) => {
