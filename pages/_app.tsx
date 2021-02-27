@@ -138,6 +138,9 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
         p {
           line-height: 1.8;
         }
+        ::selection {
+          background: #e8b5c0;
+        }
       `}</style>
     </>
   );
