@@ -92,7 +92,7 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
             </PageTransition>
           </div>
           {<BackToTopBtn isTop={isTop} />}
-          <Footer currentPage={router.pathname} />
+          <Footer />
         </ParallaxProvider>
       </ThemeProvider>
 
