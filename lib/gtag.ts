@@ -1,3 +1,4 @@
+// この変数はvercel上（すなわちサーバー上）のProduction環境にのみ置いてあるので、開発環境やPreview DeployではAnalyticsが無効になる。
 export const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
 
 // IDが取得できない場合を想定する
