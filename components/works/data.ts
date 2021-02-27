@@ -9,7 +9,7 @@ export type WorksDetail = {
 export type WorksDatum = {
   id: string;
   project: string;
-  topImg: string;
+  topImg?: string;
   year: number;
   note: string;
   collaborated: boolean;
@@ -41,7 +41,6 @@ export const worksData: WorksDatum[] = [
   {
     id: 'MF92',
     project: '第92回五月祭',
-    topImg: '',
     year: 2019,
     note: '',
     collaborated: true,

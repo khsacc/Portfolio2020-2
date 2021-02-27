@@ -18,9 +18,11 @@ export const ProjectInfo: NextPage<{ prj: WorksDatum }> = ({ prj }) => {
   const classes = useStyles();
   return (
     <>
-      <div>
-        <img className={classes.img} src={prj.topImg} />
-      </div>
+      {prj.topImg && (
+        <div>
+          <img className={classes.img} src={prj.topImg} />
+        </div>
+      )}
       <div>
         <span className={classes.title}>{prj.project}</span>
         {prj.year}年{prj.collaborated && <span>・共同制作</span>}

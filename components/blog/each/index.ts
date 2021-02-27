@@ -16,14 +16,14 @@ export const blogsData: BlogDatum[] = [
   {
     id: 'MF93-workshop',
     title: 'チームの印刷デザインに対する意識改革を、ワークショップで',
-    img: '/img/blog/MF93-workshop.jpg',
+    img: 'img/blog/MF93-workshop.jpg',
     date: 'Feb, 2020',
     related: ['MF93'],
   },
   {
     id: 'KF70-design',
     title: '第70回駒場祭のデザイン',
-    img: '/img/blog/KF70.png',
+    img: 'img/blog/KF70.png',
     date: 'Dec, 2019',
     related: ['KF70'],
   },
