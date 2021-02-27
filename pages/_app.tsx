@@ -52,23 +52,23 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
         top: 0,
       });
     }, 700);
-    gtag.pageview(router.pathname);
+    // gtag.pageview(router.pathname);
   }, [router.pathname]);
 
-  // useEffect(() => {
-  //   if (!gtag.existsGaId) {
-  //     return;
-  //   }
+  useEffect(() => {
+    if (!gtag.existsGaId) {
+      return;
+    }
 
-  //   const handleRouteChange = path => {
-  //     gtag.pageview(path);
-  //   };
+    const handleRouteChange = path => {
+      gtag.pageview(path);
+    };
 
-  //   router.events.on('routeChangeComplete', handleRouteChange);
-  //   return () => {
-  //     router.events.off('routeChangeComplete', handleRouteChange);
-  //   };
-  // }, [router.events]);
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
 
   return (
     <>

@@ -64,6 +64,8 @@ export const Contact: NextPage = () => {
         <a
           href={`https://www.instagram.com/hero__key1207/`}
           className={classes.link}
+          target="_blank"
+          rel="noreferrer"
           onClick={() => {
             recordAnalytics('Instagram');
           }}

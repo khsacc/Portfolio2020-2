@@ -7,7 +7,11 @@ export const existsGaId = GA_ID !== '';
 const isProduction = () => window.location.origin === 'https://hero--key1207.vercel.app/';
 
 // PVを測定する
-export const pageview = path => {
+export const pageview = (path: string) => {
+  if (window.location.origin === 'http://localhost:3000') {
+    console.log('page-transition' + path);
+  }
+
   if (!isProduction()) {
     return;
   }
