@@ -58,7 +58,7 @@ export const Footer: NextPage = () => {
           key={idx}
           onClick={() => {
             gtag.event({
-              action: 'click',
+              action: 'transition',
               category: 'footer-link',
               label: `from-${currentPage}_to-${page.display}`,
             });

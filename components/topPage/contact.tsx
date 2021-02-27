@@ -43,7 +43,7 @@ export const Contact: NextPage = () => {
   const address = 'k.hiroki.listen2@gmail.com';
 
   const recordAnalytics = (label: string) => {
-    gtag.event({ action: 'click', category: 'contact', label });
+    gtag.event({ action: 'exLink', category: 'contact', label });
   };
   return (
     <div className={classes.wrapper}>
