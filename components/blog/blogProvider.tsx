@@ -78,10 +78,10 @@ export const BlogProvider: NextPage<{
   return typeof contents !== 'undefined' ? (
     <PageContent>
       <div className={classes.articleTitle_wide}>
-        <ArticleTitle title={<BlogTitle title={data.title} />} img={data.img} alt=""></ArticleTitle>
+        <ArticleTitle title={<BlogTitle title={data.title} />} img={`/${data.img}`} alt=""></ArticleTitle>
       </div>
       <div className={classes.articleTitle_narrow}>
-        <img src={data.img} alt="" className={classes.articleTitle_narrow_img} />
+        <img src={`/${data.img}`} alt="" className={classes.articleTitle_narrow_img} />
         <BlogTitle title={data.title} />
       </div>
       <p className={classes.info}>published: {data.date}</p>
