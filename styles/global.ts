@@ -7,13 +7,13 @@ export const sectionStyle = {
 };
 
 export const mrEavesBook = {
-  fontFamily: 'mr-eaves-modern, glow-sans-condensed, sans-serif',
+  fontFamily: 'mr-eaves-sans, glow-sans-condensed, sans-serif',
   fontWeight: 300,
   fontStyle: 'normal',
 };
 
 export const mrEavesRegular = {
-  fontFamily: 'mr-eaves-modern, glow-sans-condensed, sans-serif',
+  fontFamily: 'mr-eaves-sans, glow-sans-condensed, sans-serif',
   fontWeight: 300,
   fontStyle: 'normal',
 };

@@ -4,15 +4,16 @@ import { KF70Design } from './each/KF70-design';
 import { MF93Workshop } from './each/MF93-workshop';
 import { NextPage } from 'next';
 import { PageContent } from '../common/pageContent';
-import { WorkImg } from '../works';
 import { colours } from '../../styles';
 import { makeStyles } from '@material-ui/core';
+import { portfolioWebsite } from './each/portfolio-website';
 import theme from '../../styles/theme';
 
 const blogList = {
   // keyはidにしてください。
   'MF93-workshop': MF93Workshop,
   'KF70-design': KF70Design,
+  'about-this-portfolio': portfolioWebsite,
 };
 
 export type BlogContent = {
@@ -78,10 +79,10 @@ export const BlogProvider: NextPage<{
   return typeof contents !== 'undefined' ? (
     <PageContent>
       <div className={classes.articleTitle_wide}>
-        <ArticleTitle title={<BlogTitle title={data.title} />} img={data.img} alt=""></ArticleTitle>
+        <ArticleTitle title={<BlogTitle title={data.title} />} img={`/${data.img}`} alt=""></ArticleTitle>
       </div>
       <div className={classes.articleTitle_narrow}>
-        <img src={data.img} alt="" className={classes.articleTitle_narrow_img} />
+        <img src={`/${data.img}`} alt="" className={classes.articleTitle_narrow_img} />
         <BlogTitle title={data.title} />
       </div>
       <p className={classes.info}>published: {data.date}</p>

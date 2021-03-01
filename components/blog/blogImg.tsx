@@ -20,9 +20,10 @@ export const BlogImg: NextPage<{
     <a
       href={href}
       rel="external nofollow noopener noreferrer"
+      target="_blank"
       onClick={() => {
         const currentPathName = useRouter().pathname;
-        gtag.event({ action: 'click', category: 'blog', label: `from-${currentPathName}-to-${href}` });
+        gtag.event({ action: 'exLink', category: 'blog', label: `from-${currentPathName}-to-${href}` });
       }}
     >
       <WorkImg work={{ name, note, img, alt: alt || '', topPage: false }} imgWidth={width}></WorkImg>

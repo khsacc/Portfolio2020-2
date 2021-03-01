@@ -43,7 +43,7 @@ export const Contact: NextPage = () => {
   const address = 'k.hiroki.listen2@gmail.com';
 
   const recordAnalytics = (label: string) => {
-    gtag.event({ action: 'click', category: 'contact', label });
+    gtag.event({ action: 'exLink', category: 'contact', label });
   };
   return (
     <div className={classes.wrapper}>
@@ -64,6 +64,8 @@ export const Contact: NextPage = () => {
         <a
           href={`https://www.instagram.com/hero__key1207/`}
           className={classes.link}
+          target="_blank"
+          rel="noreferrer"
           onClick={() => {
             recordAnalytics('Instagram');
           }}

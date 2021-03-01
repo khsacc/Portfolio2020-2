@@ -6,7 +6,7 @@ import { PageContent } from '../../components/common/pageContent';
 
 const BlogPage: NextPage<{ blog: BlogDatum }> = ({ blog }) => (
   <>
-    <CreateHead title={blog.title} ogimage={blog.img}></CreateHead>
+    <CreateHead title={`blog - ${blog.title}`} ogimage={blog.img}></CreateHead>
     <PageContent>
       <BlogProvider data={blog} />
     </PageContent>

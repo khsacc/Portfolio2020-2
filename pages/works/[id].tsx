@@ -11,7 +11,7 @@ const ProjectPage: NextPage<{ prj: WorksDatum }> = ({ prj }) => (
   // const classes = useStyles();
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   <>
-    <CreateHead title={prj.project}></CreateHead>
+    <CreateHead title={prj.project} ogimage={prj.topImg ? prj.topImg : 'meta/ogimage.png'}></CreateHead>
     <PageContent>
       <ProjectInfo prj={prj} />
       <ProjectArticle id={prj.id} />

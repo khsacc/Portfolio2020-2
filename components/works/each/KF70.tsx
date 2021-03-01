@@ -2,7 +2,6 @@ import { BlogContainer } from '../../topPage/blog';
 import { NextPage } from 'next';
 import { blogsData } from '../../blog/each';
 import { makeStyles } from '@material-ui/core';
-import classes from '*.module.css';
 
 const useStyles = makeStyles(() => ({
   blogWrapper: {

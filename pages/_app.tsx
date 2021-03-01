@@ -19,26 +19,35 @@ import UAParser from 'ua-parser-js';
 import theme from '../styles/theme';
 
 const defaultLayout = ({ Component, pageProps }: AppProps) => {
+  const [envChecked, setEnvCheck] = useState(false);
+  const checkEnv = () => {
+    const uaParser = new UAParser();
+    gtag.event({
+      action: 'on-visit',
+      category: '',
+      label: JSON.stringify(uaParser.getResult()),
+    });
+    setEnvCheck(true);
+  };
+
   // note that to initialize AOS, ``document`` is needed.
+
   useEffect(() => {
     // after mounted
     AOS.init({
       easing: 'ease-in-out-cubic',
     });
-  }, []);
 
-  useEffect(() => {
     // mounted
     const jssStyles = document.querySelector('#jss-server-side');
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles);
     }
 
-    const uaParser = new UAParser();
-    gtag.event({
-      action: 'on-visit',
-      category: '',
-      label: `${JSON.stringify(uaParser.getResult())})`,
+    window.addEventListener('load', () => {
+      if (!envChecked) {
+        checkEnv();
+      }
     });
   }, []);
 
@@ -52,23 +61,23 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
         top: 0,
       });
     }, 700);
-    gtag.pageview(router.pathname);
+    // gtag.pageview(router.pathname);
   }, [router.pathname]);
 
-  // useEffect(() => {
-  //   if (!gtag.existsGaId) {
-  //     return;
-  //   }
+  useEffect(() => {
+    if (!gtag.existsGaId) {
+      return;
+    }
 
-  //   const handleRouteChange = path => {
-  //     gtag.pageview(path);
-  //   };
+    const handleRouteChange = path => {
+      gtag.pageview(path);
+    };
 
-  //   router.events.on('routeChangeComplete', handleRouteChange);
-  //   return () => {
-  //     router.events.off('routeChangeComplete', handleRouteChange);
-  //   };
-  // }, [router.events]);
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
 
   return (
     <>
@@ -128,6 +137,9 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
         }
         p {
           line-height: 1.8;
+        }
+        ::selection {
+          background: #e8b5c0;
         }
       `}</style>
     </>

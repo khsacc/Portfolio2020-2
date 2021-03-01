@@ -3,7 +3,6 @@ import { NextPage } from 'next';
 import { colours } from '../../styles/colours';
 import { makeStyles } from '@material-ui/core';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 
 const useStyles = makeStyles(() => ({
   topLinkWrapper: {
@@ -16,6 +15,7 @@ const useStyles = makeStyles(() => ({
     color: 'white',
     background: colours.main.sub,
     padding: 10,
+    cursor: 'pointer',
   },
   topLink_hidden: {
     opacity: 0,
@@ -25,19 +25,19 @@ const useStyles = makeStyles(() => ({
 
 export const BackToTopBtn: NextPage<{ isTop: boolean }> = ({ isTop }) => {
   const classes = useStyles();
+  const router = useRouter();
+  const currentPathName = router.pathname;
   return (
     <div className={[classes.topLinkWrapper, isTop ? classes.topLink_hidden : ''].join(' ')}>
-      <Link href="/" scroll={false}>
-        <a
-          className={classes.topLink}
-          onClick={() => {
-            const currentPathName = useRouter().pathname;
-            gtag.event({ action: 'click', category: 'to-top', label: currentPathName });
-          }}
-        >
-          {'>> '}Back to Top
-        </a>
-      </Link>
+      <a
+        className={classes.topLink}
+        onClick={() => {
+          gtag.event({ action: 'transition', category: 'to-top', label: currentPathName });
+          router.push('/', '/', { scroll: false });
+        }}
+      >
+        {'>> '}Back to Top
+      </a>
     </div>
   );
 };
