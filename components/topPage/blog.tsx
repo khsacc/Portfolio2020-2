@@ -71,7 +71,7 @@ export const BlogContainer: NextPage<{ blog: BlogDatum }> = ({ blog }) => {
       <a className={classes.link}>
         <div className={classes.wrapper}>
           <LineUmb className={classes.umb} />
-          <img src={blog.img} className={classes.img} />
+          <img src={`/${blog.img}`} className={classes.img} />
           <div className={classes.title}>{blog.title}</div>
           <div className={classes.date}>published: {blog.date}</div>
         </div>

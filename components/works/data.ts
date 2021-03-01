@@ -11,7 +11,7 @@ export type WorksDatum = {
   project: string;
   topImg?: string;
   year: number;
-  note: string;
+  note?: string;
   collaborated: boolean;
   collaboratedWith?: string;
   contribution: string[];
@@ -32,9 +32,38 @@ export const worksData: WorksDatum[] = [
         name: '公式ポスター',
         img: '/img/works/KF70/KF70_poster.jpg',
         topPage: true,
-        note: 'A2版。黒色の背景は、万華鏡を覗き込むと光が見えるイメージに重なる。多用したアイデンティティのひとつだ。',
+        note:
+          'A2版。黒色の背景は、万華鏡を覗き込むと光が見えるイメージに重なる。多用したアイデンティティのひとつだ。ディレクション中心で、自分がデザインしたものはそう多くなかった駒場祭。このポスターはわたしの思うテーマの世界観がぎゅっと詰まった、そんな作品だ。',
         alt:
           '第70回駒場祭「七変華」 | のぞきこむと、色とりどりの華模様。ちりばめられた祭の華は、めぐり歩けば、一歩ごとにあたらしい。出遭いの予感に誘われて、もう一歩踏み出す。祭とは、くるり回せばくるりと変わる、万華鏡。',
+      },
+    ],
+  },
+  {
+    id: 'IPT2021',
+    project: 'IPT2021 "INVISIBLE"',
+    year: 2021,
+    collaborated: false,
+    contribution: ['Graphic design'],
+    topImg: '/img/works/IPT2021/IPT2021-top.jpg',
+    works: [
+      {
+        name: `「'cuz it's invisible」 1`,
+        img: '/img/works/IPT2021/IPT2021-1.jpg',
+        topPage: true,
+        alt: '',
+      },
+      {
+        name: `「'cuz it's invisible」 2`,
+        img: '/img/works/IPT2021/IPT2021-2.jpg',
+        topPage: false,
+        alt: '',
+      },
+      {
+        name: `「内在」`,
+        img: '/img/works/IPT2021/IPT2021-3.jpg',
+        topPage: true,
+        alt: '',
       },
     ],
   },
