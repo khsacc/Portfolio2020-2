@@ -59,7 +59,7 @@ const useWorkImgStyles = makeStyles(() => ({
 export const WorkImg: NextPage<{ work: WorksDetail; imgWidth?: string }> = ({ work, imgWidth }) => {
   const classes = useWorkImgStyles();
   return (
-    <div className={classes.wrapper}>
+    <div className={classes.wrapper} data-aos="fade-up">
       <img src={work.img} className={classes.img} style={{ width: imgWidth || '100%' }} alt={work.name || ''} />
 
       <div className={classes.name}>{work.name} </div>
