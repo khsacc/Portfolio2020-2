@@ -71,6 +71,52 @@ export const worksData: WorksDatum[] = [
     ],
   },
   {
+    id: 'akamon-restroom',
+    project: '「空き地の年輪」（赤門脇トイレ デザインコンペ）',
+    year: 2021,
+    collaborated: true,
+    collaboratedWith: [{ name: 'Marin Takeda' }],
+    contribution: ['Architecture and lightning design'],
+    works: [
+      {
+        img: '/img/works/akamon-restroom/akamon-restroom-1.jpg',
+        topPage: true,
+        alt: '',
+      },
+      {
+        img: '/img/works/akamon-restroom/akamon-restroom-2.jpg',
+        topPage: false,
+        alt: '',
+      },
+      {
+        img: '/img/works/akamon-restroom/akamon-restroom-3.jpg',
+        topPage: false,
+        alt: '',
+      },
+      {
+        img: '/img/works/akamon-restroom/akamon-restroom-2D.svg',
+        topPage: false,
+        alt: '',
+      },
+      {
+        name: '照明計画イメージ図',
+        note:
+          '日常的にキャンパスに通う人はおそらくこの屋外トイレをそこまで頻繁には使わない。でも、大学の人にもこのオブジェクトに愛着を持ってほしかった。この敷地全体をやんわりとした照明としてデザインすることで、その実現を試みた。',
+        img: '/img/works/akamon-restroom/akamon-restroom-lightning.jpg',
+        topPage: false,
+        alt: '',
+      },
+      {
+        name: 'ラフスケッチ',
+        note:
+          '公共トイレの安全を確保するには、アプローチは開放的であるべきだ。しかしこの土地に一度足を踏み入れると、目の前にあるはずの通りやそこを歩く人が、驚くほど遠く感じられる。この〈空き地〉は隔絶性を内包していて、内側から外の気配を感じることが少ない。このスケッチはそんなことを考えながら描いたものだ。それがプライベートな空間としてのトイレの安心を保障する。',
+        img: '/img/works/akamon-restroom/akamon-restroom-4.jpg',
+        topPage: false,
+        alt: '',
+      },
+    ],
+  },
+  {
     id: 'kasa',
     project: 'あまがさ',
     year: '2020-2021',
