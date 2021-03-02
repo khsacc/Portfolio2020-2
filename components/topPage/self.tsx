@@ -7,7 +7,6 @@ import { colours, sectionStyle, zIndex } from '../../styles';
 import { makeStyles } from '@material-ui/core';
 import { padding } from '../../styles/global';
 import { useState } from 'react';
-import UAParser from 'ua-parser-js';
 
 export const Self: NextPage<{ showName?: boolean; isLink?: boolean }> = ({ showName = false, isLink = true }) => {
   const classes = makeStyles(theme => ({
@@ -16,7 +15,6 @@ export const Self: NextPage<{ showName?: boolean; isLink?: boolean }> = ({ showN
       maxWidth: 800,
       margin: `${sectionStyle.margin}px auto`,
       padding: padding.common,
-      // background: colours.main.back,
       textAlign: 'center',
       position: 'relative',
       display: 'block',
@@ -25,7 +23,6 @@ export const Self: NextPage<{ showName?: boolean; isLink?: boolean }> = ({ showN
     wrapper__isLink: {
       borderRadius: 7.5,
       '&:hover': {
-        // background: colours.main.hover,
         transform: 'scale(1.015)',
         '& $umb': {
           color: '#d19090',
@@ -95,7 +92,6 @@ export const Self: NextPage<{ showName?: boolean; isLink?: boolean }> = ({ showN
         >
           <img src="/img/topPage/self.jpg" alt="self portrait" className={classes.self} />
           {isLink ? (
-            // <span className={classes.profile_page}>{'>>'} Profile</span>
             <HoverBtn text=">> Profile" hover={hover} avoidMobile={true} />
           ) : (
             <span className={classes.profile_page__top}>Profile</span>

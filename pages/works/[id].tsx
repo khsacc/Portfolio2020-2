@@ -2,17 +2,13 @@ import { CreateHead } from '../../lib/createHead';
 import { NextPage } from 'next';
 import { PageContent } from '../../components/common/pageContent';
 import { ProjectArticle, ProjectInfo, WorkImg, WorksDatum, worksData } from '../../components/works';
-// import { makeStyles } from '@material-ui/core';
+
 import { RelatedBlog } from '../../components/works/relatedBlog';
 import { Subtitle } from '../../components/article/subtitle';
 
-// const useStyles = makeStyles(() => ({}));
-
 const ProjectPage: NextPage<{ prj: WorksDatum }> = ({ prj }) => (
-  // const classes = useStyles();
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
   <>
-    <CreateHead title={prj.project} ogimage={prj.topImg ? prj.topImg : 'meta/ogimage.png'}></CreateHead>
+    <CreateHead title={prj.project} ogimage={prj.topImg ? prj.topImg : prj.works[0].img}></CreateHead>
     <PageContent>
       <ProjectInfo prj={prj} />
       <ProjectArticle id={prj.id} />

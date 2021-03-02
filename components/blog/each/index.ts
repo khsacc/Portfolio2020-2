@@ -32,10 +32,11 @@ export const blogsData: BlogDatum[] = [
     title: 'ポートフォリオ裏話',
     img: 'img/blog/portfolio-website.jpg',
     date: 'Feb, 2021',
+    related: ['kasa'],
   },
   {
     id: 'MF94-workshop',
-    title: 'はじめてデザインするあなたに贈る、デザインワークショップ',
+    title: 'はじめてデザインするあなたに贈る、デザインのレッスン',
     img: 'img/blog/MF94-workshop.jpg',
     date: 'Mar, 2021',
   },
