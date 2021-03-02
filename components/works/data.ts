@@ -112,6 +112,52 @@ export const worksData: WorksDatum[] = [
     ],
   },
   {
+    id: 'MF93',
+    project: '第93回五月祭',
+    year: 2020,
+    note: '',
+    collaborated: true,
+    contribution: ['DTP', 'Web'],
+    works: [
+      {
+        name: '公式ウェブサイト',
+        img: '/img/works/MF93/MF93-1.jpg',
+        topPage: true,
+        alt: '五月祭公式グッズ',
+        note:
+          'ページデザインと実装をどちらも担当したのは初めての経験だった。実装を知ることで広がるデザインの幅があることを実感として知った。貴重な経験だった。',
+      },
+      {
+        name: '公式ウェブサイト',
+        img: '/img/works/MF93/MF93-2.jpg',
+        topPage: false,
+        alt: 'オンライン開催について',
+      },
+      {
+        name: '東大新聞広告',
+        img: '/img/works/MF93/MF93-3.jpg',
+        topPage: true,
+        note:
+          '新聞広告はモノクロだから、すぐ重たくなってしまい世界観に合わなくなってしまう。大胆なアケ組みと書体の細さが生きる配置で、細長くてモノクロだからこその良さを追求した。',
+        alt: '',
+      },
+      {
+        name: '『オンライン企画公開の手引き』紙面デザイン',
+        note:
+          'PDFで配布する資料だから、スマートフォンでも、タブレットでも、PCでも読みやすいものを目指した。その結果がこの、左側に目次を配置する変則3段組。1段の幅をスマートフォンの幅に、あるいは2段分の幅をタブレットの幅にしたとき、ちょうど良い文字のサイズにしてある。PC版には少し大きいが、この時代にそれが不都合になることはないだろう。',
+        img: '/img/works/MF93/MF93-5.jpg',
+        topPage: true,
+        alt: '',
+      },
+      {
+        name: '新入生向け五月祭参加マニュアル 表紙',
+        img: '/img/works/MF93/MF93-4.jpg',
+        topPage: false,
+        alt: '',
+      },
+    ],
+  },
+  {
     id: 'MF92',
     project: '第92回五月祭',
     year: 2019,
