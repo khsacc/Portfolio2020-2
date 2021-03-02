@@ -71,7 +71,7 @@ export const Contact: NextPage = () => {
           }}
         >
           <span className={classes.spacing} />
-          Instagram @hero__key1207
+          Instagram: @hero__key1207
           <span className={classes.spacing} />
         </a>
       </div>

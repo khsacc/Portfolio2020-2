@@ -30,11 +30,10 @@ const ProfilePage: NextPage = () => {
       <div className={classes.wrapper}>
         <h1 className={classes.name}>Hiroki Kobayashi</h1>
         <p className={classes.p}>
-          東京大学3年。
+          東京大学3年。普段は理学部で化学を学んでいます。
           <br />
-          印刷物のデザインが得意ですが、Webデザイン・開発もやっています。
-          <br />
-          媒体と素材を活かすための、ちょっとした工夫について日々考えています。
+          印刷物のデザインが好きです。最近はWebデザイン・開発（Vue / React）もしています。
+          媒体や素材そのものを丹念に観察し、ちょっとしたおもしろさと物語性のあるデザインを心がけています。
         </p>
         <p className={classes.p}>
           デザインについて考えるようになったきっかけは、大学1年から所属していた学園祭委員での活動の影響が大きいです。

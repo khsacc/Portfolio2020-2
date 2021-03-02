@@ -3,6 +3,7 @@ import { NextPage } from 'next';
 import { PageContent } from '../../components/common/pageContent';
 import { ProjectArticle, ProjectInfo, WorkImg, WorksDatum, worksData } from '../../components/works';
 // import { makeStyles } from '@material-ui/core';
+import { RelatedBlog } from '../../components/works/relatedBlog';
 import { Subtitle } from '../../components/article/subtitle';
 
 // const useStyles = makeStyles(() => ({}));
@@ -16,11 +17,10 @@ const ProjectPage: NextPage<{ prj: WorksDatum }> = ({ prj }) => (
       <ProjectInfo prj={prj} />
       <ProjectArticle id={prj.id} />
       <Subtitle>Works</Subtitle>
-      <div data-aos="fade-up">
-        {prj.works.map((work, idx) => (
-          <WorkImg work={work} key={idx} />
-        ))}
-      </div>
+      {prj.works.map((work, idx) => (
+        <WorkImg work={work} key={idx} />
+      ))}
+      <RelatedBlog workId={prj.id} />
     </PageContent>
   </>
 );
