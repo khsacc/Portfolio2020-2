@@ -26,6 +26,21 @@ export const ProjectInfo: NextPage<{ prj: WorksDatum }> = ({ prj }) => {
       <div>
         <span className={classes.title}>{prj.project}</span>
         {prj.year}年{prj.collaborated && <span>・共同制作</span>}
+        {prj.collaboratedWith && prj.collaboratedWith.length > 0 && (
+          <span>
+            {' '}
+            with{' '}
+            {prj.collaboratedWith.map(e =>
+              typeof e.link === 'undefined' ? (
+                <span key={e.name}>{e.name}</span>
+              ) : (
+                <a href={e.link} rel="external nofollow noopener noreferrer" target="_blank" key={e.name}>
+                  {e.name}
+                </a>
+              ),
+            )}
+          </span>
+        )}
       </div>
       <div>
         {prj.collaborated && <span>Contributed in: </span>}
