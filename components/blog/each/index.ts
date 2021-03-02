@@ -32,6 +32,7 @@ export const blogsData: BlogDatum[] = [
     title: 'ポートフォリオ裏話',
     img: 'img/blog/portfolio-website.jpg',
     date: 'Feb, 2021',
+    related: ['kasa'],
   },
   {
     id: 'MF94-workshop',
