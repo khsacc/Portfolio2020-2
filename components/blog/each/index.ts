@@ -33,4 +33,10 @@ export const blogsData: BlogDatum[] = [
     img: 'img/blog/portfolio-website.jpg',
     date: 'Feb, 2021',
   },
+  {
+    id: 'MF94-workshop',
+    title: 'はじめてデザインするあなたに贈る、デザインワークショップ',
+    img: 'img/blog/MF94-workshop.jpg',
+    date: 'Mar, 2021',
+  },
 ];
