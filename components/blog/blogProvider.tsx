@@ -2,6 +2,7 @@ import { ArticleTitle } from '../article';
 import { BlogDatum } from './each';
 import { KF70Design } from './each/KF70-design';
 import { MF93Workshop } from './each/MF93-workshop';
+import { MF94Workshop } from './each/MF94-workshop';
 import { NextPage } from 'next';
 import { PageContent } from '../common/pageContent';
 import { colours } from '../../styles';
@@ -14,6 +15,7 @@ const blogList = {
   'MF93-workshop': MF93Workshop,
   'KF70-design': KF70Design,
   'about-this-portfolio': portfolioWebsite,
+  'MF94-workshop': MF94Workshop,
 };
 
 export type BlogContent = {
