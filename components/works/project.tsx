@@ -1,9 +1,11 @@
+import * as gtag from '../../lib/gtag';
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
 import { NextPage } from 'next';
 import { WorksDatum } from '.';
 import { WorksDetail } from './data';
 import { colours } from '../../styles';
 import { makeStyles } from '@material-ui/core';
+import Link from 'next/link';
 
 const useStyles = makeStyles(() => ({
   img: { width: '100%' },
@@ -167,5 +169,23 @@ export const WorkImg: NextPage<{ work: WorksDetail; imgWidth?: string }> = ({ wo
         <div className={classes.description}>{work.note}</div>
       </div>
     </>
+  );
+};
+
+const useNextStyle = makeStyles(() => ({ wrap: { textAlign: 'right' } }));
+export const NextProject: NextPage<{ nextPrj: WorksDatum; currentId: string }> = ({ nextPrj, currentId }) => {
+  const classes = useNextStyle();
+  return (
+    <div className={classes.wrap}>
+      <Link href={`/works/${nextPrj.id}`}>
+        <a
+          onClick={() => {
+            gtag.event({ action: 'transition', category: 'next-work', label: `from-${currentId}__to-${nextPrj.id}` });
+          }}
+        >
+          {'>>'} Next Project: {nextPrj.project}
+        </a>
+      </Link>
+    </div>
   );
 };
