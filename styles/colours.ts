@@ -14,4 +14,7 @@ export const colours = {
   blog: {
     quotation: '#e6c8d3',
   },
+  works: {
+    awards: '#c77b93',
+  },
 };
