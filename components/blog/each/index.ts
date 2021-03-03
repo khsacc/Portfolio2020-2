@@ -14,6 +14,12 @@ export type BlogDatum = {
  */
 export const blogsData: BlogDatum[] = [
   {
+    id: 'MF94-workshop',
+    title: 'はじめてデザインするあなたに贈る、デザインのレッスン',
+    img: 'img/blog/MF94-workshop.jpg',
+    date: 'Mar, 2021',
+  },
+  {
     id: 'MF93-workshop',
     title: 'チームの印刷デザインに対する意識改革を、ワークショップで',
     img: 'img/blog/MF93-workshop.jpg',
@@ -21,22 +27,17 @@ export const blogsData: BlogDatum[] = [
     related: ['MF93'],
   },
   {
+    id: 'about-this-portfolio',
+    title: 'ポートフォリオ裏話',
+    img: 'img/blog/portfolio-website.jpg',
+    date: 'Feb, 2021',
+    related: ['kasa'],
+  },
+  {
     id: 'KF70-design',
     title: '第70回駒場祭のデザイン',
     img: 'img/blog/KF70.png',
     date: 'Dec, 2019',
     related: ['KF70'],
-  },
-  {
-    id: 'about-this-portfolio',
-    title: 'ポートフォリオ裏話',
-    img: 'img/blog/portfolio-website.jpg',
-    date: 'Feb, 2021',
-  },
-  {
-    id: 'MF94-workshop',
-    title: 'はじめてデザインするあなたに贈る、デザインワークショップ',
-    img: 'img/blog/MF94-workshop.jpg',
-    date: 'Mar, 2021',
   },
 ];
