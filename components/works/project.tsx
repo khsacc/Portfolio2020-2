@@ -63,17 +63,17 @@ export const ProjectInfo: NextPage<{ prj: WorksDatum }> = ({ prj }) => {
                 }
               })();
               return typeof e.link === 'undefined' ? (
-                <>
-                  <span key={e.name}>{e.name}</span>
+                <span key={e.name}>
+                  <span>{e.name}</span>
                   {Separator}
-                </>
+                </span>
               ) : (
-                <>
-                  <a href={e.link} rel="external nofollow noopener noreferrer" target="_blank" key={e.name}>
+                <span key={e.name}>
+                  <a href={e.link} rel="external nofollow noopener noreferrer" target="_blank">
                     {e.name}
                   </a>
                   {Separator}
-                </>
+                </span>
               );
             })}
           </span>
