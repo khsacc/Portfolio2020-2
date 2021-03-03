@@ -8,9 +8,9 @@ const useStyles = makeStyles(() => ({
   img: { width: '100%' },
   title: {
     fontWeight: 'bold',
-    marginRight: 10,
-    paddingRight: 10,
-    borderRight: `1px solid ${colours.main.sub}`,
+    // marginRight: 10,
+    // paddingRight: 10,
+    // borderRight: `1px solid ${colours.main.sub}`,
   },
   awardsContainer: {
     margin: '15px 0',
@@ -34,22 +34,45 @@ export const ProjectInfo: NextPage<{ prj: WorksDatum }> = ({ prj }) => {
           <img className={classes.img} src={prj.topImg} />
         </div>
       )}
+      <div className={classes.title}>{prj.project}</div>
       <div>
-        <span className={classes.title}>{prj.project}</span>
         {prj.year}年{prj.collaborated && <span>・共同制作</span>}
         {prj.collaboratedWith && prj.collaboratedWith.length > 0 && (
           <span>
             {' '}
             with{' '}
-            {prj.collaboratedWith.map(e =>
-              typeof e.link === 'undefined' ? (
-                <span key={e.name}>{e.name}</span>
+            {prj.collaboratedWith.map((e, idx) => {
+              const Separator = (() => {
+                const collaboratorNumber = prj.collaboratedWith.length;
+                if (collaboratorNumber === 1) {
+                  return <></>;
+                } else if (collaboratorNumber === 2) {
+                  return idx === 0 ? <span> and </span> : <></>;
+                } else {
+                  switch (idx) {
+                    case collaboratorNumber - 1:
+                      return <></>;
+                    case collaboratorNumber - 2:
+                      return <span>, and </span>;
+                    default:
+                      return <span>, </span>;
+                  }
+                }
+              })();
+              return typeof e.link === 'undefined' ? (
+                <>
+                  <span key={e.name}>{e.name}</span>
+                  {Separator}
+                </>
               ) : (
-                <a href={e.link} rel="external nofollow noopener noreferrer" target="_blank" key={e.name}>
-                  {e.name}
-                </a>
-              ),
-            )}
+                <>
+                  <a href={e.link} rel="external nofollow noopener noreferrer" target="_blank" key={e.name}>
+                    {e.name}
+                  </a>
+                  {Separator}
+                </>
+              );
+            })}
           </span>
         )}
       </div>

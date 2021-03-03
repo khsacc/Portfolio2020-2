@@ -97,7 +97,7 @@ export const worksData: WorksDatum[] = [
     project: '「空き地の年輪」（赤門脇トイレ デザインコンペ）',
     year: 2021,
     collaborated: true,
-    collaboratedWith: [{ name: 'Marin Takeda' }],
+    collaboratedWith: [{ name: 'Marin Takeda' }, { name: 'Rin Kikuchi' }],
     contribution: ['Architecture and lightning design'],
     works: [
       {
@@ -118,8 +118,11 @@ export const worksData: WorksDatum[] = [
       {
         img: '/img/works/akamon-restroom/akamon-restroom-2D.svg',
         topPage: false,
-        alt: '',
+        alt: '平面図',
+        name: '平面図・立面図',
+        note: 'Illustrator製の図面たち。CADの習得を心に誓った……（笑）',
       },
+
       {
         name: '照明計画イメージ図',
         note:
