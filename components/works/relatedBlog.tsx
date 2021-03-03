@@ -15,11 +15,9 @@ export const RelatedBlog: NextPage<{ workId: string }> = props => {
     <>
       {relatedBlogs.length > 0 && (
         <>
-          <Subtitle>Blog</Subtitle>
-          <div className={classes.blogDesc} data-aos="fade-up">
-            関連するブログ
-          </div>
-          <div data-aos="fade-up" className={classes.wrapper}>
+          <Subtitle disableFade={true}>Blog</Subtitle>
+          <div className={classes.blogDesc}>関連するブログ</div>
+          <div className={classes.wrapper}>
             {relatedBlogs.map(blog => (
               <BlogContainer blog={blog} key={blog.id} />
             ))}
