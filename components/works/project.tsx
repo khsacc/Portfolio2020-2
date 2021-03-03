@@ -1,9 +1,11 @@
+import * as gtag from '../../lib/gtag';
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
 import { NextPage } from 'next';
 import { WorksDatum } from '.';
 import { WorksDetail } from './data';
 import { colours } from '../../styles';
 import { makeStyles } from '@material-ui/core';
+import Link from 'next/link';
 
 const useStyles = makeStyles(() => ({
   img: { width: '100%' },
@@ -66,6 +68,7 @@ const useWorkImgStyles = makeStyles(() => ({
   img: {
     margin: '10px auto',
     display: 'block',
+    cursor: 'pointer',
   },
   description: {
     fontSize: '85%',
@@ -82,7 +85,7 @@ const useWorkImgStyles = makeStyles(() => ({
     left: 0,
     width: '100vw',
     height: '100vh',
-    background: 'rgba(0, 0, 0, 0.6)',
+    background: colours.works.bg,
   },
   focusedWrapper: {
     position: 'fixed',
@@ -150,22 +153,38 @@ export const WorkImg: NextPage<{ work: WorksDetail; imgWidth?: string }> = ({ wo
   return (
     <>
       <WorkImgPopup img={work.img} isFocused={isFocused} setIsFocused={setIsFocused} />
-      <div
-        className={[classes.wrapper].join(' ')}
-        onClick={() => {
-          setIsFocused(!isFocused);
-        }}
-      >
+      <div className={[classes.wrapper].join(' ')}>
         <img
           src={work.img}
           className={classes.img}
           style={{ width: imgWidth || '100%' }}
           alt={work.name || ''}
           ref={displayImage}
+          onClick={() => {
+            setIsFocused(!isFocused);
+          }}
         />
         <div className={classes.name}>{work.name} </div>
         <div className={classes.description}>{work.note}</div>
       </div>
     </>
+  );
+};
+
+const useNextStyle = makeStyles(() => ({ wrap: { textAlign: 'right' } }));
+export const NextProject: NextPage<{ nextPrj: WorksDatum; currentId: string }> = ({ nextPrj, currentId }) => {
+  const classes = useNextStyle();
+  return (
+    <div className={classes.wrap}>
+      <Link href={`/works/${nextPrj.id}`}>
+        <a
+          onClick={() => {
+            gtag.event({ action: 'transition', category: 'next-work', label: `from-${currentId}__to-${nextPrj.id}` });
+          }}
+        >
+          {'>>'} Next Project: {nextPrj.project}
+        </a>
+      </Link>
+    </div>
   );
 };

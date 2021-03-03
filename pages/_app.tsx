@@ -19,7 +19,6 @@ import UAParser from 'ua-parser-js';
 import theme from '../styles/theme';
 
 const defaultLayout = ({ Component, pageProps }: AppProps) => {
-  const [envChecked, setEnvCheck] = useState(false);
   const checkEnv = () => {
     const uaParser = new UAParser();
     gtag.event({
@@ -27,7 +26,6 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
       category: '',
       label: JSON.stringify(uaParser.getResult()),
     });
-    setEnvCheck(true);
   };
 
   // note that to initialize AOS, ``document`` is needed.
