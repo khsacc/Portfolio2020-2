@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
 import { NextPage } from 'next';
 import { WorksDatum } from '.';
 import { WorksDetail } from './data';
@@ -98,6 +99,7 @@ const useWorkImgStyles = makeStyles(() => ({
   wrapper: {
     width: '95%',
     margin: '25px auto',
+    transition: 'all 0.5s ease-out',
   },
   img: {
     margin: '10px auto',
@@ -112,16 +114,96 @@ const useWorkImgStyles = makeStyles(() => ({
     fontWeight: 'bold',
     textAlign: 'center',
   },
+  focusedBg: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100vw',
+    height: '100vh',
+    background: 'rgba(0, 0, 0, 0.6)',
+  },
+  focusedWrapper: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100vw',
+    height: '100vh',
+    zIndex: 1000,
+    transition: 'opacity 0.3s ease-in-out',
+  },
+  focusedImage: {
+    display: 'block',
+    maxWidth: '98vw',
+    maxHeight: '98vh',
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+  },
 }));
+
+const WorkImgPopup: NextPage<{
+  img: string;
+  isFocused: boolean;
+  setIsFocused: Dispatch<SetStateAction<boolean>>;
+}> = ({ img, isFocused, setIsFocused }) => {
+  const classes = useWorkImgStyles();
+  const [style, setStyle] = useState({ display: 'none', opacity: 0 });
+  useEffect(() => {
+    // 滑らかにtransitionかつdisplay: noneを実現するためにはこんな感じしかないと思ったが、どうか？
+    if (isFocused) {
+      // popupを新たに表示する
+      setStyle({ display: 'flex', opacity: 0 });
+      setTimeout(() => {
+        setStyle({ display: 'flex', opacity: 1 });
+      }, 100);
+    } else {
+      // popupを隠す
+      setStyle({ display: 'flex', opacity: 0 });
+      setTimeout(() => {
+        setStyle({ display: 'none', opacity: 0 });
+      }, 100);
+    }
+  }, [isFocused]);
+  return (
+    <>
+      <div className={classes.focusedWrapper} style={style}>
+        <div
+          className={classes.focusedBg}
+          onClick={() => {
+            setIsFocused(false);
+          }}
+        />
+        <img src={img} className={classes.focusedImage} />
+      </div>
+    </>
+  );
+};
 
 export const WorkImg: NextPage<{ work: WorksDetail; imgWidth?: string }> = ({ work, imgWidth }) => {
   const classes = useWorkImgStyles();
-  return (
-    <div className={classes.wrapper} data-aos="fade-up">
-      <img src={work.img} className={classes.img} style={{ width: imgWidth || '100%' }} alt={work.name || ''} />
+  const [isFocused, setIsFocused] = useState(false);
+  const displayImage = useRef(null);
 
-      <div className={classes.name}>{work.name} </div>
-      <div className={classes.description}>{work.note}</div>
-    </div>
+  return (
+    <>
+      <WorkImgPopup img={work.img} isFocused={isFocused} setIsFocused={setIsFocused} />
+      <div
+        className={[classes.wrapper].join(' ')}
+        onClick={() => {
+          setIsFocused(!isFocused);
+        }}
+      >
+        <img
+          src={work.img}
+          className={classes.img}
+          style={{ width: imgWidth || '100%' }}
+          alt={work.name || ''}
+          ref={displayImage}
+        />
+        <div className={classes.name}>{work.name} </div>
+        <div className={classes.description}>{work.note}</div>
+      </div>
+    </>
   );
 };

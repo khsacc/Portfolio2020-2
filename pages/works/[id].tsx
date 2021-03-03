@@ -12,7 +12,7 @@ const ProjectPage: NextPage<{ prj: WorksDatum }> = ({ prj }) => (
     <PageContent>
       <ProjectInfo prj={prj} />
       <ProjectArticle id={prj.id} />
-      <Subtitle>Works</Subtitle>
+      <Subtitle disableFade={true}>Works</Subtitle>
       {prj.works.map((work, idx) => (
         <WorkImg work={work} key={idx} />
       ))}
