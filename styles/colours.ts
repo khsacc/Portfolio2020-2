@@ -16,5 +16,6 @@ export const colours = {
   },
   works: {
     awards: '#c77b93',
+    bg: 'rgba(0,0,0, 0.6)',
   },
 };
