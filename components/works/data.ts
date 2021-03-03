@@ -94,7 +94,7 @@ export const worksData: WorksDatum[] = [
   },
   {
     id: 'akamon-restroom',
-    project: '「空き地の年輪」（赤門脇トイレ デザインコンペ）',
+    project: '「〈空き地〉の年輪」（赤門脇トイレ デザインコンペ）',
     year: 2021,
     collaborated: true,
     collaboratedWith: [{ name: 'Marin Takeda' }, { name: 'Rin Kikuchi' }],
