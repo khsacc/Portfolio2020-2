@@ -17,6 +17,7 @@ export type WorksDatum = {
     name: string;
     link?: string;
   }[];
+  awards?: string[];
   contribution: string[];
   works: WorksDetail[];
 };

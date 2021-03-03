@@ -23,7 +23,7 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
   const checkEnv = () => {
     const uaParser = new UAParser();
     gtag.event({
-      action: 'on-visit',
+      action: 'on-leave',
       category: '',
       label: JSON.stringify(uaParser.getResult()),
     });
@@ -44,10 +44,8 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
       jssStyles.parentElement.removeChild(jssStyles);
     }
 
-    window.addEventListener('load', () => {
-      if (!envChecked) {
-        checkEnv();
-      }
+    window.addEventListener('beforeunload', () => {
+      checkEnv();
     });
   }, []);
 
