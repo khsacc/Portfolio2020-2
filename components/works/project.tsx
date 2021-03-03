@@ -1,12 +1,9 @@
-import { CSSProperties } from '@material-ui/core/styles/withStyles';
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
-import { Fade, makeStyles } from '@material-ui/core';
 import { NextPage } from 'next';
-import { RSA_PSS_SALTLEN_AUTO } from 'constants';
-import { Transition } from 'react-transition-group';
 import { WorksDatum } from '.';
 import { WorksDetail } from './data';
 import { colours } from '../../styles';
+import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
   img: { width: '100%' },
