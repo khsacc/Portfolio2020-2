@@ -44,10 +44,8 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
       jssStyles.parentElement.removeChild(jssStyles);
     }
 
-    window.addEventListener('load', () => {
-      if (!envChecked) {
-        checkEnv();
-      }
+    window.addEventListener('beforeunload', () => {
+      checkEnv();
     });
   }, []);
 
