@@ -40,7 +40,7 @@ export const BackToTopBtn: NextPage = ({}) => {
           router.push('/', '/', { scroll: false });
         }}
       >
-        {'>> '}Back to Top {router.asPath}
+        {'>> '}Back to Top
       </a>
     </div>
   ) : (
