@@ -48,10 +48,8 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
   }, []);
 
   const router = useRouter();
-  const [isTop, setIsTop] = useState(false);
 
   useEffect(() => {
-    setIsTop(router.pathname === '/');
     setTimeout(() => {
       window.scrollTo({
         top: 0,
@@ -97,7 +95,7 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
               <Component key={router.pathname} {...pageProps} />
             </PageTransition>
           </div>
-          {<BackToTopBtn isTop={isTop} />}
+          {<BackToTopBtn currentPath={router.pathname} router={router} />}
           <Footer />
         </ParallaxProvider>
       </ThemeProvider>
