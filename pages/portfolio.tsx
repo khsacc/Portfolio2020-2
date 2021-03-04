@@ -2,6 +2,7 @@
 import { NextPage } from 'next';
 import { useEffect } from 'react';
 // import { useRouter } from 'next/router';
+import { CreateHead } from '../lib/createHead';
 import { NextRouter, withRouter } from 'next/router';
 // import UAParser from 'ua-parser-js';
 
@@ -29,7 +30,11 @@ const PortfolioPage: NextPage<{ router: NextRouter }> = ({ router }) => {
     // // };
     router.push('/', '/', { scroll: false });
   }, []);
-  return <></>;
+  return (
+    <>
+      <CreateHead />
+    </>
+  );
 };
 
 export default withRouter(PortfolioPage);
