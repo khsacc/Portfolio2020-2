@@ -95,6 +95,21 @@ export const worksData: WorksDatum[] = [
           'ガラス張りの外壁の奥には、少しだけ高さの低い内壁がある。カプセル的な見た目で「〈空き地〉の保存」というコンセプトを表現するとともに、この構造を生かした間接照明を設置することで、この箱型オブジェ全体をふんわりとした照明に仕上げたかった。',
       },
       {
+        img: '/img/works/akamon-restroom/akamon-restroom-5.jpg',
+        topPage: false,
+        alt: '',
+      },
+      {
+        img: '/img/works/akamon-restroom/akamon-restroom-6.jpg',
+        topPage: false,
+        alt: '',
+      },
+      {
+        img: '/img/works/akamon-restroom/akamon-restroom-7.jpg',
+        topPage: false,
+        alt: '',
+      },
+      {
         img: '/img/works/akamon-restroom/akamon-restroom-2D.svg',
         topPage: false,
         alt: '平面図',
