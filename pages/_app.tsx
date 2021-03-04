@@ -15,19 +15,11 @@ import AOS from 'aos';
 import CssBaseLine from '@material-ui/core/CssBaseline';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
-import UAParser from 'ua-parser-js';
+// import UAParser from 'ua-parser-js';
+import { TweetBtn } from '../components/common/tweetBtn';
 import theme from '../styles/theme';
 
 const defaultLayout = ({ Component, pageProps }: AppProps) => {
-  const checkEnv = () => {
-    const uaParser = new UAParser();
-    gtag.event({
-      action: 'on-leave',
-      category: '',
-      label: JSON.stringify(uaParser.getResult()),
-    });
-  };
-
   // note that to initialize AOS, ``document`` is needed.
 
   useEffect(() => {
@@ -41,17 +33,11 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles);
     }
-
-    window.addEventListener('beforeunload', () => {
-      checkEnv();
-    });
   }, []);
 
   const router = useRouter();
-  const [isTop, setIsTop] = useState(false);
 
   useEffect(() => {
-    setIsTop(router.pathname === '/');
     setTimeout(() => {
       window.scrollTo({
         top: 0,
@@ -79,6 +65,7 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
     <>
       <Head>
         <link rel="stylesheet" href="https://use.typekit.net/vpq5jbc.css"></link>
+        <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
       </Head>
       <ThemeProvider theme={theme}>
         <ParallaxProvider>
@@ -97,7 +84,8 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
               <Component key={router.pathname} {...pageProps} />
             </PageTransition>
           </div>
-          {<BackToTopBtn isTop={isTop} />}
+          <TweetBtn />
+          {<BackToTopBtn currentPath={router.pathname} router={router} />}
           <Footer />
         </ParallaxProvider>
       </ThemeProvider>

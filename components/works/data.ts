@@ -158,47 +158,6 @@ export const worksData: WorksDatum[] = [
   },
 
   {
-    id: 'kasa',
-    project: 'あまがさ',
-    year: '2020-2021',
-    collaborated: false,
-    contribution: ['Graphic design'],
-    works: [
-      {
-        name: 'virtual background',
-        img: '/img/works/kasa/kasa-1.jpg',
-        topPage: true,
-        alt: '',
-        note:
-          '「おうち時間をもっと楽しく」をテーマにバーチャル背景を作る、というAdobeのワークショップに参加した際に制作した、本プロジェクト最初のデザイン。トリムマークを仕込んだところがちょっとしたこだわり。色違いで展開して気分によって使い分けられる。',
-      },
-      {
-        name: 'virtual background',
-        img: '/img/works/kasa/kasa-2.jpg',
-        topPage: false,
-        alt: '',
-      },
-      {
-        name: '「いろいろいろ」',
-        img: '/img/works/kasa/kasa-3.jpg',
-        topPage: false,
-        alt: '',
-      },
-      {
-        name: 'greeting card',
-        img: '/img/works/kasa/kasa-4.jpg',
-        topPage: true,
-        alt: 'Merry Christmas and Happy New Year 2021',
-      },
-      {
-        name: 'ポートフォリオサイト',
-        img: '/img/works/kasa/kasa-5.jpg',
-        topPage: false,
-        alt: 'わくわくさせるクリエイティブ',
-      },
-    ],
-  },
-  {
     id: 'MF93',
     project: '第93回五月祭',
     year: 2020,
@@ -241,6 +200,47 @@ export const worksData: WorksDatum[] = [
         img: '/img/works/MF93/MF93-4.jpg',
         topPage: false,
         alt: '',
+      },
+    ],
+  },
+  {
+    id: 'kasa',
+    project: 'あまがさ',
+    year: '2020-2021',
+    collaborated: false,
+    contribution: ['Graphic design'],
+    works: [
+      {
+        name: 'virtual background',
+        img: '/img/works/kasa/kasa-1.jpg',
+        topPage: true,
+        alt: '',
+        note:
+          '「おうち時間をもっと楽しく」をテーマにバーチャル背景を作る、というAdobeのワークショップに参加した際に制作した、本プロジェクト最初のデザイン。トリムマークを仕込んだところがちょっとしたこだわり。色違いで展開して気分によって使い分けられる。',
+      },
+      {
+        name: 'virtual background',
+        img: '/img/works/kasa/kasa-2.jpg',
+        topPage: false,
+        alt: '',
+      },
+      {
+        name: '「いろいろいろ」',
+        img: '/img/works/kasa/kasa-3.jpg',
+        topPage: false,
+        alt: '',
+      },
+      {
+        name: 'greeting card',
+        img: '/img/works/kasa/kasa-4.jpg',
+        topPage: true,
+        alt: 'Merry Christmas and Happy New Year 2021',
+      },
+      {
+        name: 'ポートフォリオサイト',
+        img: '/img/works/kasa/kasa-5.jpg',
+        topPage: false,
+        alt: 'わくわくさせるクリエイティブ',
       },
     ],
   },

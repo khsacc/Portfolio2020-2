@@ -1,8 +1,8 @@
 import * as gtag from '../../lib/gtag';
 import { NextPage } from 'next';
+import { NextRouter } from 'next/router';
 import { colours } from '../../styles/colours';
 import { makeStyles } from '@material-ui/core';
-import { useRouter } from 'next/router';
 
 const useStyles = makeStyles(() => ({
   topLinkWrapper: {
@@ -23,16 +23,14 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export const BackToTopBtn: NextPage<{ isTop: boolean }> = ({ isTop }) => {
+export const BackToTopBtn: NextPage<{ currentPath: string; router: NextRouter }> = ({ currentPath, router }) => {
   const classes = useStyles();
-  const router = useRouter();
-  const currentPathName = router.pathname;
   return (
-    <div className={[classes.topLinkWrapper, isTop ? classes.topLink_hidden : ''].join(' ')}>
+    <div className={[classes.topLinkWrapper, currentPath === '/' ? classes.topLink_hidden : ''].join(' ')}>
       <a
         className={classes.topLink}
         onClick={() => {
-          gtag.event({ action: 'transition', category: 'to-top', label: currentPathName });
+          gtag.event({ action: `to-top__from-${currentPath}`, category: 'to-top', label: '' });
           router.push('/', '/', { scroll: false });
         }}
       >
