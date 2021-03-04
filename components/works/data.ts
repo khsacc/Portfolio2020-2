@@ -71,7 +71,7 @@ export const worksData: WorksDatum[] = [
     collaborated: true,
     collaboratedWith: [{ name: 'Marin Takeda', link: 'https://note.com/mariiint' }, { name: 'Rin Kikuchi' }],
     contribution: ['Architecture and lightning design'],
-    awards: ['「（仮称）赤門脇トイレ」デザインコンペティション　優秀賞'],
+    awards: ['「（仮称）赤門脇トイレ」デザインコンペティション 優秀賞'],
     works: [
       {
         img: '/img/works/akamon-restroom/akamon-restroom-1.jpg',
