@@ -17,6 +17,8 @@ export default class MyDocument extends Document {
     return (
       <Html lang="ja">
         <Head>
+          {/* adobe fonts */}
+          <link rel="stylesheet" href="https://use.typekit.net/vpq5jbc.css"></link>
           {/* Google Analytics */}
           {existsGaId && (
             <>
