@@ -25,7 +25,7 @@ const ProfilePage: NextPage = () => {
 
   return (
     <>
-      <CreateHead title="Profile" />
+      <CreateHead title="Profile" ogimage="img/topPage/self.jpg" />
       <ArticleTitle img="/img/topPage/self.jpg" title="Profile" alt="self portrait" />
       <div className={classes.wrapper}>
         <h1 className={classes.name}>Hiroki Kobayashi</h1>
