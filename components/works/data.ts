@@ -65,40 +65,13 @@ export const worksData: WorksDatum[] = [
     ],
   },
   {
-    id: 'IPT2021',
-    project: 'IPT2021 "INVISIBLE"',
-    year: 2021,
-    collaborated: false,
-    contribution: ['Graphic design'],
-    topImg: '/img/works/IPT2021/IPT2021-top.jpg',
-    works: [
-      {
-        name: `「'cuz it's invisible」 1`,
-        img: '/img/works/IPT2021/IPT2021-1.jpg',
-        topPage: true,
-        alt: '',
-      },
-      {
-        name: `「'cuz it's invisible」 2`,
-        img: '/img/works/IPT2021/IPT2021-2.jpg',
-        topPage: false,
-        alt: '',
-      },
-      {
-        name: `「内在」`,
-        img: '/img/works/IPT2021/IPT2021-3.jpg',
-        topPage: true,
-        alt: '',
-      },
-    ],
-  },
-  {
     id: 'akamon-restroom',
     project: '「〈空き地〉の年輪」（赤門脇トイレ デザインコンペ）',
     year: 2021,
     collaborated: true,
-    collaboratedWith: [{ name: 'Marin Takeda' }, { name: 'Rin Kikuchi' }],
+    collaboratedWith: [{ name: 'Marin Takeda', link: 'https://note.com/mariiint' }, { name: 'Rin Kikuchi' }],
     contribution: ['Architecture and lightning design'],
+    awards: ['「（仮称）赤門脇トイレ」デザインコンペティション　優秀賞'],
     works: [
       {
         img: '/img/works/akamon-restroom/akamon-restroom-1.jpg',
@@ -155,6 +128,35 @@ export const worksData: WorksDatum[] = [
       },
     ],
   },
+  {
+    id: 'IPT2021',
+    project: 'IPT2021 "INVISIBLE"',
+    year: 2021,
+    collaborated: false,
+    contribution: ['Graphic design'],
+    topImg: '/img/works/IPT2021/IPT2021-top.jpg',
+    works: [
+      {
+        name: `「'cuz it's invisible」 1`,
+        img: '/img/works/IPT2021/IPT2021-1.jpg',
+        topPage: true,
+        alt: '',
+      },
+      {
+        name: `「'cuz it's invisible」 2`,
+        img: '/img/works/IPT2021/IPT2021-2.jpg',
+        topPage: false,
+        alt: '',
+      },
+      {
+        name: `「内在」`,
+        img: '/img/works/IPT2021/IPT2021-3.jpg',
+        topPage: true,
+        alt: '',
+      },
+    ],
+  },
+
   {
     id: 'kasa',
     project: 'あまがさ',
