@@ -1,8 +1,10 @@
+import * as gtag from '../../lib/gtag';
 import { NextPage } from 'next';
 import { colours, zIndex } from '../../styles';
 import { headerStyle } from '../../styles';
 import { makeStyles } from '@material-ui/core';
 import { mrEavesBook } from '../../styles';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 const HeaderDesign: NextPage = () => {
@@ -24,9 +26,17 @@ const HeaderDesign: NextPage = () => {
       textDecoration: 'none',
     },
   }))();
+
+  const router = useRouter();
+
   return (
     <Link href="/" scroll={false}>
-      <a className={classes.top_link}>
+      <a
+        className={classes.top_link}
+        onClick={() => {
+          gtag.event({ action: `header-link__@${router.asPath}`, category: 'header-link', label: '' });
+        }}
+      >
         <img src="/img/topPage/top_icon.svg" alt="" className={classes.top_icon} />
         <h1 className={classes.name}>Hiroki Kobayashi</h1>
       </a>
@@ -35,7 +45,7 @@ const HeaderDesign: NextPage = () => {
 };
 
 // Wrapper
-export const Header: NextPage<{ isTop: boolean }> = ({ isTop }) => {
+export const Header: NextPage = ({}) => {
   const classes = makeStyles(() => ({
     headerWrapper: {
       position: 'fixed',
@@ -48,8 +58,9 @@ export const Header: NextPage<{ isTop: boolean }> = ({ isTop }) => {
       zIndex: zIndex.header,
     },
   }))();
+  const router = useRouter();
   const topPageScroll = () => {
-    isTop && window.scrollTo({ top: 0, behavior: 'smooth' });
+    router.pathname === '/' && window.scrollTo({ top: 0, behavior: 'smooth' });
   };
   return (
     <header className={classes.headerWrapper} onClick={topPageScroll}>

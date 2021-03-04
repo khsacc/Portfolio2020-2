@@ -162,6 +162,7 @@ export const WorkImg: NextPage<{ work: WorksDetail; imgWidth?: string }> = ({ wo
           ref={displayImage}
           onClick={() => {
             setIsFocused(!isFocused);
+            gtag.event({ action: `large-image__${work.img}`, category: 'work-image', label: work.img });
           }}
         />
         <div className={classes.name}>{work.name} </div>
