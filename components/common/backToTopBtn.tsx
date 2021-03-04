@@ -1,6 +1,6 @@
 import * as gtag from '../../lib/gtag';
 import { NextPage } from 'next';
-import { NextRouter, useRouter } from 'next/router';
+import { NextRouter } from 'next/router';
 import { colours } from '../../styles/colours';
 import { makeStyles } from '@material-ui/core';
 
