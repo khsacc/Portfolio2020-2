@@ -70,7 +70,7 @@ export const worksData: WorksDatum[] = [
     year: 2021,
     collaborated: true,
     collaboratedWith: [{ name: 'Marin Takeda', link: 'https://note.com/mariiint' }, { name: 'Rin Kikuchi' }],
-    contribution: ['Architecture and lightning design'],
+    contribution: ['Architecture and lighting design'],
     awards: ['「（仮称）赤門脇トイレ」デザインコンペティション 優秀賞'],
     works: [
       {
