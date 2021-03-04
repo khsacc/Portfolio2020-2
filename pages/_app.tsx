@@ -42,7 +42,7 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
       window.scrollTo({
         top: 0,
       });
-    }, 700);
+    }, 900);
     // gtag.pageview(router.pathname);
   }, [router.asPath]);
 
@@ -65,7 +65,6 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
     <>
       <Head>
         <link rel="stylesheet" href="https://use.typekit.net/vpq5jbc.css"></link>
-        <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
       </Head>
       <ThemeProvider theme={theme}>
         <ParallaxProvider>
@@ -81,11 +80,11 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
             }}
           >
             <PageTransition timeout={250} classNames="page-transition">
-              <Component key={router.pathname} {...pageProps} />
+              <Component key={router.asPath} {...pageProps} />
             </PageTransition>
           </div>
           <TweetBtn />
-          {<BackToTopBtn />}
+          <BackToTopBtn key={router.asPath} />
           <Footer />
         </ParallaxProvider>
       </ThemeProvider>
