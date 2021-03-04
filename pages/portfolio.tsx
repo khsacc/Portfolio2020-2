@@ -32,7 +32,7 @@ const PortfolioPage: NextPage<{ router: NextRouter }> = ({ router }) => {
   }, []);
   return (
     <>
-      <CreateHead />
+      <CreateHead title="Top" />
     </>
   );
 };
