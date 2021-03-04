@@ -85,7 +85,7 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
             </PageTransition>
           </div>
           <TweetBtn />
-          {<BackToTopBtn currentPath={router.pathname} router={router} />}
+          {<BackToTopBtn />}
           <Footer />
         </ParallaxProvider>
       </ThemeProvider>

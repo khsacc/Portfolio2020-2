@@ -1,3 +1,4 @@
+import * as gtag from '../../lib/gtag';
 import { HoverBtn } from '../common/hoverBtn';
 import { LineUmb } from '../common';
 import { NextPage } from 'next';
@@ -70,7 +71,11 @@ const WorkContainer: NextPage<{ workidx: number; prj: WorksDatum; work: WorksDet
 
   return (
     <Link href={`/works/${prj.id}`} scroll={false}>
-      <a>
+      <a
+        onClick={() => {
+          gtag.event({ action: `top-work__${prj.id}-${workidx}`, label: work.img, category: 'top-work' });
+        }}
+      >
         <div
           className={classes.workContainer}
           key={workidx}
