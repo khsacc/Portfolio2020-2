@@ -9,13 +9,14 @@ import { PageTransition } from 'next-page-transitions';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { colours, headerStyle } from '../styles';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import AOS from 'aos';
 import CssBaseLine from '@material-ui/core/CssBaseline';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 // import UAParser from 'ua-parser-js';
+import { TweetBtn } from '../components/common/tweetBtn';
 import theme from '../styles/theme';
 
 const defaultLayout = ({ Component, pageProps }: AppProps) => {
@@ -64,6 +65,7 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
     <>
       <Head>
         <link rel="stylesheet" href="https://use.typekit.net/vpq5jbc.css"></link>
+        <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
       </Head>
       <ThemeProvider theme={theme}>
         <ParallaxProvider>
@@ -82,6 +84,7 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
               <Component key={router.pathname} {...pageProps} />
             </PageTransition>
           </div>
+          <TweetBtn />
           {<BackToTopBtn currentPath={router.pathname} router={router} />}
           <Footer />
         </ParallaxProvider>
