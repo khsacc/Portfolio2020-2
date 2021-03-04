@@ -105,7 +105,7 @@ export const KF70Design: BlogContent[] = [
             href="/img/blog/第70回駒場祭屋外地図（来場者向け）.ai"
             download={true}
             onClick={() => {
-              gtag.event({ action: 'download', category: 'blog', label: 'KF70-map-ai' });
+              gtag.event({ action: 'download__KF70-map-ai', category: 'blog', label: '' });
             }}
           >
             こちらをクリックしてダウンロードできます

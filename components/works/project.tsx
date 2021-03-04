@@ -179,7 +179,11 @@ export const NextProject: NextPage<{ nextPrj: WorksDatum; currentId: string }> =
       <Link href={`/works/${nextPrj.id}`}>
         <a
           onClick={() => {
-            gtag.event({ action: 'transition', category: 'next-work', label: `from-${currentId}__to-${nextPrj.id}` });
+            gtag.event({
+              action: `next-work__from-${currentId}__to-${nextPrj.id}`,
+              category: 'next-work',
+              label: `from-${currentId}__to-${nextPrj.id}`,
+            });
           }}
         >
           {'>>'} Next Project: {nextPrj.project}
