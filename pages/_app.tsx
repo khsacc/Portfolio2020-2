@@ -9,7 +9,7 @@ import { PageTransition } from 'next-page-transitions';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { colours, headerStyle } from '../styles';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import AOS from 'aos';
 import CssBaseLine from '@material-ui/core/CssBaseline';
@@ -44,7 +44,7 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
       });
     }, 700);
     // gtag.pageview(router.pathname);
-  }, [router.pathname]);
+  }, [router.asPath]);
 
   useEffect(() => {
     if (!gtag.existsGaId) {
@@ -71,7 +71,7 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
         <ParallaxProvider>
           <CssBaseLine />
           <LoadAnim />
-          <Header isTop />
+          <Header />
           <div
             style={{
               minHeight: `calc(100vh - ${headerStyle.height}px)`,
