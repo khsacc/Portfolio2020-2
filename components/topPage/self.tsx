@@ -35,7 +35,7 @@ export const Self: NextPage<{ showName?: boolean; isLink?: boolean }> = ({ showN
       position: 'relative',
       margin: '0 auto',
       width: '95%',
-      [theme.breakpoints.up('mobile')]: {
+      [theme.breakpoints.up('sm')]: {
         maxWidth: 450,
         width: '60%',
       },
