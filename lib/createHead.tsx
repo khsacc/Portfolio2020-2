@@ -20,7 +20,7 @@ export const CreateHead: NextPage<{ title?: string; ogimage?: string; descriptio
       <meta name="og:title" content={[title, `Hiroki Kobayashi Design Portfolio`].join(' | ')}></meta>
       <meta
         name="og:image"
-        content={typeof ogimage !== 'undefined' ? `${BASE_PATH}${ogimage}` : `${BASE_PATH}meta/ogimage.png`}
+        content={typeof ogimage !== 'undefined' ? `${BASE_PATH}${ogimage}` : `${BASE_PATH}meta/ogimage.jpg`}
       ></meta>
       <meta name="og:type" content={router.pathname === '/' ? 'website' : 'article'}></meta>
       <meta name="og:site_name" content="Hiroki Kobayashi Design Portfolio"></meta>
