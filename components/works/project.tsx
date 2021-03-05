@@ -108,9 +108,9 @@ const useWorkImgStyles = makeStyles(() => ({
     margin: '10px auto',
     display: 'block',
     cursor: 'pointer',
-    transition: `all 0.4s ${transitionTimingfunc.workImg} `,
+    transition: `all 0.6s ${transitionTimingfunc.workImg} `,
     '&:hover': {
-      transform: 'scale(1.0075)',
+      transform: 'scale(1.02)',
       boxShadow: boxShadow.workImg,
       borderRadius: 4,
     },
