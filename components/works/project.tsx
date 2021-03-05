@@ -3,6 +3,7 @@ import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
 import { NextPage } from 'next';
 import { WorksDatum } from '.';
 import { WorksDetail } from './data';
+import { boxShadow, transitionTimingfunc } from '../../styles/global';
 import { colours } from '../../styles';
 import { makeStyles } from '@material-ui/core';
 import Link from 'next/link';
@@ -107,6 +108,12 @@ const useWorkImgStyles = makeStyles(() => ({
     margin: '10px auto',
     display: 'block',
     cursor: 'pointer',
+    transition: `all 0.4s ${transitionTimingfunc.workImg} `,
+    '&:hover': {
+      transform: 'scale(1.0075)',
+      boxShadow: boxShadow.workImg,
+      borderRadius: 4,
+    },
   },
   description: {
     fontSize: '85%',
