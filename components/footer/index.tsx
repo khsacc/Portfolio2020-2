@@ -36,6 +36,7 @@ export const Footer: NextPage = () => {
   const router = useRouter();
 
   const currentPage = router.pathname;
+  const currentFullPath = router.asPath;
 
   const handleClick = (target: string) => {
     if (target === currentPage) {
@@ -58,9 +59,9 @@ export const Footer: NextPage = () => {
           key={idx}
           onClick={() => {
             gtag.event({
-              action: `footer-link__from-${currentPage}__to-${page.display}`,
+              action: `footer-link__from-${currentFullPath}__to-${page.display}`,
               category: 'footer-link',
-              label: `from-${currentPage}_to-${page.display}`,
+              label: `from-${currentFullPath}_to-${page.display}`,
             });
             handleClick(page.href);
           }}

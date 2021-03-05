@@ -1,5 +1,6 @@
 import * as gtag from '../../lib/gtag';
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
+import { ExternalLink } from '../common/externalLink';
 import { NextPage } from 'next';
 import { WorksDatum } from '.';
 import { WorksDetail } from './data';
@@ -70,9 +71,9 @@ export const ProjectInfo: NextPage<{ prj: WorksDatum }> = ({ prj }) => {
                 </span>
               ) : (
                 <span key={e.name}>
-                  <a href={e.link} rel="external nofollow noopener noreferrer" target="_blank">
+                  <ExternalLink category="collaborator" href={e.link}>
                     {e.name}
-                  </a>
+                  </ExternalLink>
                   {Separator}
                 </span>
               );
