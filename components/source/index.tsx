@@ -1,3 +1,4 @@
+import { ExternalLink } from '../common/externalLink';
 import { NextPage } from 'next';
 import { makeStyles } from '@material-ui/core';
 
@@ -37,12 +38,12 @@ export const Source: NextPage = () => {
       <br />
       ソースコードはGitHubで公開しています。
       <br />
-      <a href="https://github.com/khsacc/Portfolio2020-2/" target="_blank" rel="noreferrer external">
+      <ExternalLink href="https://github.com/khsacc/Portfolio2020-2/" category="github-link">
         <div className={classes.img_wrapper}>
           <img className={classes.img} src="/img/source/source.svg" alt="" />
           <img className={[classes.img, classes.img_hover].join(' ')} src="/img/source/source_hover.svg" alt="" />
         </div>
-      </a>
+      </ExternalLink>
     </div>
   );
 };

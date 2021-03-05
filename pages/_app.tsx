@@ -9,25 +9,16 @@ import { PageTransition } from 'next-page-transitions';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { colours, headerStyle } from '../styles';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import AOS from 'aos';
 import CssBaseLine from '@material-ui/core/CssBaseline';
-import Head from 'next/head';
 import PropTypes from 'prop-types';
-import UAParser from 'ua-parser-js';
+// import UAParser from 'ua-parser-js';
+import { TweetBtn } from '../components/common/tweetBtn';
 import theme from '../styles/theme';
 
 const defaultLayout = ({ Component, pageProps }: AppProps) => {
-  const checkEnv = () => {
-    const uaParser = new UAParser();
-    gtag.event({
-      action: 'on-leave',
-      category: '',
-      label: JSON.stringify(uaParser.getResult()),
-    });
-  };
-
   // note that to initialize AOS, ``document`` is needed.
 
   useEffect(() => {
@@ -41,10 +32,6 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles);
     }
-
-    window.addEventListener('beforeunload', () => {
-      checkEnv();
-    });
   }, []);
 
   const router = useRouter();
@@ -54,9 +41,9 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
       window.scrollTo({
         top: 0,
       });
-    }, 700);
+    }, 900);
     // gtag.pageview(router.pathname);
-  }, [router.pathname]);
+  }, [router.asPath]);
 
   useEffect(() => {
     if (!gtag.existsGaId) {
@@ -75,14 +62,11 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
 
   return (
     <>
-      <Head>
-        <link rel="stylesheet" href="https://use.typekit.net/vpq5jbc.css"></link>
-      </Head>
       <ThemeProvider theme={theme}>
         <ParallaxProvider>
           <CssBaseLine />
           <LoadAnim />
-          <Header isTop />
+          <Header />
           <div
             style={{
               minHeight: `calc(100vh - ${headerStyle.height}px)`,
@@ -92,10 +76,11 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
             }}
           >
             <PageTransition timeout={250} classNames="page-transition">
-              <Component key={router.pathname} {...pageProps} />
+              <Component key={router.asPath} {...pageProps} />
             </PageTransition>
           </div>
-          {<BackToTopBtn currentPath={router.pathname} router={router} />}
+          <TweetBtn />
+          <BackToTopBtn key={router.asPath} />
           <Footer />
         </ParallaxProvider>
       </ThemeProvider>

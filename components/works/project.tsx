@@ -3,6 +3,7 @@ import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
 import { NextPage } from 'next';
 import { WorksDatum } from '.';
 import { WorksDetail } from './data';
+import { boxShadow, transitionTimingfunc } from '../../styles/global';
 import { colours } from '../../styles';
 import { makeStyles } from '@material-ui/core';
 import Link from 'next/link';
@@ -11,9 +12,9 @@ const useStyles = makeStyles(() => ({
   img: { width: '100%' },
   title: {
     fontWeight: 'bold',
-    marginRight: 10,
-    paddingRight: 10,
-    borderRight: `1px solid ${colours.main.sub}`,
+    // marginRight: 10,
+    // paddingRight: 10,
+    // borderRight: `1px solid ${colours.main.sub}`,
   },
   awardsContainer: {
     margin: '15px 0',
@@ -37,9 +38,47 @@ export const ProjectInfo: NextPage<{ prj: WorksDatum }> = ({ prj }) => {
           <img className={classes.img} src={prj.topImg} />
         </div>
       )}
+      <div className={classes.title}>{prj.project}</div>
       <div>
-        <span className={classes.title}>{prj.project}</span>
         {prj.year}年{prj.collaborated && <span>・共同制作</span>}
+        {prj.collaboratedWith && prj.collaboratedWith.length > 0 && (
+          <span>
+            {' '}
+            with{' '}
+            {prj.collaboratedWith.map((e, idx) => {
+              const Separator = (() => {
+                const collaboratorNumber = prj.collaboratedWith.length;
+                if (collaboratorNumber === 1) {
+                  return <></>;
+                } else if (collaboratorNumber === 2) {
+                  return idx === 0 ? <span> and </span> : <></>;
+                } else {
+                  switch (idx) {
+                    case collaboratorNumber - 1:
+                      return <></>;
+                    case collaboratorNumber - 2:
+                      return <span>, and </span>;
+                    default:
+                      return <span>, </span>;
+                  }
+                }
+              })();
+              return typeof e.link === 'undefined' ? (
+                <span key={e.name}>
+                  <span>{e.name}</span>
+                  {Separator}
+                </span>
+              ) : (
+                <span key={e.name}>
+                  <a href={e.link} rel="external nofollow noopener noreferrer" target="_blank">
+                    {e.name}
+                  </a>
+                  {Separator}
+                </span>
+              );
+            })}
+          </span>
+        )}
       </div>
       <div>
         {prj.collaborated && <span>Contributed in: </span>}
@@ -69,6 +108,12 @@ const useWorkImgStyles = makeStyles(() => ({
     margin: '10px auto',
     display: 'block',
     cursor: 'pointer',
+    transition: `all 0.6s ${transitionTimingfunc.workImg} `,
+    '&:hover': {
+      transform: 'scale(1.02)',
+      boxShadow: boxShadow.workImg,
+      borderRadius: 4,
+    },
   },
   description: {
     fontSize: '85%',
@@ -162,6 +207,7 @@ export const WorkImg: NextPage<{ work: WorksDetail; imgWidth?: string }> = ({ wo
           ref={displayImage}
           onClick={() => {
             setIsFocused(!isFocused);
+            gtag.event({ action: `large-image__${work.img}`, category: 'work-image', label: work.img });
           }}
         />
         <div className={classes.name}>{work.name} </div>

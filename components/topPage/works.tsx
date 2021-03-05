@@ -1,11 +1,12 @@
+import * as gtag from '../../lib/gtag';
 import { HoverBtn } from '../common/hoverBtn';
 import { LineUmb } from '../common';
 import { NextPage } from 'next';
 import { Subtitle } from '../article/subtitle';
 import { WorksDatum, WorksDetail } from '../works/data';
+import { boxShadow, padding, transitionTimingfunc } from '../../styles/global';
 import { colours } from '../../styles';
 import { makeStyles } from '@material-ui/core';
-import { padding, transitionTimingfunc } from '../../styles/global';
 import { useState } from 'react';
 import { worksData } from '../works/data';
 import Link from 'next/link';
@@ -30,7 +31,7 @@ const useTopWorkStyles = makeStyles(theme => ({
       },
       '& $workImg': {
         transform: 'scale(1.02)',
-        boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
+        boxShadow: boxShadow.workImg,
         borderRadius: 5,
       },
     },
@@ -70,7 +71,11 @@ const WorkContainer: NextPage<{ workidx: number; prj: WorksDatum; work: WorksDet
 
   return (
     <Link href={`/works/${prj.id}`} scroll={false}>
-      <a>
+      <a
+        onClick={() => {
+          gtag.event({ action: `top-work__${prj.id}-${workidx}`, label: work.img, category: 'top-work' });
+        }}
+      >
         <div
           className={classes.workContainer}
           key={workidx}

@@ -1,9 +1,11 @@
+import * as gtag from '../../lib/gtag';
 import { BlogDatum, blogsData } from '../blog/each';
 import { LineUmb, Subtitle } from '../common';
 import { NextPage } from 'next';
+import { boxShadow, transitionTimingfunc } from '../../styles/global';
 import { colours } from '../../styles';
 import { makeStyles } from '@material-ui/core';
-import { transitionTimingfunc } from '../../styles/global';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import theme from '../../styles/theme';
 
@@ -25,7 +27,7 @@ const useStyles = makeStyles(theme => ({
     transition: `all 0.7s ${transitionTimingfunc.workImg}`,
     '&:hover': {
       transform: `scale(1.03)`,
-      boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
+      boxShadow: boxShadow.workImg,
       borderRadius: 5,
       '& $umb': {
         color: colours.main.main,
@@ -66,9 +68,19 @@ const useStyles = makeStyles(theme => ({
 
 export const BlogContainer: NextPage<{ blog: BlogDatum }> = ({ blog }) => {
   const classes = useStyles();
+  const router = useRouter();
   return (
     <Link href={`/blog/${blog.id}`} scroll={false}>
-      <a className={classes.link}>
+      <a
+        className={classes.link}
+        onClick={() => {
+          gtag.event({
+            action: `blog-open__from-${router.asPath}__to-${blog.id}`,
+            category: 'blog-container',
+            label: '',
+          });
+        }}
+      >
         <div className={classes.wrapper}>
           <LineUmb className={classes.umb} />
           <img src={`/${blog.img}`} className={classes.img} />

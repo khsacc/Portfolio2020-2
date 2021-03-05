@@ -37,3 +37,7 @@ export const transitionTimingfunc = {
   title: 'cubic-bezier(.6,.24,.13,.65)',
   workImg: 'cubic-bezier(.79,.22,.26,1)',
 };
+
+export const boxShadow = {
+  workImg: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
+};
