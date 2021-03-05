@@ -10,6 +10,7 @@ const useStyles = makeStyles(() => ({
     textAlign: 'center',
     margin: '10px auto',
     transition: 'all 0s 1s ease-in-out',
+    height: 40,
   },
   topLink: {
     textDecoration: 'none',
@@ -29,21 +30,23 @@ export const BackToTopBtn: NextPage = ({}) => {
   const router = useRouter();
   const [isTop, setIsTop] = useState(true);
   useEffect(() => {
-    setIsTop(router.pathname === '/');
+    setTimeout(() => {
+      setIsTop(router.pathname === '/');
+    }, 1000);
   }, [router.asPath]);
-  return !isTop ? (
+  return (
     <div className={[classes.topLinkWrapper].join(' ')}>
-      <a
-        className={classes.topLink}
-        onClick={() => {
-          gtag.event({ action: `to-top__from-${router.asPath}`, category: 'to-top', label: '' });
-          router.push('/', '/', { scroll: false });
-        }}
-      >
-        {'>> '}Back to Top
-      </a>
+      {!isTop && (
+        <a
+          className={classes.topLink}
+          onClick={() => {
+            gtag.event({ action: `to-top__from-${router.asPath}`, category: 'to-top', label: '' });
+            router.push('/', '/', { scroll: false });
+          }}
+        >
+          {'>> '}Back to Top
+        </a>
+      )}
     </div>
-  ) : (
-    <></>
   );
 };
