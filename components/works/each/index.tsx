@@ -3,6 +3,7 @@ import { KF70 } from './KF70';
 import { MF92 } from './MF92';
 import { MF93 } from './MF93';
 import { NextPage } from 'next';
+import { akamonRestroom } from './akamon-restroom';
 import { kasa } from './kasa';
 import { makeStyles } from '@material-ui/core';
 
@@ -13,6 +14,7 @@ const articleData = {
   MF93,
   IPT2021,
   kasa,
+  'akamon-restroom': akamonRestroom,
 };
 
 // 全体
