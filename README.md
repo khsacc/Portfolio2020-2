@@ -29,15 +29,15 @@ to see the result on [http://localhost:3000](http://localhost:3000).
 
 ## Directories
 
-- ``components`` to store difinitions of component. Files should be categorized.
+- ``components`` to store definitions of component. Files should be categorized.
 - ``lib`` to store custom libraries.
-- ``pages`` to store page-difining tsx files.
-- ``public`` to store image and typeface files. For example, you can access a file at ``public/img/example.png`` with the path ``"/img/exmaple.png"`` in html attributes.
+- ``pages`` to store page-defining tsx files.
+- ``public`` to store image and typeface files. For example, you can access a file at ``public/img/example.png`` with the path ``"/img/example.png"`` in html attributes.
 - ``styles`` to store global style data. Even though Material-ui is used, this website does not follow the rule of material design. Thus, some files are out of ``Theme`` provided by material-ui, such as colours data.
 
 ## How to add a work or blog:
-- You can add a new work by (1) adding a new element into ``worksData`` array at ``components/works/data.ts``, (2) creating a new article file (which will be displayed at the top of individual page) in ``components-works-each`` directory, and (3) import the article tsx file to ``components/works/each/index.ts`` and add it to ``articleData`` object.
-- You can add a new blog by (1) creating a new tsx file in ``components/blog/each`` directory to export the written content as an array of ``BlogContent``, and (2) add the exported array to ``blogList`` object in ``components/blog/blogProvider.tsx``.
+- You can add a new work by (1) adding a new element into ``worksData`` array at ``components/works/data.ts``, (2) creating a new article file (which will be displayed at the top of individual page) in ``components-works-each`` directory, and (3) importing the article tsx file to ``components/works/each/index.ts`` and adding it to ``articleData`` object.
+- You can add a new blog by (1) creating a new tsx file in ``components/blog/each`` directory to export the written content as an array of ``BlogContent``, and (2) adding the exported array to ``blogList`` object in ``components/blog/blogProvider.tsx``.
 
 ## Deployment on Vercel
 
