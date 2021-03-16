@@ -3,6 +3,7 @@ export type BlogDatum = {
   title: string;
   img: string;
   date: string;
+  pickup: boolean;
   related?: string[]; // worksのidを書く
 };
 
@@ -18,6 +19,7 @@ export const blogsData: BlogDatum[] = [
     title: 'はじめてデザインするあなたに贈る、デザインのレッスン',
     img: 'img/blog/MF94-workshop.jpg',
     date: 'Mar, 2021',
+    pickup: true,
   },
   {
     id: 'MF93-workshop',
@@ -25,6 +27,7 @@ export const blogsData: BlogDatum[] = [
     img: 'img/blog/MF93-workshop.jpg',
     date: 'Feb, 2020',
     related: ['MF93'],
+    pickup: true,
   },
   {
     id: 'about-this-portfolio',
@@ -32,6 +35,7 @@ export const blogsData: BlogDatum[] = [
     img: 'img/blog/portfolio-website.jpg',
     date: 'Feb, 2021',
     related: ['kasa'],
+    pickup: true,
   },
   {
     id: 'KF70-design',
@@ -39,5 +43,6 @@ export const blogsData: BlogDatum[] = [
     img: 'img/blog/KF70.png',
     date: 'Dec, 2019',
     related: ['KF70'],
+    pickup: true,
   },
 ];
