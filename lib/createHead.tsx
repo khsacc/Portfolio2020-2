@@ -25,6 +25,7 @@ export const CreateHead: NextPage<{ title?: string; ogimage?: string; descriptio
       <meta name="og:type" content={router.pathname === '/' ? 'website' : 'article'}></meta>
       <meta name="og:site_name" content="Hiroki Kobayashi Design Portfolio"></meta>
       <meta name="twitter:card" content="summary_large_image"></meta>
+      <meta name="note:card" content="summary_large_image"></meta>
       <meta
         name="description"
         content={description || `Hiroki Kobayashi, a designer interested in DTP, web, and spacial design.`}
