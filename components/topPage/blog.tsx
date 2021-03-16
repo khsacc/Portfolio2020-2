@@ -92,17 +92,19 @@ export const BlogContainer: NextPage<{ blog: BlogDatum }> = ({ blog }) => {
   );
 };
 
-export const Blog: NextPage = () => {
+export const Blog: NextPage<{ data: BlogDatum[]; title?: string; comment?: string }> = ({ data, title, comment }) => {
   const classes = useStyles(theme);
 
   return (
     <>
-      <Subtitle>Blog</Subtitle>
-      <p className={classes.comment} data-aos="fade-up">
-        主催したワークショップのご報告やデザインの裏側など。長くなりがちですが、丁寧に書くよう心がけています。お読みいただけたら嬉しいです。
-      </p>
+      <Subtitle>{title || 'Blogs'}</Subtitle>
+      {comment && (
+        <p className={classes.comment} data-aos="fade-up">
+          {comment}
+        </p>
+      )}
       <div className={classes.blogsContainer} data-aos="fade-up">
-        {blogsData.map((blog, idx) => (
+        {data.map((blog, idx) => (
           <BlogContainer blog={blog} key={idx} />
         ))}
       </div>
