@@ -1,5 +1,6 @@
 import { ExternalLink } from '../../common/externalLink';
 import { NextPage } from 'next';
+import { WorksDatum } from '..';
 
 export const IPT2021: NextPage = ({}) => (
   <>
@@ -14,3 +15,32 @@ export const IPT2021: NextPage = ({}) => (
     </p>
   </>
 );
+
+export const IPT2021Data: WorksDatum = {
+  id: 'IPT2021',
+  project: 'IPT2021 "INVISIBLE"',
+  year: 2021,
+  collaborated: false,
+  contribution: ['Graphic design'],
+  topImg: '/img/works/IPT2021/IPT2021-top.jpg',
+  works: [
+    {
+      name: `「'cuz it's invisible」 1`,
+      img: '/img/works/IPT2021/IPT2021-1.jpg',
+      topPage: true,
+      alt: '',
+    },
+    {
+      name: `「'cuz it's invisible」 2`,
+      img: '/img/works/IPT2021/IPT2021-2.jpg',
+      topPage: false,
+      alt: '',
+    },
+    {
+      name: `「内在」`,
+      img: '/img/works/IPT2021/IPT2021-3.jpg',
+      topPage: true,
+      alt: '',
+    },
+  ],
+};

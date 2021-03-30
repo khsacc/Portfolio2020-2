@@ -2,6 +2,7 @@ import { BlogImg } from '../../blog/blogImg';
 import { BlogQuotation } from '../../blog/blogQuotation';
 import { ExternalLink } from '../../common/externalLink';
 import { NextPage } from 'next';
+import { WorksDatum } from '..';
 
 export const akamonRestroom: NextPage = ({}) => (
   <>
@@ -45,3 +46,83 @@ export const akamonRestroom: NextPage = ({}) => (
     <p>アドバイス・応援をくださったみなさん、ありがとうございました。</p>
   </>
 );
+
+export const AkamonRestroomData: WorksDatum = {
+  id: 'akamon-restroom',
+  project: '「〈空き地〉の年輪」（赤門脇トイレ デザインコンペ）',
+  year: 2021,
+  collaborated: true,
+  collaboratedWith: [{ name: 'Marin Takeda', link: 'https://note.com/mariiint' }, { name: 'Rin Kikuchi' }],
+  contribution: ['Architecture and lighting design'],
+  awards: ['「（仮称）赤門脇トイレ」デザインコンペティション 優秀賞'],
+  works: [
+    {
+      img: '/img/works/akamon-restroom/akamon-restroom-1.jpg',
+      topPage: true,
+      alt: '',
+      note:
+        '「外観は本郷キャンパスの歴史性を踏まえた良好な経年変化をもたらす素材を基調とすること」という指定があった。しかし、木やレンガ、タイルではすぐ隣にあるガラス張りの建物と調和しない。一直線に並ぶガラスとコンクリートの建物群は美しく、その「面」の美しさに参加させたいとの直感から、ガラス張りの外観を採用した。内側の化粧板が日焼けして、ゆっくりと飴色に変わっていく。あまりにゆっくりとした経年変化だが、そのくらいがこの静かな〈空き地〉の空気にあっていると思った。',
+    },
+    {
+      img: '/img/works/akamon-restroom/akamon-restroom-2.jpg',
+      topPage: false,
+      alt: '',
+      note:
+        '車椅子使用者がトイレを利用する時、便座の左右どちらに車椅子をとめたいかは好みがある。どちらのニーズにも応えることができるよう、対称な配置とした。また、門の近くにある屋外トイレとあれば、大概の人は手荷物を置いておく台が必要だ。着替えをしたり、子どもの面倒をみたりと様々な使い方を想定し、そのいずれの場面でも困らないよう努めた。',
+    },
+    {
+      img: '/img/works/akamon-restroom/akamon-restroom-3.jpg',
+      topPage: false,
+      alt: '',
+      note:
+        'ガラス張りの外壁の奥には、少しだけ高さの低い内壁がある。カプセル的な見た目で「〈空き地〉の保存」というコンセプトを表現するとともに、この構造を生かした間接照明を設置することで、この箱型オブジェ全体をふんわりとした照明に仕上げたかった。控え柱は奥の塀についているものを象徴的に模した。インテリア的な外観を目指すことで、建物らしさを軽減しようとした。',
+    },
+    {
+      img: '/img/works/akamon-restroom/akamon-restroom-5.jpg',
+      topPage: false,
+      alt: '',
+    },
+    {
+      img: '/img/works/akamon-restroom/akamon-restroom-6.jpg',
+      topPage: false,
+      alt: '',
+    },
+    {
+      img: '/img/works/akamon-restroom/akamon-restroom-7.jpg',
+      topPage: false,
+      alt: '',
+    },
+    {
+      img: '/img/works/akamon-restroom/akamon-restroom-2D.svg',
+      topPage: false,
+      alt: '平面図',
+      name: '平面図・立面図',
+      note: 'Illustrator製の図面たち。CADの習得を心に誓った……（笑）',
+    },
+
+    {
+      name: '照明計画イメージ図',
+      note:
+        '日常的にキャンパスに通う人は、屋外のトイレをわざわざ頻繁には使わないだろう。でも、大学の人にもこの〈オブジェ〉に愛着を持ってほしかった。この敷地全体をやんわりとした照明としてデザインすることで、敷地の外側に対するやんわりとした緩やかな働きかけを試みた。',
+      img: '/img/works/akamon-restroom/akamon-restroom-lightning.jpg',
+      topPage: false,
+      alt: '',
+    },
+    {
+      name: 'ラフスケッチ',
+      note:
+        '公共トイレの安全を確保するには、アプローチは開放的であるべきだ。しかしこの土地に一度足を踏み入れると、目の前にあるはずの通りやそこを歩く人が、驚くほど遠く感じられる。この〈空き地〉は隔絶性を内包していて、内側から外の気配を感じることが少ない。このスケッチはそんなことを考えながら描いたものだ。それがプライベートな空間としてのトイレの安心を保障する。',
+      img: '/img/works/akamon-restroom/akamon-restroom-4.jpg',
+      topPage: false,
+      alt: '',
+    },
+    {
+      name: '一次審査提出書類',
+      note:
+        '建築デザインを説明するときに、文字はできるだけ少ない方が良いとされる（らしい）が、建築学生以外のアイデアも取り入れるという趣旨を信じ、思い切って逆を行くことにした。提出直前まで詩的な文章と向き合っているのは不安しかなかったが、この〈物語性〉をいかに空間表現に落とし込んだか、ということをどうしても伝えたかった。功を奏しただろうか。',
+      img: '/img/works/akamon-restroom/akamon-restroom-document.jpg',
+      topPage: false,
+      alt: '',
+    },
+  ],
+};

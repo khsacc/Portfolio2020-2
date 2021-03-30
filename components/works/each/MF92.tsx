@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import { WorksDatum } from '..';
 
 export const MF92: NextPage = ({}) => (
   <>
@@ -12,3 +13,28 @@ export const MF92: NextPage = ({}) => (
     <p></p>
   </>
 );
+
+export const MF92Data: WorksDatum = {
+  id: 'MF92',
+  project: '第92回五月祭',
+  year: 2019,
+  note: '',
+  collaborated: true,
+  contribution: ['DTP', 'Information Signs'],
+  works: [
+    {
+      name: '公式パンフレット表紙',
+      img: '/img/works/MF92/MF92pam_cover.jpg',
+      topPage: true,
+      alt: '第92回五月祭「〈おもしろい〉が交差する」公式パンフレット',
+    },
+    {
+      name: '屋内案内サイン',
+      img: '/img/works/MF92/MF92navi.jpg',
+      topPage: true,
+      alt: '矢印で教室の方向を指し示す案内サイン。45度傾けた正方形を組み合わせて作られる。',
+      note:
+        '45度傾けた正方形を組み合わせてどんな数・方向も指し示せるサインをデザインした。この回のテーマは「〈おもしろい〉が交差する。」。わかりやすくあるべき案内サインにテーマを反映するのは難しいとされていたが、「交差」をうまく取り込んだ〈おもしろい〉サインができた。Twitter上では一般の方々からいくつか反応もあり、手応えのあった作品。',
+    },
+  ],
+};

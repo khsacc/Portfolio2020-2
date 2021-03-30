@@ -1,10 +1,11 @@
-import { IPT2021 } from './IPT2021';
-import { KF70 } from './KF70';
-import { MF92 } from './MF92';
-import { MF93 } from './MF93';
+import { AkamonRestroomData, akamonRestroom } from './akamon-restroom';
+import { IPT2021, IPT2021Data } from './IPT2021';
+import { KF70, KF70data } from './KF70';
+import { KasaData, kasa } from './kasa';
+import { MF92, MF92Data } from './MF92';
+import { MF93, MF93Data } from './MF93';
+import { Madogiwa2021, Madogiwa2021Data } from './madogiwa2021';
 import { NextPage } from 'next';
-import { akamonRestroom } from './akamon-restroom';
-import { kasa } from './kasa';
 import { makeStyles } from '@material-ui/core';
 
 // ここに並べたものが表示対象です
@@ -15,7 +16,11 @@ const articleData = {
   IPT2021,
   kasa,
   'akamon-restroom': akamonRestroom,
+  'madogiwa-2021': Madogiwa2021,
 };
+
+// dataはここからexportしておいてください
+export { AkamonRestroomData, KF70data, IPT2021Data, Madogiwa2021Data, MF93Data, KasaData, MF92Data };
 
 // 全体
 const useProjectArticleStyles = makeStyles(() => ({
