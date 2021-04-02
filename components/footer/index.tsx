@@ -31,10 +31,10 @@ export const Footer: NextPage = () => {
       href: '/profile',
       display: 'Profile',
     },
-    {
-      href: '/works',
-      display: 'Works',
-    },
+    // {
+    //   href: '/works',
+    //   display: 'Works',
+    // },
     {
       href: '/blog',
       display: 'Blogs',
