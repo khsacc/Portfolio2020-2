@@ -74,6 +74,7 @@ export const AkamonRestroomData: WorksDatum = {
       img: '/img/works/akamon-restroom/akamon-restroom-3.jpg',
       topPage: false,
       alt: '',
+      hideAsAll: true,
       note:
         'ガラス張りの外壁の奥には、少しだけ高さの低い内壁がある。カプセル的な見た目で「〈空き地〉の保存」というコンセプトを表現するとともに、この構造を生かした間接照明を設置することで、この箱型オブジェ全体をふんわりとした照明に仕上げたかった。控え柱は奥の塀についているものを象徴的に模した。インテリア的な外観を目指すことで、建物らしさを軽減しようとした。',
     },
@@ -81,16 +82,19 @@ export const AkamonRestroomData: WorksDatum = {
       img: '/img/works/akamon-restroom/akamon-restroom-5.jpg',
       topPage: false,
       alt: '',
+      hideAsAll: true,
     },
     {
       img: '/img/works/akamon-restroom/akamon-restroom-6.jpg',
       topPage: false,
       alt: '',
+      hideAsAll: true,
     },
     {
       img: '/img/works/akamon-restroom/akamon-restroom-7.jpg',
       topPage: false,
       alt: '',
+      hideAsAll: true,
     },
     {
       img: '/img/works/akamon-restroom/akamon-restroom-2D.svg',
@@ -98,6 +102,7 @@ export const AkamonRestroomData: WorksDatum = {
       alt: '平面図',
       name: '平面図・立面図',
       note: 'Illustrator製の図面たち。CADの習得を心に誓った……（笑）',
+      hideAsAll: true,
     },
 
     {
@@ -107,6 +112,7 @@ export const AkamonRestroomData: WorksDatum = {
       img: '/img/works/akamon-restroom/akamon-restroom-lightning.jpg',
       topPage: false,
       alt: '',
+      hideAsAll: true,
     },
     {
       name: 'ラフスケッチ',
@@ -115,6 +121,7 @@ export const AkamonRestroomData: WorksDatum = {
       img: '/img/works/akamon-restroom/akamon-restroom-4.jpg',
       topPage: false,
       alt: '',
+      hideAsAll: true,
     },
     {
       name: '一次審査提出書類',
@@ -123,6 +130,7 @@ export const AkamonRestroomData: WorksDatum = {
       img: '/img/works/akamon-restroom/akamon-restroom-document.jpg',
       topPage: false,
       alt: '',
+      hideAsAll: true,
     },
   ],
 };

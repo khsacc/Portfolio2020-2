@@ -22,7 +22,7 @@ export const Footer: NextPage = () => {
       cursor: 'pointer',
     },
   }))();
-  const pages = [
+  const pages: { href: string; display: string }[] = [
     {
       href: '/',
       display: 'Top',
@@ -30,6 +30,10 @@ export const Footer: NextPage = () => {
     {
       href: '/profile',
       display: 'Profile',
+    },
+    {
+      href: '/works',
+      display: 'Works',
     },
     {
       href: '/blog',

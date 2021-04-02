@@ -1,5 +1,5 @@
 import { CreateHead } from '../../lib/createHead';
-import { TopWork } from '../../components/topPage/works';
+import { WorkIndex } from '../../components/topPage/works';
 import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
@@ -14,7 +14,7 @@ export default function IndexPage() {
     <>
       <CreateHead />
       <div className={classes.wrapper}>
-        <TopWork />
+        <WorkIndex />
       </div>
     </>
   );

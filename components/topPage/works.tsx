@@ -22,6 +22,7 @@ const useTopWorkStyles = makeStyles(theme => ({
   },
   workContainer: {
     position: 'relative',
+
     '&:hover': {
       '& $workUmb': {
         opacity: 1,
@@ -65,15 +66,32 @@ const useTopWorkStyles = makeStyles(theme => ({
   },
 }));
 
-const WorkContainer: NextPage<{ workidx: number; prj: WorksDatum; work: WorksDetail }> = ({ workidx, prj, work }) => {
+const WorkContainer: NextPage<{ workidx: number; prj: WorksDatum; work: WorksDetail; all?: boolean }> = ({
+  workidx,
+  prj,
+  work,
+  all = false,
+}) => {
   const classes = useTopWorkStyles(theme);
   const [hover, setHover] = useState(false);
+
+  const customAttributes = all
+    ? {
+        style: {
+          height: 200,
+        },
+      }
+    : {};
 
   return (
     <Link href={`/works/${prj.id}`} scroll={false}>
       <a
         onClick={() => {
-          gtag.event({ action: `top-work__${prj.id}-${workidx}`, label: work.img, category: 'top-work' });
+          gtag.event({
+            action: `${all ? 'work-index' : 'top-work'}__${prj.id}-${workidx}`,
+            label: work.img,
+            category: all ? 'work-index' : 'top-work',
+          });
         }}
       >
         <div
@@ -85,9 +103,9 @@ const WorkContainer: NextPage<{ workidx: number; prj: WorksDatum; work: WorksDet
           onMouseOut={() => {
             setHover(false);
           }}
-          data-aos="fade-up"
+          data-aos={all ? '' : 'fade-up'}
         >
-          <img src={work.img} className={classes.workImg} alt="" />
+          <img src={work.img} className={classes.workImg} alt="" {...customAttributes} />
           <LineUmb className={classes.workUmb} />
           <HoverBtn
             hover={hover}
@@ -95,7 +113,7 @@ const WorkContainer: NextPage<{ workidx: number; prj: WorksDatum; work: WorksDet
             text={
               <>
                 <div className={classes.prjName}>{prj.project}</div>
-                <div>{work.name}</div>
+                {!all && <div>{work.name}</div>}
               </>
             }
           ></HoverBtn>
@@ -121,6 +139,30 @@ export const TopWork: NextPage = () => {
           )
           .map((work, workidx) => (
             <WorkContainer key={workidx} workidx={workidx} work={work} prj={work.prj} />
+          ))}
+      </div>
+    </>
+  );
+};
+
+export const WorkIndex: NextPage = () => {
+  const classes = useTopWorkStyles();
+  return (
+    <>
+      <Subtitle>Works</Subtitle>
+      <div className={classes.container}>
+        {worksData
+          .reduce(
+            (pre: (WorksDetail & { prj: WorksDatum })[], cur: WorksDatum) => [
+              ...pre,
+              ...cur.works
+                .filter(work => typeof work.hideAsAll === 'undefined' || work.hideAsAll === false)
+                .map(work => ({ ...work, prj: cur })),
+            ],
+            [],
+          )
+          .map((work, workidx) => (
+            <WorkContainer key={workidx} workidx={workidx} work={work} prj={work.prj} all={true} />
           ))}
       </div>
     </>
