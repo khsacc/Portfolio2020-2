@@ -21,7 +21,7 @@ export const IPT2021Data: WorksDatum = {
   project: 'IPT2021 "INVISIBLE"',
   year: 2021,
   collaborated: false,
-  contribution: ['Graphic design'],
+  contribution: ['poster design'],
   topImg: '/img/works/IPT2021/IPT2021-top.jpg',
   works: [
     {

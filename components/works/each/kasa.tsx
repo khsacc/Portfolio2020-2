@@ -34,6 +34,7 @@ export const KasaData: WorksDatum = {
       img: '/img/works/kasa/kasa-2.jpg',
       topPage: false,
       alt: '',
+      hideAsAll: true,
     },
     {
       name: '「いろいろいろ」',

@@ -38,12 +38,12 @@ export const Source: NextPage = () => {
       <br />
       ソースコードはGitHubで公開しています。
       <br />
-      <ExternalLink href="https://github.com/khsacc/Portfolio2020-2/" category="github-link">
-        <div className={classes.img_wrapper}>
+      <div className={classes.img_wrapper}>
+        <ExternalLink href="https://github.com/khsacc/Portfolio2020-2/" category="github-link">
           <img className={classes.img} src="/img/source/source.svg" alt="" />
           <img className={[classes.img, classes.img_hover].join(' ')} src="/img/source/source_hover.svg" alt="" />
-        </div>
-      </ExternalLink>
+        </ExternalLink>
+      </div>
     </div>
   );
 };

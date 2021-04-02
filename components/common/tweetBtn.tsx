@@ -42,7 +42,7 @@ export const TweetBtn: NextPage = () => {
         ]
           .map(e => `${e[0]}=${e[1]}`)
           .join('&')}`;
-        gtag.event({ action: `tweet__${router.pathname}`, category: 'twitter-share', label: '' });
+        gtag.event({ action: `tweet__${router.asPath}`, category: 'twitter-share', label: '' });
         window.open(href);
       }}
     >

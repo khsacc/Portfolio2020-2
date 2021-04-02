@@ -6,6 +6,7 @@ export type WorksDetail = {
   img: string;
   alt: string;
   topPage: boolean;
+  hideAsAll?: boolean;
 };
 
 export type WorksDatum = {

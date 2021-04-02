@@ -1,6 +1,6 @@
 import { CreateHead } from '../../lib/createHead';
 
-import { Blog } from '../../components/topPage/blog';
+import { BlogIndex } from '../../components/blog/blogIndex';
 import { Subtitle } from '../../components/common';
 import { blogsData } from '../../components/blog/each';
 import { makeStyles } from '@material-ui/core';
@@ -17,7 +17,8 @@ export default function IndexPage() {
     <>
       <CreateHead title="Blogs" />
       <div className={classes.wrapper}>
-        <Blog data={blogsData} />
+        <Subtitle>Blogs</Subtitle>
+        <BlogIndex data={blogsData} />
       </div>
     </>
   );
