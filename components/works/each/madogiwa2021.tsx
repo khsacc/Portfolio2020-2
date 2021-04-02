@@ -18,7 +18,7 @@ export const Madogiwa2021Data: WorksDatum = {
   year: 2021,
   note: '',
   collaborated: false,
-  contribution: ['DTP'],
+  contribution: ['poster design'],
   works: [
     {
       name: '',

@@ -30,7 +30,7 @@ const ProfilePage: NextPage = () => {
       <div className={classes.wrapper}>
         <h1 className={classes.name}>Hiroki Kobayashi</h1>
         <p className={classes.p}>
-          東京大学3年。普段は理学部で化学を学んでいます。
+          東京大学4年。この春から理学部化学科の地球化学研究室に配属になりました。
           <br />
           印刷物のデザインが好きです。最近はWebデザイン・開発（Vue / React）もしています。
           媒体や素材そのものを丹念に観察し、ちょっとしたおもしろさと物語性のあるデザインを心がけています。

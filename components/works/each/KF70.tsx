@@ -34,7 +34,7 @@ export const KF70data: WorksDatum = {
   year: 2019,
   note: '',
   collaborated: true,
-  contribution: ['Design Direction', 'DTP', 'Web Design'],
+  contribution: ['Design Direction', 'DTP', 'Web'],
   works: [
     {
       name: '公式ポスター',
