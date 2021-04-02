@@ -31,6 +31,10 @@ export const Footer: NextPage = () => {
       href: '/profile',
       display: 'Profile',
     },
+    {
+      href: '/blog',
+      display: 'Blogs',
+    },
   ];
 
   const router = useRouter();
