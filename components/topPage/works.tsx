@@ -12,7 +12,7 @@ import { worksData } from '../works/data';
 import Link from 'next/link';
 import theme from '../../styles/theme';
 
-const useTopWorkStyles = makeStyles(theme => ({
+export const useTopWorkStyles = makeStyles(theme => ({
   container: {
     padding: padding.common,
     display: 'flex',
@@ -66,7 +66,7 @@ const useTopWorkStyles = makeStyles(theme => ({
   },
 }));
 
-const WorkContainer: NextPage<{ workidx: number; prj: WorksDatum; work: WorksDetail; all?: boolean }> = ({
+export const WorkContainer: NextPage<{ workidx: number; prj: WorksDatum; work: WorksDetail; all?: boolean }> = ({
   workidx,
   prj,
   work,
@@ -88,7 +88,7 @@ const WorkContainer: NextPage<{ workidx: number; prj: WorksDatum; work: WorksDet
       <a
         onClick={() => {
           gtag.event({
-            action: `${all ? 'work-index' : 'top-work'}__${prj.id}-${workidx}`,
+            action: `${all ? 'work-index' : 'top-work'}__${work.img}`,
             label: work.img,
             category: all ? 'work-index' : 'top-work',
           });
@@ -139,30 +139,6 @@ export const TopWork: NextPage = () => {
           )
           .map((work, workidx) => (
             <WorkContainer key={workidx} workidx={workidx} work={work} prj={work.prj} />
-          ))}
-      </div>
-    </>
-  );
-};
-
-export const WorkIndex: NextPage = () => {
-  const classes = useTopWorkStyles();
-  return (
-    <>
-      <Subtitle>Works</Subtitle>
-      <div className={classes.container}>
-        {worksData
-          .reduce(
-            (pre: (WorksDetail & { prj: WorksDatum })[], cur: WorksDatum) => [
-              ...pre,
-              ...cur.works
-                .filter(work => typeof work.hideAsAll === 'undefined' || work.hideAsAll === false)
-                .map(work => ({ ...work, prj: cur })),
-            ],
-            [],
-          )
-          .map((work, workidx) => (
-            <WorkContainer key={workidx} workidx={workidx} work={work} prj={work.prj} all={true} />
           ))}
       </div>
     </>

@@ -101,7 +101,8 @@ export const Self: NextPage<{ showName?: boolean; isLink?: boolean }> = ({ showN
         <>
           {showName && <Subtitle>Hiroki Kobayashi</Subtitle>}
           <p className={classes.prof}>
-            東京大学3年。
+            {/* 学年等情報更新の際にはpages/profile.tsx も更新すること */}
+            東京大学4年。
             <br />
             印刷物のデザインが好きです。最近はWebデザイン・開発（Vue / React）もしています。
             媒体や素材そのものを丹念に観察し、ちょっとしたおもしろさと物語性のあるデザインを心がけています。{'>>'}{' '}

@@ -1,3 +1,4 @@
+import * as gtag from '../../lib/gtag';
 import { BlogDatum } from './each';
 import { CSSProperties } from 'react';
 import { NextPage } from 'next';
@@ -92,7 +93,16 @@ export const BlogIndex: NextPage<{ data: BlogDatum[] }> = ({ data }) => {
     <>
       {data.map((datum, idx) => (
         <Link href={`/blog/${datum.id}`} key={datum.id}>
-          <a className={classes.wrapper__atag}>
+          <a
+            className={classes.wrapper__atag}
+            onClick={() => {
+              gtag.event({
+                action: `blog-index__to-${datum.id}`,
+                category: 'blog-index-link',
+                label: `blog__${datum.id}`,
+              });
+            }}
+          >
             <div key={datum.id} className={classes.wrapper}>
               <img src={datum.img} className={classes.img} />
               <div className={classes.cover} />
