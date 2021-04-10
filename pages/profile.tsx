@@ -29,6 +29,7 @@ const ProfilePage: NextPage = () => {
       <ArticleTitle img="/img/topPage/self.jpg" title="Profile" alt="self portrait" />
       <div className={classes.wrapper}>
         <h1 className={classes.name}>Hiroki Kobayashi</h1>
+        {/* 学年等の更新の際にはトップページの情報も更新すること */}
         <p className={classes.p}>
           東京大学4年。この春から理学部化学科の地球化学研究室に配属になりました。
           <br />
