@@ -51,7 +51,7 @@ export const TopLab: NextPage = () => {
     <div id="lab">
       <Subtitle>Laboratory</Subtitle>
       <p data-aos="fade-up" className={classes.desc}>
-        日常の中で実験的に制作したグラフィックなど、細々としたものを。
+        名もなきデザインと、試作の記録。
       </p>
       <div className={classes.container}>
         {laboratoryData.map(datum => (

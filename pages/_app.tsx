@@ -16,7 +16,6 @@ import CssBaseLine from '@material-ui/core/CssBaseline';
 import PropTypes from 'prop-types';
 // import UAParser from 'ua-parser-js';
 import { TweetBtn } from '../components/common/tweetBtn';
-import { idScrollFunction } from '../lib/idScroll';
 import theme from '../styles/theme';
 
 const defaultLayout = ({ Component, pageProps }: AppProps) => {
