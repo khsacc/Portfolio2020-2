@@ -101,7 +101,8 @@ export const ProjectInfo: NextPage<{ prj: WorksDatum }> = ({ prj }) => {
 // 画像表示用component
 const useWorkImgStyles = makeStyles(() => ({
   wrapper: {
-    width: '95%',
+    // width: '95%',
+    padding: 10,
     margin: '25px auto',
     transition: 'all 0.5s ease-out',
   },
@@ -153,7 +154,7 @@ const useWorkImgStyles = makeStyles(() => ({
   },
 }));
 
-const WorkImgPopup: NextPage<{
+export const WorkImgPopup: NextPage<{
   img: string;
   isFocused: boolean;
   setIsFocused: Dispatch<SetStateAction<boolean>>;
@@ -191,15 +192,22 @@ const WorkImgPopup: NextPage<{
   );
 };
 
-export const WorkImg: NextPage<{ work: WorksDetail; imgWidth?: string }> = ({ work, imgWidth }) => {
+export const WorkImg: NextPage<{ work: WorksDetail; imgWidth?: string; eventCategory?: string; margin?: string }> = ({
+  work,
+  imgWidth,
+  eventCategory = 'work-image',
+  margin,
+}) => {
   const classes = useWorkImgStyles();
   const [isFocused, setIsFocused] = useState(false);
   const displayImage = useRef(null);
 
+  const inlineStyle = margin ? { style: { margin: margin } } : {};
+
   return (
     <>
       <WorkImgPopup img={work.img} isFocused={isFocused} setIsFocused={setIsFocused} />
-      <div className={[classes.wrapper].join(' ')}>
+      <div className={[classes.wrapper].join(' ')} {...inlineStyle}>
         <img
           src={work.img}
           className={classes.img}
@@ -208,7 +216,11 @@ export const WorkImg: NextPage<{ work: WorksDetail; imgWidth?: string }> = ({ wo
           ref={displayImage}
           onClick={() => {
             setIsFocused(!isFocused);
-            gtag.event({ action: `large-image__${work.img}`, category: 'work-image', label: work.img });
+            gtag.event({
+              action: `large-image__${work.img}`,
+              category: eventCategory || 'work-image',
+              label: work.img,
+            });
           }}
         />
         <div className={classes.name}>{work.name} </div>

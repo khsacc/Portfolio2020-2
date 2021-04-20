@@ -36,18 +36,18 @@ export const KasaData: WorksDatum = {
       alt: '',
       hideAsAll: true,
     },
-    {
-      name: '「いろいろいろ」',
-      img: '/img/works/kasa/kasa-3.jpg',
-      topPage: false,
-      alt: '',
-    },
-    {
-      name: 'greeting card',
-      img: '/img/works/kasa/kasa-4.jpg',
-      topPage: true,
-      alt: 'Merry Christmas and Happy New Year 2021',
-    },
+    // {
+    //   name: '「いろいろいろ」',
+    //   img: '/img/works/kasa/kasa-3.jpg',
+    //   topPage: false,
+    //   alt: '',
+    // },
+    // {
+    //   name: 'greeting card',
+    //   img: '/img/works/kasa/kasa-4.jpg',
+    //   topPage: true,
+    //   alt: 'Merry Christmas and Happy New Year 2021',
+    // },
     {
       name: 'ポートフォリオサイト',
       img: '/img/works/kasa/kasa-5.jpg',

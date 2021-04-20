@@ -2,7 +2,9 @@ import { Fade, makeStyles } from '@material-ui/core';
 import { LineUmb } from '../common';
 import { NextPage } from 'next';
 import { colours, zIndex } from '../../styles';
+import { scrollLists } from '../../lib/idScroll';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 type WelcomeLettersDatum = { d: string; time: number };
 
@@ -32,57 +34,48 @@ const WelcomeLetter: NextPage<{ data: WelcomeLettersDatum }> = ({ data }) => {
   );
 };
 
-export const LoadAnim: NextPage = () => {
-  const classes = makeStyles(() => ({
-    basement: {
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      width: '100%',
-      height: '100vh',
-      background: colours.main.sub,
-      zIndex: zIndex.load_anim.base,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      color: 'white',
-      textAlign: 'center',
-    },
-    umb: {
-      width: '45%',
-      transform: 'translateY(-10px) scale(0.8)',
-      opacity: 0,
-      transition: 'all 0.6s ease-in-out',
-    },
-    umb__show: {
-      opacity: 1,
-      transform: 'translateY(0) scale(0.9)',
-    },
-    exit: {
-      opacity: 1,
-    },
-    exitActive: {
-      transition: 'all 0.8s ease-in-out',
-    },
-    exitDone: {
-      opacity: 0,
-    },
-    welcome: {
-      width: 150,
-    },
-  }))();
+const useStyles = makeStyles(() => ({
+  basement: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100vh',
+    background: colours.main.sub,
+    zIndex: zIndex.load_anim.base,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: 'white',
+    textAlign: 'center',
+  },
+  umb: {
+    width: '45%',
+    transform: 'translateY(-10px) scale(0.8)',
+    opacity: 0,
+    transition: 'all 0.6s ease-in-out',
+  },
+  umb__show: {
+    opacity: 1,
+    transform: 'translateY(0) scale(0.9)',
+  },
+  exit: {
+    opacity: 1,
+  },
+  exitActive: {
+    transition: 'all 0.8s ease-in-out',
+  },
+  exitDone: {
+    opacity: 0,
+  },
+  welcome: {
+    width: 150,
+  },
+}));
 
-  // アニメーション自体の表示切り替え
-  const [showAnim, setShowAnim] = useState(true);
-  const [showUmb, setShowUmb] = useState(false);
-  useEffect(() => {
-    setTimeout(() => {
-      setShowUmb(true);
-    }, 200);
-    setTimeout(() => {
-      setShowAnim(false);
-    }, 1000);
-  }, []);
+export const LoadAnim: NextPage = () => {
+  const classes = useStyles();
+  const router = useRouter();
 
   const welcomeSvg: WelcomeLettersDatum[] = [
     // LoadAnimはフォントの読み込み前に表示されることが予想されるので文字は全てSVG
@@ -119,6 +112,28 @@ export const LoadAnim: NextPage = () => {
         'M136.1,24.84a2.57,2.57,0,0,1,2.51-2.29,2,2,0,0,1,2.08,2.29,2.58,2.58,0,0,1-2.52,2.29A2,2,0,0,1,136.1,24.84ZM140.69.34h4.09l-4.53,19.39h-1.94Z',
     },
   ].map((e, i) => ({ ...e, time: i * 70 + 250 }));
+
+  const idScroll = () => {
+    scrollLists.forEach(element => {
+      if (new RegExp(`${element.path}.*to=${element.id}`).test(router.asPath)) {
+        const scroll = document.getElementById('lab').getBoundingClientRect().top - element.offset;
+        window.scrollBy({ top: scroll });
+      }
+    });
+  };
+
+  // アニメーション自体の表示切り替え
+  const [showAnim, setShowAnim] = useState(true);
+  const [showUmb, setShowUmb] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setShowUmb(true);
+    }, 200);
+    setTimeout(() => {
+      setShowAnim(false);
+      idScroll();
+    }, 1000);
+  }, []);
 
   return (
     <Fade

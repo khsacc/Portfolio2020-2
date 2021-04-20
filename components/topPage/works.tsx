@@ -127,7 +127,10 @@ export const TopWork: NextPage = () => {
   const classes = useTopWorkStyles();
   return (
     <>
-      <Subtitle>Works</Subtitle>
+      <Subtitle>Projects</Subtitle>
+      <p className={classes.container} data-aos="fade-up">
+        わたしの関わったプロジェクトをまとめています。
+      </p>
       <div className={classes.container}>
         {worksData
           .reduce(

@@ -12,7 +12,7 @@ export default function IndexPage() {
   const classes = useStyles();
   return (
     <>
-      <CreateHead title="Works" />
+      <CreateHead title="Projects" />
       <div className={classes.wrapper}>
         <WorkIndex />
       </div>

@@ -20,7 +20,6 @@ import theme from '../styles/theme';
 
 const defaultLayout = ({ Component, pageProps }: AppProps) => {
   // note that to initialize AOS, ``document`` is needed.
-
   useEffect(() => {
     // after mounted
     AOS.init({
@@ -37,11 +36,12 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
 
   useEffect(() => {
-    setTimeout(() => {
-      window.scrollTo({
-        top: 0,
-      });
-    }, 900);
+    !router.query.to &&
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+        });
+      }, 900);
     // gtag.pageview(router.pathname);
   }, [router.asPath]);
 

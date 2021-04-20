@@ -24,23 +24,31 @@ const HeaderDesign: NextPage = () => {
     },
     top_link: {
       textDecoration: 'none',
+      cursor: 'pointer',
     },
   }))();
 
   const router = useRouter();
 
   return (
-    <Link href="/" scroll={false}>
-      <a
-        className={classes.top_link}
-        onClick={() => {
-          gtag.event({ action: `header-link__@${router.asPath}`, category: 'header-link', label: '' });
-        }}
-      >
+    // <Link href="/" scroll={false}>
+    <a
+      className={classes.top_link}
+      onClick={() => {
+        if (router.pathname !== '/') {
+          router.push('/', '/', { scroll: false });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        gtag.event({ action: `header-link__@${router.asPath}`, category: 'header-link', label: '' });
+      }}
+    >
+      <div>
         <img src="/img/topPage/top_icon.svg" alt="" className={classes.top_icon} />
         <h1 className={classes.name}>Hiroki Kobayashi</h1>
-      </a>
-    </Link>
+      </div>
+    </a>
+    // </Link>
   );
 };
 
@@ -60,7 +68,7 @@ export const Header: NextPage = ({}) => {
   }))();
   const router = useRouter();
   const topPageScroll = () => {
-    router.pathname === '/' && window.scrollTo({ top: 0, behavior: 'smooth' });
+    router.asPath === '/' && window.scrollTo({ top: 0, behavior: 'smooth' });
   };
   return (
     <header className={classes.headerWrapper} onClick={topPageScroll}>
