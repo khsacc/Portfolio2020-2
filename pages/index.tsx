@@ -7,7 +7,7 @@ import { TopLab } from '../components/topPage/lab';
 import { blogsData } from '../components/blog/each';
 import { idScrollFunction } from '../lib/idScroll';
 import { makeStyles } from '@material-ui/core';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
@@ -38,6 +38,7 @@ const IndexPage: NextPage = () => {
     <>
       <CreateHead title="Top" />
       <Top />
+
       <Link href="/profile" scroll={false}>
         <a className={classes.wrapper_link}>
           <Self />

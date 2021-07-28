@@ -1,5 +1,6 @@
 import { CreateHead } from '../../lib/createHead';
 import { WorkIndex } from '../../components/works/workIndex';
+import { createElement } from 'react';
 import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
