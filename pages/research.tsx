@@ -26,7 +26,7 @@ const ResearchPage: NextPage = () => {
         <p className={classes.desc}>
           Student at Geochemical Research Centre, the University of Tokyo, working on the polymorphism of ice.
           <br />
-          Interested in high pressure hydrogen-bonded science. Usually uses Diamond Anvil Cells (DAC), X-ray
+          Interested in hydrogen-bonded science under high pressure. Usually uses Diamond Anvil Cells (DAC), X-ray
           diffraction, and Raman spectroscopy.
         </p>
         {/* <p className={classes.desc}>Interested in</p> */}
