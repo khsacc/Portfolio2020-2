@@ -25,6 +25,16 @@ const laboratoryData: WorksDetail[] = [
     topPage: true,
     alt: 'Merry Christmas and Happy New Year 2021',
   },
+  {
+    img: '/img/works/lab/KF71_banner.jpg',
+    topPage: true,
+    alt: '祝 第71回駒場祭開催',
+  },
+  {
+    img: '/img/works/lab/MF94_banner.jpg',
+    topPage: true,
+    alt: '祝 第94回五月祭開催',
+  },
 ];
 
 const useStyles = makeStyles(() => ({
