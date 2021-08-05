@@ -2,6 +2,7 @@ import { AkamonRestroomData, akamonRestroom } from './akamon-restroom';
 import { IPT2021, IPT2021Data } from './IPT2021';
 import { KF70, KF70data } from './KF70';
 import { KasaData, kasa } from './kasa';
+import { LittermateData, littermate } from './littermate';
 import { MF92, MF92Data } from './MF92';
 import { MF93, MF93Data } from './MF93';
 import { Madogiwa2021, Madogiwa2021Data } from './madogiwa2021';
@@ -17,10 +18,11 @@ const articleData = {
   kasa,
   'akamon-restroom': akamonRestroom,
   'madogiwa-2021': Madogiwa2021,
+  littermate,
 };
 
 // dataはここからexportしておいてください
-export { AkamonRestroomData, KF70data, IPT2021Data, Madogiwa2021Data, MF93Data, KasaData, MF92Data };
+export { AkamonRestroomData, KF70data, IPT2021Data, Madogiwa2021Data, MF93Data, KasaData, MF92Data, LittermateData };
 
 // 全体
 const useProjectArticleStyles = makeStyles(() => ({

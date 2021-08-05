@@ -1,4 +1,5 @@
 import { AkamonRestroomData, IPT2021Data, KF70data, KasaData, MF92Data, MF93Data, Madogiwa2021Data } from './each';
+import { LittermateData } from './each/littermate';
 
 export type WorksDetail = {
   name?: string;
@@ -30,6 +31,7 @@ export const worksData: WorksDatum[] = [
   KF70data,
   AkamonRestroomData,
   Madogiwa2021Data,
+  LittermateData,
   IPT2021Data,
   MF93Data,
   KasaData,
