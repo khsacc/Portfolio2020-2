@@ -7,7 +7,13 @@ import { padding } from '../../styles/global';
 import React from 'react';
 
 // ここでしか表示しないのでデータ管理もここでやる（そのことにより配列の中にjsxを含んでもサーバーサイドのエラーを吐かないので便利！）
+// 結局jsx使ってない（）
 const laboratoryData: WorksDetail[] = [
+  {
+    img: '/img/works/lab/natsuyasumi.jpg',
+    alt: '夏休み 2021 summer vacation!',
+    topPage: true,
+  },
   {
     img: '/img/works/lab/20210421.jpg',
     alt: '2021.4.21.',
