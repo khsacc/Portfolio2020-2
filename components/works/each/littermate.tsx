@@ -69,5 +69,12 @@ export const LittermateData: WorksDatum = {
       alt: 'Littermate Website',
       note: '',
     },
+    {
+      name: 'Poster',
+      img: '/img/works/littermate/poster.jpg',
+      topPage: false,
+      alt: 'Littermate Popup Store',
+      note: '新宿マルイへの出店に際して制作したポスター。大きな紙に印刷してはじめて成り立つ誌面設計を心がけた。',
+    },
   ],
 };
