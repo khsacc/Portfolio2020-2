@@ -15,6 +15,16 @@ const laboratoryData: WorksDetail[] = [
     topPage: true,
   },
   {
+    img: '/img/works/lab/imperfect.jpg',
+    alt: 'imperfect',
+    topPage: true,
+  },
+  {
+    img: '/img/works/lab/separation.jpg',
+    alt: 'separation',
+    topPage: true,
+  },
+  {
     img: '/img/works/lab/20210421.jpg',
     alt: '2021.4.21.',
     topPage: true,
