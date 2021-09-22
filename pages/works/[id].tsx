@@ -4,6 +4,7 @@ import { PageContent } from '../../components/common/pageContent';
 import { ProjectArticle, ProjectInfo, WorkImg, WorksDatum, worksData } from '../../components/works';
 
 import { NextProject } from '../../components/works/project';
+import { NextSeo } from 'next-seo';
 import { RelatedBlog } from '../../components/works/relatedBlog';
 import { Subtitle } from '../../components/article/subtitle';
 

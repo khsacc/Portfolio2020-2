@@ -15,7 +15,9 @@ import AOS from 'aos';
 import CssBaseLine from '@material-ui/core/CssBaseline';
 import PropTypes from 'prop-types';
 // import UAParser from 'ua-parser-js';
+import { DefaultSeo } from 'next-seo';
 import { TweetBtn } from '../components/common/tweetBtn';
+import SEO from '../next-seo.config';
 import theme from '../styles/theme';
 
 const defaultLayout = ({ Component, pageProps }: AppProps) => {
@@ -62,6 +64,7 @@ const defaultLayout = ({ Component, pageProps }: AppProps) => {
 
   return (
     <>
+      <DefaultSeo {...SEO} />
       <ThemeProvider theme={theme}>
         <ParallaxProvider>
           <CssBaseLine />
